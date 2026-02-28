@@ -1,0 +1,74 @@
+<!-- semester system(yearly) > dual year(true) > inside/ourside bound -->
+<script>
+    function calc(a,b,c,d,e,f,g){
+    let totalYear = a;
+    let semester = b;
+
+    let presentYear = c;
+    let registeredYear = d;
+
+    let month = e;
+    let yearStartMonth = f;
+    let yearEndMonth = g;
+        console.log("new result");
+            let dual = true;
+            if(yearStartMonth>yearEndMonth){
+                dual = true;
+            if(((month>=yearStartMonth)&&(month<=12)) ||((month>=1)&&(month<=yearEndMonth))){
+                if(presentYear == registeredYear){
+                    return "same semester not counting(problem with moth 1 same year)"
+                }else{
+                    if((month>=1)&&(month<=yearEndMonth)){
+                        // old semester yearly previos
+                    let result = presentYear - registeredYear;
+                    let resultSemester = semester + result;
+                    if(resultSemester<= totalYear + 1){
+                        return " same semester new year not counting ";
+                    }else{
+                        return "ex student not counting 1";
+                    }
+
+
+                    }else{
+                        // new semester begins
+                    let result = presentYear - registeredYear;
+                    let resultSemester = semester + result;
+                    if(resultSemester<= totalYear){
+                        return " promoted new semester will be used and year presemt(changes)";
+                    }else{
+                        return "ex student not counting 2";
+                    }
+
+                    }
+                }
+            }else{
+                return "out of bound not counting";
+                
+            }
+            }else{
+                return "dual year not counting";
+            }
+    }
+
+
+    // let totalYear = 2;
+    // let semester = 2;
+
+    // let presentYear = 2026;
+    // let registeredYear = 2026;
+
+    // let month = 10;
+    // let yearStartMonth = 2;
+    // let yearEndMonth = 10;
+///////////////totalYear///semester///presentYear///registeredYear///month///yearStartMonth///yearEndMonth
+console.log(calc(2,         1,         2026,            2026,         2,         7,              5));
+    // console.log(calc(2,1,2026,2025,10,2,10));
+    // console.log(calc(2,2,2026,2025,10,2,10));
+
+
+    // console.log(calc(2,2,2026,2025,10,2,10));
+    // console.log(calc(2,1,2026,2026,10,2,10));
+    
+
+    // console.log(calc(2,2,2029,2026,1,2,10));
+</script>

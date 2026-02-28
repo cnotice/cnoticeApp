@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body style="height:1000px;"> -->  
+<body> 
+    <audio id="bubbleSound" src="/src/sound/bubble.mp3"></audio>
+    <audio id="clickSound" src="/src/sound/click.mp3"></audio>
+
+    <main class="mainContainer ">
+        <section class="introContainer">
+            <div class="introBackIcon" onclick="goBack()"></div>
+            <div class="intro intro1">Dashboard</div>
+            <div class="introMenuDotsIcon" onclick="playSound('clickSound','about.html');"></div>
+        </section>
+        <section style="display:flex;width:100%;">
+            <div style="width:10%;"></div>
+            <div style="width:80%;text-align:center;">
+                <div class="highlighti">Institute</div>
+            </div>
+            <div style="position:relative;width:10%;" onclick="playSound('bubbleSound')">
+                <a href="information.html">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+                </a>
+            </div>
+        </section>
+
+        <section class="subjectContainer" id="getDepartment" style="margin-bottom:8px ;">
+            <div class="triangleContainer">
+                <div id="previous2" class="triangleContainer2">
+                    <div class="triangleleft"></div>
+                </div>
+            </div>
+            <div style="width:360px;">
+                <div id="quiz2"></div>
+            </div>
+            <div class="triangleContainer">
+                <div id="next2" class="triangleContainer2">
+                    <div class="triangleright"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="subjectContainer" style="margin-bottom:10px ;">
+            <div class="triangleContainer">
+                <div id="previous" class="triangleContainer2">
+                    <div class="triangleleft"></div>
+                </div>
+            </div>
+            <div style="width:360px;">
+                <div id="quiz"></div>
+            </div>
+            <div class="triangleContainer">
+                <div id="next" class="triangleContainer2">
+                    <div class="triangleright"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="sortContainer" style="margin-bottom:5px;margin-left:10px;">
+            <div class="sort sort2">
+            Institute Notice Board
+            </div>
+        </section>
+            
+        <section class="messageContainer" onclick="window.location='notice.html#seeNotice';">
+            <div class="messageBox">
+                <div> Notices : </div>
+                <div style="margin-left:5px;"> 556 </div>
+            </div>
+        </section>
+            
+        <section class="menuContainer"> 
+            <div class="menuBox"  onclick="playSound('bubbleSound', 'guide.html')" style="cursor: pointer;" onclick="window.location='guide.html';">
+                <div class="guide"></div>
+                Guide
+            </div>
+            <div class="menuBox" style="cursor: pointer;" onclick="playSound('bubbleSound', 'logs.html')"> 
+                <div class="logs" onclick=""></div>
+                Logs
+            </div>
+        
+            <div class="menuBox" style="cursor: pointer;" onclick="playSound('bubbleSound', 'settings.html')"> 
+                <div class="settings"></div>
+                Settings
+            </div>
+            <div class="menuBox" style="cursor: pointer;" onclick="playSound('bubbleSound', 'insprofile.html')"> 
+                <div class="profile" onclick="" style="font-size:;background-color:;"></div>
+                Profile
+            </div>
+        </section>
+
+    </main>
+    <script>
+        const myQuestions = [
+        {
+        question: "QP",
+        answers: {
+        a: "question",
+        b: "Sheryl Sandberg",
+        c: "Brendan Eich"
+        },
+        correctAnswer: "c"
+        },
+        {
+        question: "Syllabus",
+        answers: {
+        a: "syllabus",
+        b: "Sheryl Sandberg",
+        c: "Brendan Eich"
+        },
+        correctAnswer: "c"
+        },
+        {
+        question: "Calendar",
+        answers: {
+        a: "calendar",
+        b: "TypeScript",
+        c: "npm"
+        },
+        correctAnswer: "c"
+        }, 
+        {
+        question: "TimeTable",
+        answers: {
+        a: "timeTable",
+        b: "TypeScript",
+        c: "npm"
+        },
+        correctAnswer: "c"
+        },
+        {
+        question: "Notice",
+        answers: {
+        a: "notice",
+        b: "jQuery",
+        c: "RequireJS",
+        d: "ESLint"
+        },
+        correctAnswer: "d"
+        }
+        ];
+
+        const myQuestions2a = [
+        {
+        question: "Subjects",
+        answers: {
+        a: "subjects",
+        b: "Sheryl Sandberg",
+        c: "Brendan Eich"
+        },
+        correctAnswer: "c"
+        },
+        {
+        question: "Teachers",
+        answers: {
+        a: "teachers",
+        b: "Sheryl Sandberg",
+        c: "Brendan Eich"
+        },
+        correctAnswer: "c"
+        },
+        {
+        question: "Students",
+        answers: {
+        a: "students",
+        b: "TypeScript",
+        c: "npm"
+        },
+        correctAnswer: "c"
+        }, 
+        {
+        question: "Degrees",
+        answers: {
+        a: "degree",
+        b: "TypeScript",
+        c: "npm"
+        },
+        correctAnswer: "c"
+        }
+        ];
+    </script>
+    <!-- <script src="exp12.js"></script> -->
+    <script src="dashboard.js"></script>
+    <script src="/src/js/app.js"></script>
+</body>
+
+
+
+<script>
+    
+    // ////////////// number 3 simple goback or and hide button
+
+    // function goBack(){
+    //     window.history.back();
+    // }
+    // document.addEventListener("DOMContentLoaded", function(){
+    //     const backButton = document.getElementsByClassName("introBackIcon");
+    //     if(window.history.length <=1){
+    //         backButton[0].style.visibility = "none";
+    //     }
+    // });
+
+    // ////////////// number 2 go back or any page , no hide button
+
+    // function goBack(){
+    //     if(window.history.length >1){
+    //         window.history.back();
+    //     }else{
+    //         window.location.href = "index.html";
+    //     }
+    // }
+
+    //  ///////////////////// number1
+
+    function goBack(){
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+
+        if(referrer && referrer.startsWith(currentOrigin)){
+            window.history.back();
+        }else{
+            
+    playSound('bubbleSound');
+            window.location.href = "/index.html";
+        }
+    }
+// or hide button
+document.addEventListener("DOMContentLoaded",function(){
+    const backButton = document.getElementsByClassName("introBackIcon");
+    const referrer = document.referrer;
+    const currentOrigin = window.location.origin;
+
+    if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+            backButton[0].style.visibility = "hidden";
+    }
+});
+
+function playSound(sound, location){
+    // alert(sound);
+document.getElementById(sound).play();
+
+if(location){
+        setTimeout(function() {
+// //   console.log("This message appears after 2 seconds.");
+window.location= location;
+}, 120); // 2000 milliseconds = 2 seconds
+}
+
+document.getElementById(sound).currentTime = 0;
+}
+</script>
+
+
+<script src="payload.js"></script>
+<script>
+
+      if(payload.designation !== "institute"){
+        // document.location = `/combi/pageDoesNotExist.html`;
+
+      }
+
+console.log(payload.designation);
+
+</script>

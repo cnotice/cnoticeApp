@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="/combi/estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+<body >
+ 
+    <section id='101' style='z-index:3;
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    '>
+        <div class='errorMessageBox' style='
+        background-color:#02013b;
+        padding:40px 10px 30px 10px;
+        border-radius:5px;
+        color:white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width:90%;
+        '>
+            <div>
+                <div class="deckerCard deckerHead"> Please mark the problem about this question for which the creator can rectify </div>
+                <div class="deckerCard deckerBody" style="text-align: left;" >
+              
+                    <label style="display: flex; align-items: center; border-radius: 5px;  cursor: pointer;">
+                    <input type="radio" name="department" value="incorrect" style="margin-right: 10px;">
+                    Incorrect information / Off-topic / Out of syllabus
+                    </label>
+                    <hr>
+                    <label style="display: flex; align-items: center; border-radius: 5px;  cursor: pointer;">
+                    <input type="radio" name="department" value="incorrect" style="margin-right: 10px;">
+                    Inappropriate content/ malicious links
+                    </label>
+                    <hr>
+                    <label style="display: flex; align-items: center; border-radius: 5px;  cursor: pointer;">
+                    <input type="radio" name="department" value="incorrect" style="margin-right: 10px;">
+                    Spam/ duplicate
+                    </label>
+                    <hr>
+                    <label style="display: flex; align-items: center; border-radius: 5px;  cursor: pointer;">
+                    <input type="radio" name="department" value="incorrect" style="margin-right: 10px;">
+                    Promotional/ advertisement
+                    </label>
+                </div>
+                <button class="button17a button0" onclick="ok()">Cancel</button>
+                <button class="button17a button0" onclick="ok()">Submit</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="mainContainer ">
+
+    
+    
+        <section id='111' style='z-index:3;
+        display:none;
+        position:fixed;
+        width:100%;
+        height:100%;
+        background-color:rgb(0,0,0);
+        background-color:rgba(0,0,0,0.4);
+        justify-content: center;
+        align-items: center;
+        '>
+            <div class='errorMessageBox' style='
+            background-color:#02013b;
+            padding:40px 10px 30px 10px;
+            border-radius:5px;
+            color:white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            width:90%;
+            '>
+                <div>
+                    <!-- <div class="deckerCard deckerHead"> Please choose an option right now:</div>
+                    <div class="deckerCard deckerBody" style="text-align: left;" >
+
+                    <div style="border-radius:5px;
+                    " class=" sortExtend" onclick="creategetmodel()">
+                    Edit
+                    </div>    
+                    <hr>    
+                    <div style="border-radius:5px;
+                    " class=" sortExtend" onclick="confirmFunction()">
+                    Delete
+                    </div>
+                    </div> -->
+                    <div style="position:relative;"><div class="" style="width:300px;">
+                        <div id="id3" onclick="" class="scoreBox" style="visibility:;">
+                            <div style="
+                            display: flex;
+                            flex-direction: row-reverse; "> 
+                                <div class="trophy4" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                                <div class="trophy" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                                <div class="trophy4" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                            </div>Congratulations 2!$
+                  
+                            <span  id="congra">xxx</span>
+                  
+                            <div style="background-color:;font-size:px;margin:10px 0px 0px 0px;">! You have completed all for today.If there id all for today.If there is more than i will let you know. uishiusw khsukhj hk uhhhjjh jiijji 
+                                <div style="margin-top:5px;
+                                display: flex;
+                                flex-direction: row; 
+                                justify-content: space-around;"> 
+                                    <button class="button0"> Play Weak Subject</button> <button class="button0"> Play Again </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button class="button17a button0" onclick="ok2()">CancelSHDbQuit</button>
+                    </div>
+                </div>
+        </section>
+
+        <section class="introContainer">
+            <div style="
+            width:35px;
+            height:40px;
+            margin:0px 0px 0px 3px;" onclick=""></div>
+            <div class="intro intro1">CSE </div>
+            <div class="introMenuDotsIcon"></div>
+        </section>
+        <section style="display:flex;width:100%;background-color: ;">
+            <div style="width:10%;background-color:;"></div>
+            <div style="width:80%;background-color: ;text-align:center;">
+                <div class="highlighti">Flash Card</div>
+            </div>
+            <div style="position:relative;width:10%;background-color: ;">
+                <a href="information.html">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+                </a>
+            </div>
+        </section>
+
+        <section class="sortContainer" >
+            <div class="sort" >
+                Max Q : Unlimited
+            </div>
+            <div class="sort" >
+            Question no: 5000
+            </div>
+            <div class="sort sort2" >
+                float display
+            </div>
+            <div class="sort" >
+                Life: infinite
+            </div>
+            <div class="sort" >
+                Time: <span id="timer" data-time="5"> 02:00</span>
+            </div>
+            <div class="sort" >
+                tagged: <span id="gamePoints2"> 0</span>
+            </div>
+            <div class="sort" >
+                untagged: <span id="gamePoints"> 0</span>
+            </div>
+        </section>
+
+        <section class="quizContainer" id="quiz3">
+        </section>
+        <br>
+        <section class="quizAnsContainer" style="height:300px;" id="reveal" style="display:;">
+            <div >
+
+            </div>
+        </section>
+
+        <div style="width:80%;  margin-top:50px;">
+            <button class="button0 button11 " style="float: left ;" onclick="goBack()">quit</button><button class="button0 button11 " style="float: right ;"  id="skip">skip</button>
+        </div>
+    </main>
+
+    <script src="/src/js/app.js"></script>
+</body>
+
+<script src="/combi/timer.js"></script>
+
+<script>
+//     const noOfStuButt = document.getElementById("show");
+
+// noOfStuButt.addEventListener("click", function(){
+
+// let ans = `
+// <div class="answerbox" id="quizans">
+// A. Partha is the ultimate living human who is eligible to be the president of the nation.
+// </div>`
+
+// document.getElementById("show").style.display = "none";
+
+// })
+
+let todayDate = 0;
+</script>
+
+
+
+<script>
+    
+
+    function goBack(){
+            window.location.href = "/combi/mc.html";
+    }
+document.addEventListener("DOMContentLoaded",function(){
+    const backButton = document.getElementsByClassName("introBackIcon");
+    const referrer = document.referrer;
+    const currentOrigin = window.location.origin;
+
+    if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+            backButton[0].style.visibility = "hidden";
+    }
+});
+
+function ok(){
+        document.getElementById('101').style.display="none";
+    }
+    
+    function fetch(){
+        document.getElementById('101').style.display="flex";
+    }
+
+</script>
+
+<script>
+    
+    function shuffleArray(array){
+        for (let i =array.length - 1; i>0; i--){
+            const j = Math.floor(Math.random()*(i+1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+    
+    function buildQuiz2(){
+        console.log("rendi");
+        // shuffleArray(subjectsCards);
+    let itnum2 = subjectsCards.length ; // iteration no of frames skeleton imp chng
+    let string2 = "";
+    let stringans = "";
+    let totalquestion2 = subjectsCards.length ; // for array pointer
+    totalquestion2 = totalquestion2 - 1; // as above
+    let test1 = 0;
+    
+    let countDown2 = function f2(fromNumber2) { // fromnumber is itnum
+    let nextNumber2 = fromNumber2 - 1;  // for repeat iteration and last frame
+    console.log(fromNumber2);
+
+    if (fromNumber2 > 0) {
+
+    
+        const answersArray = [subjectsCards[test1].correcta,subjectsCards[test1].wrongb,subjectsCards[test1].wrongc,subjectsCards[test1].wrongd];
+        shuffleArray(answersArray);
+
+        stringans += `<div class=" slide " style="display:block;">`;
+            
+        answersArray.forEach(a=>{
+            stringans += `
+        <div class="answerbox" data-id='${subjectsCards[test1]._id}' onclick="gameFunction('${a}')">${a} <br> ${test1}</div>`;
+            // const li = document.createElement("li");
+            // li.textContent =a;
+            // li.addEventListener("click",()=>{
+            //     if(a=== q.correct){
+            //         alert("correct");
+            //     }else{
+            //         alert("incorrect");
+            //     }
+            // });
+            // al.appendChild(li);
+        });
+
+        // stringans += `
+        // <div class="  answerbox" onclick="gameFunction('hello')">${subjectsCards[test1].answer} <br> ${test1}</div>
+        // <div class="  answerbox" onclick="gameFunction('hello')">${subjectsCards[test1].answer} <br> ${test1}</div>
+        // <div class="  answerbox" onclick="gameFunction('hello')">${subjectsCards[test1].answer} <br> ${test1}</div>
+        // <div class="  answerbox" onclick="gameFunction('hello')">${subjectsCards[test1].answer} <br> ${test1}</div>`;
+
+        stringans += `
+        </div>
+        `;
+        
+        string2 += `<div class="slide2" id="${subjectsCards[test1]._id}">
+    <div class="quiz" style="
+    word-break: break-word;">
+            <div  class="quizFlag btton0 buton11 mcAnsFag" onclick="fetch()" style=""> 
+                <div class="announce" onclick="" style="margin:0px 0px 0px 3px;"></div>
+            </div>
+   <p> 
+${subjectsCards[test1].question}<br>${test1} </p>
+    </div>`
+
+    totalquestion2 = totalquestion2 - 1;
+
+    test1 = test1 + 1;
+        string2 += `
+</div>
+`;
+
+if (nextNumber2 == 0) {
+stringans += `<div class=" slide " style="display:none;">`;
+
+stringans += `    </div>
+   `;
+
+string2 += `<div style="position:relative;"><div class="slide2">`;
+string2 += `<div id="id3" onclick="" class="scoreBox" style="visibility:;">
+   <div style="
+display: flex;
+flex-direction: row-reverse; "> 
+    <div class="trophy4" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+     <div class="trophy" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+     <div class="trophy4" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+     </div>Congratulations !
+                  <p  id="congra2">oooo</p>
+            <div style="background-color:;font-size:px;margin:10px 0px 0px 0px;">! You have completed all for today.If there id all for today.If there is more than i will let you know. uishiusw khsukhj hk uhhhjjh jiijji 
+                <div style="margin-top:5px;
+display: flex;
+flex-direction: row; 
+justify-content: space-around;"> 
+<button class="button0"> Play Weak Subject</button> <button class="button0"> Play Again </button>
+</div>
+</div>
+</div>`;
+test1 = test1 + 1;
+
+string2 += `</div></div>`;
+}
+
+    f2(nextNumber2);
+    }
+    
+
+    if((subjectsCards === ''||subjectsCards === null)||subjectsCards.length === 0){
+        document.getElementById("timer").dataset.time = 599940;
+        console.log("njjuhuhftftrdese");
+    const previousButton2 = document.getElementById("previous");
+    const nextButton2 = document.getElementById("next");
+    const quizContainer23 = document.getElementById('quiz3');
+    const skip = document.getElementById("skip");
+    skip.style.visibility = 'hidden';
+        // console.log(quizContainer23);
+        console.log("this is the if part");
+            // quizContainer2.innerHTML = "<div style='background-color:red;height:200px;width:200px;'>There is nere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz dato quiz data</div>";
+            quizContainer23.innerHTML = 
+     `<div style="position:relative;"><div class="introCard">
+     <div id="id3" onclick="" class="scoreBox" style="visibility:;">
+        <div style="
+  display: flex;
+  flex-direction: row-reverse; "> 
+          <div class="error" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+          </div>Sorry ! dus
+                 <div style="background-color:;font-size:px;margin:10px 0px 0px 0px;">There is no quiz. Please create.
+                    <br> There is no review to be done.
+                   
+   </div>
+     </div>
+    </div></div>`;
+    // console.log(quizContainer23);
+    // showAnswer.style.visibility = 'hidden';
+    // tagId.style.visibility = 'hidden';
+    // untagId.style.visibility = 'hidden';
+    nextButton2.style.visibility = 'hidden';
+    previousButton2.style.visibility = 'hidden';
+    skip.style.visibility = 'hidden';
+    // quizContainer2.innerHTML = string2;
+    }else{
+    quizContainer2.innerHTML = string2;
+    quizAns.innerHTML = stringans;
+
+    }
+    // quizContainer2.innerHTML = string2;
+    // quizAns.innerHTML = stringans;
+    }
+    
+    let newYearCountDown2 = countDown2;
+    countDown2 = null;
+    newYearCountDown2(itnum2);
+    }
+       
+// let tota = "3 out of 9" ;
+    let points = 0;
+    let points2 = 0;
+
+    function gameFunction(yyy){
+
+        // alert( xxx + yyy);
+        
+  const activeSlide = document.querySelector('.active-slide2');
+  if (!activeSlide) {
+    console.warn('No active slide found');
+    return null;
+  }else{
+    console.warn('Active slide found');
+
+  }
+    //    const xxx = activeSlide.querySelector('div').dataset.id;
+       const xxx = activeSlide.id;
+    console.log(xxx);
+    console.log(yyy);
+
+
+        const mcqs = localStorage.getItem('mcquiz');
+        if(mcqs){
+            try{
+                const parsed = JSON.parse(mcqs);
+                if(Array.isArray(parsed)){
+                    const found = parsed.find(item => item._id === xxx);
+
+                    if (found){
+                            console.log("found id");
+                        console.log('item found', found);
+                        if(found.correcta == yyy){
+                            points += 1;
+        document.getElementById("gamePoints").innerHTML = points;
+        updatePointsInStorage("added");
+        showNextSlide2();
+                        }else{
+        updatePointsInStorage("subtracted");
+                            points2 += 1;
+        document.getElementById("gamePoints2").innerHTML = points2;
+        showNextSlide2();
+                        }
+                    }else{
+                        console.log('item with that id not found');
+                    }
+                }else{
+                    console.error('data in storage is not an array');
+                }
+            }catch(e){
+                console.log('failed to parse',e);
+            }
+        }else{
+            console.log('no quiz data in storage');
+        }
+    }
+
+    function gameFunction2(){
+
+        
+//   const activeSlide = document.querySelector('.active-slide');
+//   if (!activeSlide) {
+//     console.warn('No active slide found');
+//     return null;
+//   }else{
+//     console.warn('Active slide found');
+
+//   }
+
+  
+//        const value2 = activeSlide.querySelector('div').dataset.id;
+//     console.log(value2);
+
+
+                            points2 -= 1;
+        updatePointsInStorage("skipped");
+        document.getElementById("gamePoints2").innerHTML = points2;
+        
+    }
+
+    function updatePointsInStorage(data){
+
+  const activeSlide = document.querySelector('.active-slide2');
+  if (!activeSlide) {
+    console.warn('No active slide found');
+    return null;
+  }else{
+    console.warn('Active slide found');
+
+  }
+       const xxx = activeSlide.id;
+
+    let data2update = localStorage.getItem("mcquiz");
+    let array2update = data2update ? JSON.parse(data2update): [];
+    // let idToUpdate2 = id;
+    let idToUpdate2 = xxx;
+
+    const finder = array2update.find(item=>item._id === idToUpdate2);
+
+let lastAskedDate = 0; // to find
+let nextAskAtSRDaysLevel = 0; // to find
+    if(finder){
+        lastAskedDate = finder.lastAskedDate || 0; 
+        nextAskAtSRDaysLevel = finder.nextAskAtSRDaysLevel ?? 0;
+        console.log(lastAskedDate, nextAskAtSRDaysLevel);
+    }else{
+        console.log("id not found aiiiii")
+    }
+
+    let sRDaysLevelArray = [0,1,2,4,8,16,32,64,128,256,512,1024,2048,4096]
+// let lastAskedDate = 0; // to find
+// let todayDate = 9;
+
+let timeElapsed = todayDate - lastAskedDate;
+
+// let nextAskAtSRDaysLevel = 8; // to find
+// let lastLevel = 4;
+        console.log(lastAskedDate, nextAskAtSRDaysLevel);
+const index = sRDaysLevelArray.indexOf(nextAskAtSRDaysLevel);
+
+switch (data) {
+  case "added":{
+    console.log("It's added!");
+    //3 getting and updating with id from loalstorage to localstorage
+    nextAskAtSRDaysLevel = sRDaysLevelArray[index+1];
+    break;
+  }
+  case "subtracted":{
+    console.log("It's subtracted!");
+    //3 getting and updating with id from loalstorage to localstorage
+    nextAskAtSRDaysLevel = 0;
+    break;}
+  case "skipped":{
+    console.log("It's skipped!");
+    //3 getting and updating with id from loalstorage to localstorage
+    nextAskAtSRDaysLevel = 0;
+    break;
+    }
+  default:
+    console.log("Unknown Command");
+}
+
+    // lastAskedDate = today   ///change below updatedData2 accordingly //done
+    let updatedData2 = {nextAskAtSRDaysLevel: nextAskAtSRDaysLevel, lastAskedDate : todayDate};
+    array2update = array2update.map(obj=> obj._id === idToUpdate2 ? { ...obj, ...updatedData2}: obj);
+    localStorage.setItem("mcquiz", JSON.stringify(array2update));
+        
+    // //3 getting and updating with id from loalstorage to localstorage
+    // let storage = localStorage.getItem("mcquiz");
+    // let array = storage ? JSON.parse(storage): [];
+    // // console.log(array)
+    // let idToUpdate = id;
+    // let updatedData = {data: data};
+    //     console.log(data);
+
+    // array = array.map(obj=> obj._id === idToUpdate ? { ...obj, ...updatedData}: obj);
+
+    // localStorage.setItem("mcquiz", JSON.stringify(array));
+    }
+
+
+    function showSlide2(n) {
+    slides2[currentSlide2].classList.remove('active-slide2');
+    slides2[n].classList.add('active-slide2');
+    slides[currentSlide2].classList.remove('active-slide');
+    slides[n].classList.add('active-slide');
+    currentSlide2 = n;
+    if(currentSlide2 === 0){
+    // previousButton2.style.display = 'none';
+    // previousButton2.style.visibility = 'hidden';
+    }
+    else{
+    // previousButton2.style.display = '';
+    // previousButton2.style.visibility = '';
+    }
+    if(currentSlide2 === slides2.length-1){
+        const message = "taggid :" + points2 + " <br> untagged : " + points;
+
+        
+document.getElementById("congra2").innerHTML = message;
+        stopTimer();
+    // nextButton2.style.display = 'none';
+    nextButton2.style.visibility = 'hidden';
+    document.getElementById("reveal").style.visibility = 'hidden';
+    }
+    else{
+    // nextButton2.style.display = '';
+    nextButton2.style.visibility = '';
+    }
+    }
+
+    function showNextSlide2() {
+    showSlide2(currentSlide2 + 1);
+    }
+    
+    function showPreviousSlide2() {
+    showSlide2(currentSlide2 - 1);
+    }
+    
+    const quizContainer2 = document.getElementById('quiz3');
+    const quizAns = document.getElementById('reveal');
+    
+const getSubjects = localStorage.getItem('mcquiz');
+console.log(typeof getSubjects);
+
+
+
+
+
+
+    
+
+    function meetsCriteriaForQuestioning(obj){
+    // let sRDaysLevelArray = [0,1,2,4,8,16,32,64,128,256,512,1024,2048,4096]
+// let todayDate = 9;
+let lastAskedDate = obj.lastAskedDate ?? 0;
+let timeElapsed = todayDate - lastAskedDate;
+let nextAskAtSRDaysLevel = obj.nextAskAtSRDaysLevel ?? 0;
+// let lastLevel = 4;
+if(nextAskAtSRDaysLevel<=timeElapsed){
+    console.log("ask question");
+    return obj;
+}else{
+    console.log("skip this question");
+}
+
+// let datum = obj.data;
+// if(datum == 'subtracted'){
+// console.log(obj);
+//     return;
+// }
+    }
+        // let subjectsCards = JSON.parse(getSubjects);
+    let subjectsCards = getSubjects && getSubjects.trim() !== '' ? JSON.parse(getSubjects): [];
+    // this imp
+    // const refinedQuestions = subjectsCards.filter(meetsCriteriaForQuestioning);
+    // subjectsCards = refinedQuestions;
+    // or imp
+    // subjectsCards = subjectsCards.slice(0,0);
+//or imp
+ //   function customSlice(arr, start, end) {
+ // const sliced = arr.slice(start, end);
+ // return sliced.length >= 1 ? sliced : []; ///important
+//}
+   //  subjectsCards = customSlice(subjectsCards,0,1); /// important
+   // console.log(subjectsCards);
+        buildQuiz2();
+    
+    const nextButton2 = document.getElementById("skip");
+    const slides2 = document.querySelectorAll(".slide2");
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide2 = 0;
+    
+    showSlide2(currentSlide2);
+    nextButton2.addEventListener("click", gameFunction2);
+    nextButton2.addEventListener("click", showNextSlide2);
+
+</script>
+
+
+
+<script src="/src/js/idb.js"></script>

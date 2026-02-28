@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+<body>
+   
+  <main class="mainContainer">
+        
+    <section class="introContainer">
+      <div class="introBackIcon" onclick="goBack()"></div>
+      <div class="intro intro1">Menu</div>
+      <div class="introMenuDotsIcon"></div>
+    </section>
+    
+    <section style="display:flex;width:100%;background-color: ;">
+      <div style="width:10%;background-color:;"></div>
+      <div style="width:80%;background-color: ;text-align:center;">
+          <div class="highlighti">Settings</div>
+      </div>
+      <div style="position:relative;width:10%;background-color: ;">
+          <a href="information.html">
+            <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+          </a>
+      </div>
+    </section>
+
+    <section id="creation" class="messageContainer" style="visibility:;">
+
+      <div class="messageRegistration" >
+                    
+        <fieldset>
+          <legend>
+            Add app to Home Screen 
+          </legend>
+          <div style="display:flex;justify-content:space-between;">
+
+            <p>
+              Add app to Home Screen 
+            </p>
+            <button class="button20a " id="share-image-button">Add</button>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="messageRegistration" id="someid">
+      
+        <fieldset>
+          <legend>
+          Change Theme Colour(comming soon) :
+          </legend>
+          <!-- <span style="color:white;margin-left:30px;" >Regional Institute of Science And Technology</span> -->
+        </fieldset>
+      
+        <fieldset>
+          <legend>
+          Always show/hide answers :
+          </legend>
+          <section class="sortContainer" >
+        
+            <label for="ans1">
+              <div style="
+              align-items: center;
+              display: flex;
+              " class="sort sort2 sortExtend" >
+                Always show answers
+                <input type="radio" name="answer" id="ans1">
+              </div>
+            </label>
+        
+            <label for="ans2">
+              <div style="
+              align-items: center;
+              display: flex;
+              " class="sort sort2 sortExtend" >
+                Always hide answers
+                
+                <input type="radio" name="answer" id="ans2" checked>
+              </div>
+            </label>
+          </section>
+        </fieldset>
+
+              <!-- <div style="
+              display:flex;
+              align-items:center;
+          justify-content:center;">
+              <button class="button0 button17a " id="submit">Create</button>
+              </div> -->
+              
+      </div>
+
+      <div id="gulati">helo</div>
+
+      <style>
+        #myDiv {
+          display: none;
+          width: 200px;
+          height: 100px;
+          background-color: lightblue;
+          text-align: center;
+          line-height: 100px;
+          margin-top: 20px;
+        }
+      </style>
+
+      </head>
+      <body>
+      <button id="toggleButton">Press and Hold</button>
+      <div id="myDiv">Hello, I'm here!</div>
+
+      <script>
+        const button = document.getElementById("toggleButton");
+        const div = document.getElementById("myDiv");
+
+        // Show div when button is pressed or touched
+        function showDiv() {
+          div.style.display = "block";
+        }
+
+        // Hide div when button is released or touch ends
+        function hideDiv() {
+          div.style.display = "none";
+        }
+
+        // Mouse events
+        button.addEventListener("mousedown", showDiv);
+        button.addEventListener("mouseup", hideDiv);
+        button.addEventListener("mouseleave", hideDiv);
+
+        // Touch events (for mobile devices)
+        button.addEventListener("touchstart", showDiv);
+        button.addEventListener("touchend", hideDiv);
+        button.addEventListener("touchcancel", hideDiv);
+      </script>
+
+      
+    </section>
+    
+  </main>
+    
+
+
+  <script>
+  /////////////////////161224
+  var shareImageButton = document.querySelector('#share-image-button');
+
+  function openCreatePostModal() {
+    createPostArea.style.display = 'block';
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+
+      deferredPrompt.userChoice.then(function(choiceResult) {
+        console.log(choiceResult.outcome);
+
+        if (choiceResult.outcome === 'dismissed') {
+          console.log('User cancelled installation');
+        } else {
+          console.log('User added to home screen');
+        }
+      });
+
+      deferredPrompt = null;
+    }
+  }
+
+
+  shareImageButton.addEventListener('click', openCreatePostModal);
+  /////////////////////161224
+
+    ans1.addEventListener("click", function(){
+    // alert("hello");
+    // myDiv.style.display = 'block';
+    gulati.style.display = 'block';
+    // ans1.checked;
+    localStorage.setItem('divDisplayState', 'block');
+    
+    });
+    
+    ans2.addEventListener("click", function(){
+    // alert("bye");
+    // myDiv.style.display = 'none';
+    gulati.style.display = 'none';
+    localStorage.setItem('divDisplayState', 'none');
+    
+    });
+    </script>
+  <script>
+      // Set the initial state of the div based on localStorage when the page loads
+  window.onload = function() {
+    const myDiv = document.getElementById('gulati');
+  //   const myDiv = document.getElementById('myDiv');
+    const displayState = localStorage.getItem('divDisplayState') || 'none'; // default to 'none'
+    myDiv.style.display = displayState;
+    if(displayState == 'none'){
+      let ans2 = document.getElementById("ans2");
+      ans2.checked = 'true';
+      // alert("none")
+    }else{
+      let ans1 = document.getElementById("ans1");
+      ans1.checked = 'true';
+      // alert("block")
+    }
+  };
+
+  </script>
+
+  <script>
+    
+  // ////////////// number 3 simple goback or and hide button
+
+  // function goBack(){
+  //     window.history.back();
+  // }
+  // document.addEventListener("DOMContentLoaded", function(){
+  //     const backButton = document.getElementsByClassName("introBackIcon");
+  //     if(window.history.length <=1){
+  //         backButton[0].style.visibility = "none";
+  //     }
+  // });
+
+  // ////////////// number 2 go back or any page , no hide button
+
+  // function goBack(){
+  //     if(window.history.length >1){
+  //         window.history.back();
+  //     }else{
+  //         window.location.href = "index.html";
+  //     }
+  // }
+
+  //  ///////////////////// number1
+
+  function goBack(){
+      const referrer = document.referrer;
+      const currentOrigin = window.location.origin;
+
+      if(referrer && referrer.startsWith(currentOrigin)){
+          window.history.back();
+      }else{
+          window.location.href = "/index.html";
+      }
+  }
+  // or hide button
+  document.addEventListener("DOMContentLoaded",function(){
+    const backButton = document.getElementsByClassName("introBackIcon");
+    const referrer = document.referrer;
+    const currentOrigin = window.location.origin;
+
+    if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+            backButton[0].style.visibility = "hidden";
+    }
+  });
+
+  </script>
+
+
+  <script src="/src/js/app.js"></script>
+  <script src="payload.js"></script>
+  <script>
+
+    
+      if(payload.designation == "teacher"){
+        // document.location = `/combi/class.html`;
+    console.log("teacher");
+        // document.getElementById('institute').style.display = 'none';
+        // document.getElementById('student').style.display = 'none';
+        // document.getElementById('teacher').style.display = 'block';
+
+      }else if(payload.designation == "student"){
+        // document.location = `/combi/subject.html`;
+    console.log("student");
+        // document.getElementById('institute').style.display = 'none';
+        // document.getElementById('teacher').style.display = 'none';
+        // document.getElementById('student').style.display = 'block';
+
+      }else if(payload.designation == "institute"){
+        // document.location = `/combi/pageDoesNotExist.html`;
+    console.log("institute");
+        // document.getElementById('teacher').style.display = 'none';
+        // document.getElementById('student').style.display = 'none';
+        // document.getElementById('institute').style.display = 'block';
+
+      }else{
+        document.location = `/combi/pageDoesNotExist.html`;
+
+      }
+  </script>
+</body>
+<!-- too many head and body in the middle -->

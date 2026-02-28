@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+<style>
+    *{
+        font-size:large;
+    }
+</style>
+<body>
+    <div class="body">
+        <div class="main-content">
+            <h1 class="h1" style="font-size: 32px;">Welcome to cnotice</h1>
+            <section class="element3" id="register">
+                <div class="footer" style="width:inherit;">
+                    <div class="buttonDiv16" onclick="register()"> Register</div>
+                    <div class="buttonDiv16" onclick="login()" id="loginid" >Login</div>
+                </div>    
+            </section>
+            <section class="element3" style="display:none" id="occupation" >
+                <div class="elementx" style="width:inherit;">
+                    <div style="margin-bottom:20px;color:white;">Register </div>
+                    <div class="footer" style="width:inherit;">
+                        <div class="buttonDiv16"  onclick="inst()" >Institute</div>
+                        <div class="buttonDiv16" onclick="teac()" >Teacher</div>
+                        <div class="buttonDiv16"  onclick="stud()" >Student</div>
+                    </div>    
+                </div>
+            </section>
+            <section class="element3" style="display:none" id="code">
+                <div class="elementx" style="width:inherit;">
+                    <div style="margin-bottom:20px;">Please enter the code</div>
+                    <div><input class="input16 " placeholder="here" id="contactnum"></div>
+                    <div class="footer" style="width:inherit;">
+                        <div class="buttonDiv16"
+                        id="trycontact">Ok</div>
+                        <div class="buttonDiv16" onclick="location.reload()" >Cancel</div>
+                    </div>
+                </div>
+            </section>
+            <section id="error" class="element3" style="display:none">
+                something wrong please try again
+                <button  class="button16 buttonDiv16"  onclick="location.reload()">Ok</button>
+            </section>
+            <section class="element3"  style="display:none" id="form">
+                <div class="elementx" style="width:inherit;">
+                    Please fill the 
+                    <div style="margin-bottom:10px;">Sign up form</div>
+                    <input class="input16 " name="designation" type="hidden" id="designation">
+                    Name
+                    <div style="position: relative;">
+                        <input data-maxlength="40" name="name" type="" class="input16  classIdKeys" style="padding-right:55px;padding-top:5px;" placeholder="Name" id="name" required>
+                        <div class=" classIdTextCountKeys" style="
+                        position:absolute;
+                        top:15px;
+                        right:10px;width:45px;border-radius:0px 5px 5px 0px ;height:40px;">0/40</div>
+                    </div>  
+                    Email
+                    <div style="position: relative;">
+                        <input data-maxlength="40" name="email" type="" class="input16  classIdKeys" style="padding-right:55px;padding-top:5px;" placeholder="Email" required>
+                        <div class=" classIdTextCountKeys" style="
+                        position:absolute;
+                        top:15px;
+                        right:10px;width:45px;border-radius:0px 5px 5px 0px ;height:40px;">0/40</div>
+                    </div>  
+                    Phone
+                    <div style="position: relative;">
+                        <input data-maxlength="10" name="phone" type="number" class="input16  classIdKeys" style="padding-right:55px;padding-top:5px;" placeholder="Phone" required>
+                        <div class=" classIdTextCountKeys" style="
+                        position:absolute;
+                        top:15px;
+                        right:10px;width:45px;border-radius:0px 5px 5px 0px ;height:40px;">0/10</div>
+                    </div>  
+                    Unique Password
+                    <div style="position: relative;">
+                        <input minlength="6" data-maxlength="40" name="password" type="password" class="input16  classIdKeys" style="padding-right:55px;padding-top:5px;" placeholder="Password" id="password" required>
+                    </div>  
+                    Re-type Password
+                    <div style="position: relative;">
+                        <input minlength="6" data-maxlength="40" name="repassword" type="password" class="input16  classIdKeys" style="width:;padding-right:55px;padding-top:5px;" placeholder="Re-type Password" id="repassword" required>
+                    </div>
+                    <div class="footer" style="width:inherit;">
+                        <button   class="button16 buttonDiv16" onclick="location.reload()">Cancel</button>
+                        <button   class="button16 buttonDiv16" onclick="next()" type="">Next</button>
+                    </div>
+                </div>
+            </section>
+            <!-- todo fetch res with url and data -->
+            <section class="element3" style="display:none" id="login">
+                <div class="elementx" style="width:inherit;">
+                    <div style="margin-bottom:20px;">Login</div>
+                    <div style="display:flex;padding:5px;"> 
+                        <div style="width:35%;margin-top:7px;">User Id </div>
+                        <div style="width:65%;">
+                            <input class="input16 " id="userid" name="email" placeholder="User Id">
+                        </div>
+                    </div>
+                    <div style="display:flex;padding:5px;"> 
+                        <div style="width:35%;margin-top:7px;">Password</div>
+                        <div style="width:65%;">
+                            <input class="input16 " id="userpassword" name="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="footer" style="width:inherit;">
+                        <button  class="button16 buttonDiv16" id="loginsubmit" type="submit">Ok</button>
+                        <button class="button16 buttonDiv16" onclick="location.reload()">Cancel</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="signin.js"></script>
+    <script src="studyaccount.js"></script>
+    <script src="/src/js/app.js"></script>
+    <script src="payload.js"></script>
+</body>

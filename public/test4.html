@@ -1,0 +1,187 @@
+<!-- automatic promotion system design
+
+<script>
+    let month = 2;
+    let year = 2026;
+
+
+    function calculation(month,year){
+
+        let semesterStatusSystem = false;
+        let presentMonth = 1;
+        let presentYear = 2026;
+
+        let result = 0;
+
+        if(semesterStatusSystem){
+
+            let semesterOddStart = 8; //august
+            let semesterOddEnd = 12; //december
+            let semesterEvenStart = 1; //january
+            let semesterEvenEnd = 7; //july
+
+            
+            // if((month>=semesterEvenStart)&&(month<=semesterEvenEnd)){
+            //     console.log("Semester System month inside bounds of even semester.");
+            // }else if(){
+            //     console.log("Year System month outside bounds.")
+            // }else{
+
+            // }
+            
+            let dual = false;
+            if(semesterOddStart<semesterOddEnd){
+                dual = false;
+                console.log("semester dual year is " + dual);
+            }else{
+                dual = true;
+                console.log("semester dual year is " + dual);
+            }
+            result = month + year ;
+        return result;
+
+        }else{
+            let yearStartMonth = 1;
+            let yearEndMonth = 12;
+            
+
+
+
+            let totalYear = 10;
+            let dual = false;
+            if(yearStartMonth<yearEndMonth){
+                dual = false;
+                console.log("year dual year is " + dual);
+                
+            if((month>=yearStartMonth)&&(month<=yearEndMonth)){
+                console.log("Not dual Year System month inside bounds.");
+            }else{
+                console.log("Not dual Year System month outside bounds.");
+                if (presentSemester<=totalYear){
+                    console.log
+                }
+            }
+
+
+            }else{
+                dual = true;
+                console.log("year dual year is " + dual);
+                
+            if(((month>=yearStartMonth)&&(month<= 12) ) || ((month>=1)&&(month<= yearEndMonth) )){
+                console.log("Dual Year System month inside bounds.");
+            }else{
+                console.log(" Dual Year System month outside bounds.")
+            }
+
+
+            }
+        //     result = month - year ;
+        // return result;
+
+        }
+    }
+
+    // Checking for Yearly, dual or non dual year, 
+    // **** for semester to check whether semester odd or even too *****Not needed in yearly //
+    // semester system false HARD CODE
+    // variable code 
+
+    console.log(calculation(3,5));
+    // console.log(calculation(1,5));
+    // console.log(calculation(12,5));
+ 
+    // let semesterStatusSystem
+    // let startMonth
+    // let EndMonth
+    // let totalYear
+    // let PresentYear
+    // let present month
+
+
+</script> -->
+
+<script>
+    
+
+    function calculation(){
+                console.log(month);
+                console.log("first");
+            let dual = false;
+            if(yearStartMonth<yearEndMonth){
+                console.log("second");
+                //  not a dual year
+                dual = false;
+                console.log("year dual year is " + dual);
+                
+            if((month>=yearStartMonth)&&(month<=yearEndMonth)){
+                console.log("third");
+                console.log(month);
+            // inside bound
+                console.log("Not dual Year System month inside bounds.");
+                if(presentYear == registeredYear){
+                    console.log("fourth");
+                    // same present year with registered
+                    return(semester)
+
+                }else{
+                    console.log("fifth");
+                    // greater present year than registered
+                    let result = presentYear - registeredYear;
+                    let resultSemester = semester + result;
+                    if(resultSemester<= totalYear){
+                        return resultSemester;
+                    }else{
+                        console.log("sixth");
+                        return 100;
+                    }
+                }
+            }else{
+                console.log(month);
+                console.log("seventh");
+                // outside bound
+                console.log("Not dual Year System month outside bounds.");
+                if (presentYear == registeredYear){
+                    console.log("eight");
+                    return semester +1;
+                }else{
+                    console.log("nine");
+                    let result = presentYear-registeredYear;
+                    if(result<=totalYear){
+                        console.log("ten");
+                        return semester + result;
+                    }else{
+                        console.log("eleven");
+                        return 100;
+                    }
+                }
+            }
+
+
+            }else{
+                // dual year
+                dual = true;
+                console.log("year dual year is " + dual);
+                
+            if(((month>=yearStartMonth)&&(month<= 12) ) || ((month>=1)&&(month<= yearEndMonth) )){
+                console.log("Dual Year System month inside bounds.");
+            }else{
+                console.log(" Dual Year System month outside bounds.")
+            }
+
+
+            }
+
+    }
+
+    let totalYear = 2;
+    let semester = 100;
+    let registeredYear = 2025;
+    let presentYear = 2026;
+    let month = 11;
+    let yearStartMonth = 2;
+    let yearEndMonth = 10;
+
+    console.log(calculation());
+
+    
+</script>

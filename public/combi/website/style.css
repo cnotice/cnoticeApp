@@ -1,0 +1,88 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	/* font: inherit; */
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* *{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color:white;
+    font-size:14px;
+    } */
+
+    
+    .introMenuDotsIcon{
+        background-image: url('/src/helperBox/menudots.png');
+        background-size:cover;
+        background-position:center;
+    width:35px;
+    height:35px;
+    margin:20px 0px 0px 0px;
+        filter: brightness(1%);
+        float:right;
+    }
+
+    .introMenuDotsIcon:active {
+        background-image: url('/src/helperBox/menudots.png');
+        background-size:cover;
+        background-position:center;
+        filter: brightness(1%);
+        opacity:0.3;
+        width:35px;
+        height:35px;
+    margin:20px 0px 0px 0px;
+        transition: filter .9s ease;
+        }
+
+
+        
+.introContainer{
+    box-shadow: 4px 4px 6px rgba(0,0,0,.2);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:10px;
+    align-items:center;
+    display:flex;
+    width:400px;
+    background-color:#1a1aff;
+    margin-bottom: 5px;
+    }

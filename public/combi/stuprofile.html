@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+<div id='create' style='z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4);'>
+    <div class='errorMessageBox' style='margin-top:auto;margin-left:auto;margin-bottom:50px;margin-right:auto;background-color:#02013b;position:relative;padding:10px 10px 30px 10px;outline:0;width:90%; border-radius:5px;color:white;text-align: center;'>
+        <div style='padding-bottom: 50px;margin-top: 20px;
+        text-align:center;
+        justify-content:center;
+        align-items:center;
+        display:flex;
+        flex-direction:column;'>
+        
+    <section id="" class="containerBoard">
+            
+        
+        <fieldset>
+            <legend>
+            Unit Number
+            </legend>
+            <!-- <span style="color:white;" >
+                    <input name="unitnumber" type="number" class="input0 input10 " id="keys1" style="width:80px;background: ;padding:px;" placeholder="Number">
+            </span> -->
+        <span style="color:white;" >
+            <input min="0" max="20" onkeydown="blockInvalidKeys(event)" onchange="enforceMaxMin(this)"  name="unitnumber" type="number" class="input0 input10 " id="keys1" style="width:80px;background: ;margin-right:55px;" placeholder="Number">
+    </span>
+            </fieldset>
+    
+    
+            <fieldset>
+            <legend>
+            Unit Name
+            </legend>
+            <span style="color:white;" >
+            <div style="width:90px;position: relative;">
+<!--     
+                <input name="unitname" type="" class="input0 input10 " id="keys2" style="width:325px;background: ;" placeholder="Unit Name"> -->
+            <input data-maxlength="40" name="unitname" type="" class="input0 input10 classIdKeys" id="keys2" style="width:325px;background: ;padding-right:55px;" placeholder="Unit Name">
+                
+            <!-- <div id="cxcxxcxc" class="keyCounter" style="width:45px;background-color: ;border-radius:0px 5px 5px 0px ;height:40px;margin:3px -244px;">0/40</div>
+            </div>   -->
+        <div id="cxcxxcxc" class="keyCounter classIdTextCountKeys" style="width:45px;background-color: ;border-radius:0px 5px 5px 0px ;height:40px;margin:3px -244px;">?/40</div>
+    </div>  
+            
+            </span>
+            </fieldset>
+        
+            <fieldset>
+                <legend>
+                Topic
+                </legend>
+                <span style="color:red;" >
+                               
+            <div style="width:90px;position: relative;">
+    
+                <!-- <input name="topic" type="" class="input0 input10 " id="keys3" style="width:325px;background: ;" placeholder="Topic"> -->
+            <input data-maxlength="40" name="topic" type="" class="input0 input10 classIdKeys" id="keys3" style="width:325px;background: ;padding-right:55px;" placeholder="Topic">
+                
+            <!-- <div id="xcxcxcxc" class="keyCounter" style="width:45px;background-color: ;border-radius:0px 5px 5px 0px ;height:40px;margin:3px -244px;">0/40</div> -->
+            <div id="xcxcxcxc" class="keyCounter classIdTextCountKeys" style="width:45px;background-color: ;border-radius:0px 5px 5px 0px ;height:40px;margin:3px -244px;">?/40</div>
+            </div>  
+            
+            </span>
+                </fieldset>
+        
+        </section>
+    
+    <section class="stuMenu3">
+    
+        <fieldset>
+            <legend>
+            Question
+            </legend>
+        <!-- <div style="position: relative;">
+        
+            <textarea class="mcTextarea" placeholder="Question" name="question" id="question" cols="30" rows="15"></textarea>
+        
+            <div  id="count" class="mcTextareaLine" >0/10 lines | 0/400 characters</div>
+        </div> -->
+    <div style="position: relative;">
+    
+        <textarea data-maxlength="40" data-maxline="10" class="mcTextarea classIdText" placeholder="Question" name="question" id="question" cols="30" rows="15"></textarea>
+    
+        <div  id="count" class="mcTextareaLine classIdTextCount" >?/10 lines | ?/400 characters</div>
+    </div>
+    </fieldset>
+    
+        <fieldset>
+            <legend>
+                Correct_Answer
+            </legend>
+            <span style="color:white;" >
+    
+                <div class="mcInputContainer">
+                    <div style="width:100%;">
+                        Correct Option
+                    </div>
+                    <!-- <div style="width:190%;position: relative;">
+                        <input name="correctanswer"  class="input0 input10 " id="answercorrect" style="background: ;" placeholder="Correct_Answer">
+                        <div class="mcInputLine">20/20</div> -->
+                <div style="width:190%;position: relative;">
+                    <input data-maxlength="20" name="correctanswer"  class="input0 input10 classIdKeys" id="answercorrect" style="background: ;padding-right:55px;" placeholder="Correct_Answer">
+                    <div class="mcInputLine classIdTextCountKeys">?/20</div>
+                    </div>
+                </div>
+            </span>
+            </fieldset>
+                 
+        <fieldset>
+            <legend>
+                Wrong_Answers
+            </legend>
+            <span style="color:white;" >
+    
+    <div class="mcInputContainer">
+    <div style="width:100%;">
+        Wrong Option
+    </div>
+    <!-- <div style="width:190%;position: relative;">
+        <input class="input0 input10 " id="answerwrongb" style="background: ;" placeholder="Wrong_Answer">
+        <div class="mcInputLine">20/20</div> -->
+<div style="width:190%;position: relative;">
+    <input data-maxlength="20" class="input0 input10 classIdKeys" id="answerwrongb" style="background: ;padding-right:55px;" placeholder="Wrong_Answer">
+    <div class="mcInputLine classIdTextCountKeys">?/20</div>
+    </div> 
+    </div>
+    <div class="mcInputContainer">
+    <div style="width:100%;">
+        Wrong Option
+    
+    </div>
+    <div style="width:190%;position: relative;">
+        <!-- <input class="input0 input10 " id="answerwrongc" style="background: ;" placeholder="Wrong_Answer">
+        <div class="mcInputLine">20/20</div> -->
+    <input data-maxlength="20" class="input0 input10 classIdKeys" id="answerwrongc" style="padding-right:55px;background: ;" placeholder="Wrong_Answer">
+    <div class="mcInputLine classIdTextCountKeys">?/20</div>
+    </div>
+    </div>
+    <div class="mcInputContainer">
+    <div style="width:100%;">
+        Wrong Option
+    
+    </div>
+    <div style="width:190%;position: relative;">
+        <!-- <input class="input0 input10 " id="answerwrongd" style="background: ;" placeholder="Wrong_Answer">
+        <div class="mcInputLine">20/20</div> -->
+    <input data-maxlength="20" class="input0 input10 classIdKeys" id="answerwrongd" style="padding-right:55px;background: ;" placeholder="Wrong_Answer">
+    <div class="mcInputLine classIdTextCountKeys">?/20</div>
+    </div>
+    </div>
+    </span>
+    </fieldset>
+    
+    <div class="mcButtonBox" >
+    <button  class="button0 button10 " onclick="closeEditModal()">Cancel</button>
+    <button  class="button0 button10 " id="send">Publish</button>
+    </div>
+    
+    </section>
+    </div>
+       
+    </div>
+    </div>
+    
+    
+    
+    <head></head>
+    
+    <link rel="stylesheet" href="estyle.css">
+</head>
+    <body>
+   
+    <main class="mainContainer">
+        
+<section class="introContainer">
+    <div class="introBackIcon" onclick="goBack()"></div>
+    <div class="intro intro1">Menu</div>
+    <div class="introMenuDotsIcon"></div>
+    </section>
+    <section style="display:flex;width:100%;background-color: ;">
+        <div style="width:10%;background-color:;"></div>
+        <div style="width:80%;background-color: ;text-align:center;">
+            <div class="highlighti">Profile</div>
+        </div>
+        <div style="position:relative;width:10%;background-color: ;">
+           <a href="information.html">
+            <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+    
+           </a>
+    
+        </div>
+        </section>
+
+        
+        <section id="creation" class="messageContainer" style="visibility:;">
+
+            <div class="messageRegistration">
+            
+                <fieldset>
+                    <legend>
+                    Profile :
+                    </legend>
+            <fieldset>
+            <legend>
+            Name :
+            </legend>
+            <span style="color:;margin-left:;" >Partha Jyoti Barbaruah</span>
+            </fieldset>
+            
+            <fieldset>
+            <legend>
+            Email
+            </legend>
+            <span style="color:white;" >parthabaruah@gmail.com </span>
+            </fieldset>
+        
+            <fieldset>
+                <legend>
+                Phone Number:
+                </legend>
+                <span style="color:white;" > 9453627182 </span>
+                </fieldset>
+            
+        
+                <fieldset>
+                    <legend>
+                    Role :
+                    </legend>
+                    <span style="margin-left:;color:;" >Student</span>
+                    </fieldset>
+                    
+                <fieldset>
+                    <legend>
+                    Institute 
+                    </legend>
+                    <span style="color:white;" > Regional Institute of science and Technology </span>
+                    </fieldset>    
+            <fieldset>
+                <legend>
+                Department
+                </legend>
+                <span style="color:white;" > Engineering </span>
+                </fieldset>
+        
+            <fieldset>
+            <legend>
+            Branch 
+            </legend>
+            <span style="color:white;" > Computer Science and Engineering</span>
+            </fieldset>
+            
+        
+            <fieldset>
+                <legend>
+                Semester 
+                </legend>
+                <span style="color:white;" > 8 </span>
+                </fieldset>
+        
+                <fieldset>
+                    <legend>
+                    Section 
+                    </legend>
+                    <span style="color:white;" > A </span>
+                    </fieldset>
+                
+        
+            <fieldset>
+                <legend>
+                Session 
+                </legend>
+                <span style="color:white;" > 2024 -2028 </span>
+                </fieldset>
+            
+                <fieldset>
+                    <legend>
+                    Change Password ?
+                    </legend>
+                    <!-- <span style="margin-left:;color:;" >
+                        Total number of times profile can be edited : 3
+                    </span> -->
+                <fieldset>
+                    <legend>
+                        New Password
+                        </legend>
+                    <input class="input0 input17a">
+                    </fieldset>
+                        <fieldset>
+                    <legend>
+                    Re-type New Password
+                    </legend>
+                    <input class="input0 input17a">
+                </fieldset>
+                    </fieldset>
+                    <div style="
+                    display:flex;
+                    align-items:center;
+                justify-content:center;">
+                    <button class="button0 button17a " id="submit" onclick="creategetmodel()">Edit</button>
+                    </div>
+                    
+                </fieldset>
+                    
+            </div>
+            </section>
+</main>
+    
+<script>
+    
+    // ////////////// number 3 simple goback or and hide button
+
+    // function goBack(){
+    //     window.history.back();
+    // }
+    // document.addEventListener("DOMContentLoaded", function(){
+    //     const backButton = document.getElementsByClassName("introBackIcon");
+    //     if(window.history.length <=1){
+    //         backButton[0].style.visibility = "none";
+    //     }
+    // });
+
+    // ////////////// number 2 go back or any page , no hide button
+
+    // function goBack(){
+    //     if(window.history.length >1){
+    //         window.history.back();
+    //     }else{
+    //         window.location.href = "index.html";
+    //     }
+    // }
+
+    //  ///////////////////// number1
+
+    function goBack(){
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+
+        if(referrer && referrer.startsWith(currentOrigin)){
+            window.history.back();
+        }else{
+            window.location.href = "/index.html";
+        }
+    }
+// or hide button
+document.addEventListener("DOMContentLoaded",function(){
+    const backButton = document.getElementsByClassName("introBackIcon");
+    const referrer = document.referrer;
+    const currentOrigin = window.location.origin;
+
+    if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+            backButton[0].style.visibility = "hidden";
+    }
+});
+
+
+function creategetmodel(){
+        // let checkthis = subjectsCards[currentSlide2].question;
+        // console.log(currentSlide2)
+        document.getElementById('create').style.display="flex";
+        // let key1 = subjectsCards[currentSlide2]._id;
+        // document.getElementById('keys2').value = key1;
+        // let key2 = subjectsCards[currentSlide2].question;
+        // alert(key1);
+        // document.getElementById('keys1').value = key1;
+        // document.getElementById('101').style.display="none";
+    }
+
+    function closeEditModal(){
+        
+        document.getElementById('create').style.display="none";
+    }
+</script>
+<script src="/src/js/app.js"></script>
+
+
+<script src="payload.js"></script>
+<script>
+
+      if(payload.designation !== "student"){
+        // document.location = `/combi/pageDoesNotExist.html`;
+
+      }
+
+console.log(payload.designation);
+
+</script>
+    </body>

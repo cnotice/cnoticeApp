@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+
+    
+<!-- SECTION 101 102 BELOW TO BE REVISED PROPERLY -->
+    <!-- <section id='101' style='z-index:3;
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    '>
+        <div class='errorMessageBox' style='
+        background-color:#02013b;
+        padding:40px 10px 30px 10px;
+        border-radius:5px;
+        color:white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width:90%;
+        '>
+            <div>
+                <div class="deckerCard deckerHead"> Deleting old subject may cause problems for students</div>
+                <div class="deckerCard deckerBody" style="text-align: left;" >
+        
+                    <div style="border-radius:5px;
+                    /* align-items: center; */
+                    /* display: flex; */
+                    " class=" sortExtend" onclick="confirmFunction()">
+                    Delete
+                    </div>
+                </div>
+                <button class="button17a button0" onclick="ok()">Cancel</button>
+            </div>
+        </div>
+    </section> -->
+
+    <section id='102' style='z-index:3;
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    '>
+        <div class='errorMessageBox' style='
+        background-color:#02013b;
+        padding:40px 10px 30px 10px;
+        border-radius:5px;
+        color:white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width:90%;
+        '>
+            <div>
+                <div class="deckerCard deckerHead"> Confirm :</div>
+                <div class="deckerCard deckerBody" style="text-align: left;" >
+                   
+                    <div style="border-radius:5px;
+                    /* align-items: center; */
+                    /* display: flex; */
+                    " class=" sortExtend" onclick="confirmFunction3()">
+                    Yes
+                    </div>    
+                    <hr>    
+                    <div style="border-radius:5px;
+                    /* align-items: center; */
+                    /* display: flex; */
+                    " class=" sortExtend" onclick="confirmFunction2()">
+                    No
+                    </div>
+                </div>
+                <button class="button17a button0" onclick="confirmFunction2()">Cancel</button>
+            </div>
+        </div>
+    </section>
+
+<!-- SECTION 101 102 ABOVE TO BE REVISED PROPERLY -->
+
+<body >
+    <main class="mainContainer ">
+    
+        <section class="introContainer">
+            <div class="introBackIcon" onclick="goBack()"></div>
+            <div class="intro intro1">Institute</div>
+            <div class="introMenuDotsIcon" onclick="alert('intro menu')"></div>
+        </section>
+
+        <section style="display:flex;width:100%;background-color: ;">
+            <div style="width:10%;background-color:;"></div>
+            <div style="width:80%;background-color: ;text-align:center;">
+                <div class="highlighti">Notice</div>
+            </div>
+            <div style="position:relative;width:10%;background-color: ;">
+                <a href="information.html">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+                </a>
+            </div>
+        </section>
+    
+        <div action="" method="POST" class="" >
+            <section id="creation" class="writeMessageContainer" style="visibility:;">
+                <div class="messageRegistration">
+                    <fieldset>
+                        <legend>
+                        Name of the Institute :
+                        </legend>
+                        <span style="color:white;margin-left:30px;" >Regional Institute of Science And Technology</span>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>
+                        Short Institute Name :
+                        </legend>
+                        <span style="margin-left:30px;color:white;" >RIST</span>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>
+                        Degree(optional)
+                        </legend>
+                        <span style="color:white;" ><select id="first">
+                            <!-- <option>none</option><option>1st</option><option>2nd</option><option>3rd</option><option>4th</option><option>5th</option><option>6th</option><option>7th</option><option>8th</option> -->
+                        </select>
+                        </span>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                        Branch(optional)
+                        </legend>
+                        <span style="color:white;" >
+                            <select id="second">
+                            <option>Please Select Degree</option>
+                            <!-- <option>none</option><option>1st</option><option>2nd</option><option>3rd</option><option>4th</option><option>5th</option><option>6th</option><option>7th</option><option>8th</option> -->
+                            </select>
+                        </span>
+                    </fieldset>
+                        
+                    <fieldset>
+                        <legend>
+                        Semester(optional)
+                        </legend>
+                        <span style="color:white;" ><select id="third">
+                            
+                            <option>Please Select Degree</option>
+                            <!-- <option>none</option><option>1st</option><option>2nd</option><option>3rd</option><option>4th</option><option>5th</option><option>6th</option><option>7th</option><option>8th</option> -->
+                        </select>
+                        </span>
+                    </fieldset>
+
+                    <!-- <fieldset>
+                    <legend>
+                    Session Year
+                    </legend>
+                    <span style="color:white;" ><select id="fourth">
+                        <option>none</option><option>2011-2015</option><option>2012-2016</option><option>2013-2017</option><option>2014-2018</option>   
+                    </select>
+                    </span>
+                    </fieldset> -->
+                        
+
+                    <fieldset>
+                        <legend>
+                        Section(optional)
+                        </legend>
+                        <span style="color:white;" >
+                            <!-- <input class="input0 input17a " > -->
+                            <div style="width:;position: relative;">
+                                <input id="fifth" data-maxlength="40" name="topic" type="" class=" input0   input17a classIdKeys" style="
+                                width:auto;background: ;padding-right:70px;margin-top:11px;" placeholder="Section">
+                                <div class=" classIdTextCountKeys" style="
+                                position:absolute;
+                                top:21px;
+                                right:105px;width:45px;background-color: ;height:40px;margin:;">0/40</div>
+                            </div>
+                        </span>
+                    </fieldset>
+            
+
+                </div>
+                <div style="
+                margin:0px 10px 10px 10px;
+                padding:5px;
+                font-size:15px;
+                width:370px;
+                box-shadow:4px 4px 4px rgba(0,0,0,.2);
+                /*  */
+                /* min-height:100vh; */
+                /*  */
+                border:1px solid rgba(255,255,255,.20);
+                border-radius:5px;
+                background-color: #1a1aff;">
+                    <fieldset>
+                        <legend>
+                        Select Content Type : 
+                        </legend>
+                        <button id="sortFirst" class="buttontest2">Text</button>
+                        <button id="sortSecond" class="buttontest" >Image</button>
+                        <button style="visibility:hidden;" class="buttontest">butt</button>
+
+                        <fieldset id="textid">
+                            <legend>
+                            Write Text :
+                            </legend>
+                            <!-- <section class="containerBoard"> -->
+                            <!--  -->
+
+                            <!-- <div style="position: relative;">
+                            <textarea id="noticetext"></textarea>
+
+                            <div  id="count" class="line">0/5 lines | 0/200 characters</div>
+                            </div> -->
+                            <div style="position: relative;">    
+                                <textarea id="noticetext" data-maxlength="40" data-maxline="10" class="mcTextarea classIdText" placeholder="Question" name="question" id="question" cols="" rows=""></textarea>    
+                                <div  id="count" class="mcTextareaLine classIdTextCount" >0/10 lines | 0/400 characters</div>
+                            </div>
+
+                            <div style="display:;">
+                                <button  class="button0 button4 " style="float:right;margin-top:15px;" id="noticesubmit">Submit</button>
+                            </div>
+                            <!-- </section> -->
+
+                        </fieldset>
+
+                        <!-- </div> -->
+                        <!-- <div style="
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;height:100px;">
+
+                        Write Text And Submit "OR" Select Image And Submit
+                        </div> -->
+
+                        <!-- <div class="messageRegistration" > -->
+
+                        <fieldset id="imageid">
+                            <legend>
+                            Select Image :
+                            </legend>
+                            <!-- <span style="color:white;margin-left:30px;" >Regional Institute of Science And Technology</span> -->
+
+                            <div id="imageDisplay" src="" alt="Selected Image" style="display:; width: ;"> 
+                                <!-- <input type="file" name="notice" id="file" style="display:;" capture="environment" accept=""> -->
+                            </div>
+
+                            <div style="display:;">
+                                <input type="file" id="file" style="display:none;" capture="environment" accept="image/*">
+                                <label class="buttonDiv16" style="margin-left:15px;float:left;" for="file">Select Image</label>
+                                <!-- <div class="buttonDiv16" style="display:grid; place-items: center; justify-content:center;align-items:center;" id="submit">Submit</div> -->
+                                <button class="button0 button4 "  style="float:right;margin-top:20px;" id="submit">Submit</button>
+                                <!-- <div class="buttonDiv16"  class="button0 button4 "  style="float:right;" id="submit">Submitf</div> -->
+                            </div>
+
+                        </fieldset>
+
+                    </fieldset>
+
+                </div>
+            </section>
+
+    
+
+            <!-- <div style="height:300px;"></div> -->
+
+            <section class="sortContainer" style="margin-bottom:5px;margin-left:10px;">
+                <div id="seeNotice"  class="sort sort2" >
+                Institute Notice Board
+                </div>
+            </section>
+            
+            <div id="noticeAndImage"></div>
+            <div class="images"></div>
+    
+    </main>
+    
+    <!-- <script src="exp18.js"></script> -->
+    <script src="studyaccount.js"></script>
+    
+    <script>
+        file.addEventListener('change', function(event){
+            const file = event.target.files[0]; // Get the selected file
+    if (file) {
+    const reader = new FileReader(); // Create a FileReader object
+    reader.onload = function(e) {
+        var img = document.createElement("img");
+
+    img.src = e.target.result;
+    img.style.width = "100%";
+    // img.style.display = 'block'; // Make the image visible
+
+    // append the image to the container
+    var container = document.getElementById("imageDisplay");
+    container.innerHTML = ""; //clear any existing content
+    container.appendChild(img);
+    // CReate a new inpput field and append it below the image
+    var input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Add a caption...(Optional)";
+    input.classList.add("input0");
+    input.id = "captionTextId";
+    container.appendChild(input);
+    };
+    reader.readAsDataURL(file); // Read the file as a data URL
+    }
+        });
+        </script>   
+    <script>
+        
+        
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+    // for institute DO NOT DELETE IMPORTANT 
+    // moved to instituteoptions.js
+    </script>
+    
+    <script>
+    
+    // // for teacher DO NOT DELETE IMPORTANT
+    // moved to teachersoptions.js
+        
+        </script>
+    
+    
+    
+    
+
+
+
+    <script>
+
+        submit.addEventListener('click', (e)=>{
+        e.preventDefault();
+            submit.disabled = true;
+            submit.innerText= "processing...";
+            setTimeout(()=>{
+                submit.disabled = false;
+                submit.innerText = 'Submit';
+            },5000);
+            console.log("hello");
+        
+        let imgage = document.getElementById("file");
+        let fileData = imgage.files[0];
+            console.log(fileData.size)
+            // x is just an initial value
+            let x = 0;
+            const min_x = 0.00;
+            // max_x is maximum compression
+            const max_x = 0.8;
+            // max_y is maximum image size from capture or else full compression i.e 0
+            const max_y = 1024 * 1024 * 1;
+        
+            function updateX(y){
+                const decrementStep = (max_x/max_y);
+                x = max_x - (decrementStep *y);
+                x=Math.max(x,min_x);
+                x= Math.round(x*100)/100;
+                console.log(`updated value of file: ${x}`);
+            }
+            updateX(fileData.size);
+        
+            const url = URL.createObjectURL(fileData);
+            const img = new Image();
+            img.src = url;
+            img.onload = function(){
+                // document.body.appendChild(img);
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
+                ctx.drawImage(img,0,0);
+                let compressedSize = x;
+                canvas.toBlob((blob)=>{
+                    console.log(blob, blob.size);
+                    const fr = new FileReader();
+                    fr.readAsDataURL(blob);
+                    fr.addEventListener('load',()=>{
+                        const dataURL = fr.result;
+                        const img2 = new Image();
+                        img2.src = dataURL;
+                        // document.body.appendChild(img2);
+                        console.log(blob.size);
+        const data = new FormData();
+        
+        let degree = document.getElementById('first').value;   
+                        let department = document.getElementById('second').value;   
+                        let semester = document.getElementById('third').value;    
+                        let subject = document.getElementById('fifth').value;   
+                        let caption = document.getElementById('captionTextId').value;  
+                        let sendData = {
+                            degree,
+                            department,
+                            // branch,
+                            semester,
+                            subject,
+                            caption
+                        }
+        
+            data.append('notice', blob, 'img.jpeg');
+            data.append('jsonData', JSON.stringify(sendData));
+        // changes
+                // 090924
+        const token = localStorage.getItem("authToken");
+           let h = new Headers();
+                h.append('Authorization' ,`Bearer ${token}`);
+                // 090924
+                // h.append('Content-Type', 'application/json');
+        fetch("/uploadnotice",{
+            method:"POST",
+            // 090924
+            headers: h,
+            // 090924
+            //  {
+            //     'Authorization': `Bearer ${token}`
+            //     // ,
+            //     // 'Content-Type':'application/json'
+            // },
+            body:data,
+        }).then((result)=>{
+            console.log("file sent successfully");
+        }).catch((err)=>{
+            console.log(err.message);
+        });
+                    })
+                 },'image/jpeg',compressedSize)
+            }
+        });
+        
+
+        </script>
+
+
+
+
+    <script>
+        
+
+    noticesubmit.addEventListener('click', ()=>{
+    let url = "/notice";
+
+    let degreeData = localStorage.getItem('degreeData');
+    let degreeData2 = JSON.parse(degreeData);
+            
+    console.log(degreeData);
+    console.log(degreeData2[0]);
+
+    let notice = document.getElementById('noticetext').value; 
+
+    let sendData = {
+    //     branch : 'computer Science' ,
+    // section : 'b ',
+    // semester :'5 th',
+    // department : 'Engineering',
+    // subject : 'data science',
+    institute:'hhhhhhhhhhh',
+    author : 'institute',
+    // subjectnotice : subjectId, //come frm indexeddb now localstorage
+    text: notice
+    }
+    const token = localStorage.getItem("authToken");
+    let h = new Headers();
+            h.append('Authorization' ,`Bearer ${token}`);
+            h.append('Content-Type', 'application/json')
+    let req = new Request(url,{
+        // create
+        method: 'POST',
+        // read
+        // method: 'GET',
+        // update
+        // method: 'PATCH',
+        // delete
+        // method: 'DELETE',
+
+
+        headers: h
+        //CREATE,update
+        ,
+        body: JSON.stringify(sendData)
+    })
+
+
+    //// CREATE
+    // fetch(req).then(res=>res.json()).then((data)=>{
+    //     document.getElementById('data').innerHTML = JSON.stringify(data);
+    // })
+
+    //// READ, UPDATE
+    fetch(req).then(res=>res.json()).then((data)=>{
+        console.log(data);
+        // document.getElementById('data').innerHTML = JSON.stringify(data);
+    })
+
+
+    })
+        </script>
+
+
+
+
+
+
+
+
+
+    <!-- 031224 -->
+    <script>
+
+    /////////////////////////////////////////////080724 170924
+    
+    const tokens1 = localStorage.getItem("authToken");
+    //    let hs1 = new Headers();
+    //         hs1.append('Authorization' ,`Bearer ${tokens1}`);
+    //         hs1.append('Content-Type' ,'application/json');
+    
+    // // let urls1 = `/notice`;
+    // let urls1 = `/getimagenotice`;
+    //         let reqs1 = new Request(urls1,{
+    //             method: 'GET',
+    //             headers: hs1
+    //         });
+    
+    //         fetch(reqs1)
+    //         .then(res=>res.json())
+    //         .then((data)=> 
+    //         {
+    
+    //             console.log(data);
+    //             // console.log(data[0]);
+    
+    //     }
+    //     )
+            /////////////////////////////////////////////080724 170924
+    </script>
+    <!-- 031224 -->
+
+    
+
+
+
+    <script>
+    
+        // ////////////// number 3 simple goback or and hide button
+    
+        // function goBack(){
+        //     window.history.back();
+        // }
+        // document.addEventListener("DOMContentLoaded", function(){
+        //     const backButton = document.getElementsByClassName("introBackIcon");
+        //     if(window.history.length <=1){
+        //         backButton[0].style.visibility = "none";
+        //     }
+        // });
+    
+        // ////////////// number 2 go back or any page , no hide button
+    
+        // function goBack(){
+        //     if(window.history.length >1){
+        //         window.history.back();
+        //     }else{
+        //         window.location.href = "index.html";
+        //     }
+        // }
+    
+        //  ///////////////////// number1
+    
+        function goBack(){
+            const referrer = document.referrer;
+            const currentOrigin = window.location.origin;
+    
+            if(referrer && referrer.startsWith(currentOrigin)){
+                window.history.back();
+            }else{
+                window.location.href = "/index.html";
+            }
+        }
+    // or hide button
+    document.addEventListener("DOMContentLoaded",function(){
+        const backButton = document.getElementsByClassName("introBackIcon");
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+    
+        if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+                backButton[0].style.visibility = "hidden";
+        }
+    });
+            
+
+
+
+
+
+
+
+            
+        const loadImages = async()=>{
+                const response = await fetch('/getimagenotice').then(response => response.json());
+                console.log(response);
+                
+        // do not delete 250522
+                        // response.notices.sort((a,b)=>
+                        // // new Date(a.date) - new Date(b.date)) //according to my first free employee
+                        // a._id.localeCompare(b._id));
+                        // console.log(response);
+        // Make a copy and sort in LIFO (newest first)
+        // const sortedUsers = [...response.notices].sort((a, b) => b._id.localeCompare(a._id));
+
+        // console.log(sortedUsers);
+        // do not delete 250522
+                        
+                const imagesElement = document.querySelector('.images');
+                imagesElement.innerHTML = '';
+                let noticeAndImage = "";
+
+                // sortedUsers.forEach(image => {
+                response.notices.forEach(image => {
+                    // const img = document.createElement('img');
+                    // console.log(image.filePath);
+                    console.log(image);
+
+                    // // changed by employee 250517
+                    // // img.src = image.filePath;
+                    // img.src = `/images/${image.filePath.split('/').pop()}`;
+                    // // changed by employee 250517
+
+                    // console.log(img.src);
+                    // img.height = '200';
+                    // imagesElement.appendChild(img);
+                    noticeAndImage += `
+        <section class="writeMessageContainer">
+            <fieldset>
+                <div class="addressBox">
+                                        <button  class=" buttonDelete" onclick="confirmFunction()">Delete</button>
+
+                Address to:<br>
+                    ${image.institute}<br>
+                    semester: ${image.semester} <br>
+                    degree: ${image.degree}<br>
+                    branch: ${image.branch}<br>
+                    subject : to be thought of s
+                
+                </div>`;
+                let filepath = image.filePath;
+                if(filepath){
+                    noticeAndImage += `
+                <img style="width:100%" src="/images/${image.filePath.split('/').pop()}">`;
+                let caption = image.caption;
+                if(caption){
+                    noticeAndImage += `<div class="captionBox">
+                    ${image.caption}
+                    </div>`
+                }else{
+                    noticeAndImage += `<div class="emptyCaptionBox">
+                    </div>`
+
+                }
+                }else{
+                    noticeAndImage += `<div class="captionBox">
+                    ${image.text}
+                    </div>`;
+                }
+                noticeAndImage+= `
+            </fieldset>
+            
+            </section>`;
+                    
+                });
+                
+                document.getElementById('noticeAndImage').innerHTML = noticeAndImage;;
+            }
+
+            window.onload = loadImages;
+            </script>    
+
+
+        <script>
+            
+            // List of all the clickable IDs
+        const ids = ["sortFirst", "sortSecond"];
+
+        // Define unique functions for each div
+        function handleDiv1() {
+            console.log("Div 1 clicked");
+            // document.getElementById('reveal').innerHTML = "drgrrdgtrt";
+            document.getElementById('textid').style.display = "";
+            document.getElementById('imageid').style.display = "none";
+        }
+
+        function handleDiv2() {
+            console.log("Div 2 clicked");
+            // document.getElementById('reveal').innerHTML = "fhjfdthtdh";
+            document.getElementById('textid').style.display = "none";
+            document.getElementById('imageid').style.display = "";
+        }
+
+
+        // Map each ID to its corresponding handler
+        const handlers = {
+            sortFirst: handleDiv1,
+            sortSecond: handleDiv2
+        };
+
+        ids.forEach(function(id) {
+            document.getElementById(id).addEventListener("click", function() {
+                // First, remove the "active" class from all
+                ids.forEach(function(otherId) {
+                    // document.getElementById(otherId).classList.remove("buttontest2");
+                    document.getElementById(otherId).classList.add("buttontest");
+                });
+
+                // Then add it only to the clicked one
+                this.classList.add("buttontest2");
+                this.classList.remove("buttontest");
+        
+                
+                // Call the corresponding function
+                handlers[id]();
+            });
+        });
+
+        handleDiv1();
+
+    </script>
+
+
+
+
+    <script src="/src/js/app.js"></script>
+    <script src="/combi/payload.js"></script>
+
+    <script>
+        console.log(payload.designation);
+        // use below for important for institute or teacher
+        function loadUserScript(userType) {
+  let script = document.createElement("script");
+  script.type = "text/javascript";
+
+  if (userType === "institute") {
+    script.src = "instituteoptions.js";
+  } else if (userType === "teacher") {
+    script.src = "teacheroptions.js";
+  }
+
+  document.head.appendChild(script);
+}
+
+// Example: user type fetched from API or session
+// const currentUserType = getUserTypeFromSession(); // Implement this function
+const currentUserType = payload.designation;
+loadUserScript(currentUserType);
+
+function confirmFunction3(){
+    alert("hello");
+
+}
+
+
+// <!-- bELOW JS OF 101 102 TO BE REVISED PROPERLY -->
+    // function fetchSS(){
+    //     document.getElementById('101').style.display="flex";
+    // }
+
+    // function ok(){
+    //     document.getElementById('101').style.display="none";
+    // }
+    
+    // function creategetmodel(){
+    //     let checkthis = subjectsCards[currentSlide2].question;
+    //     console.log(currentSlide2)
+    //     document.getElementById('create').style.display="flex";
+    //     let key1 = subjectsCards[currentSlide2]._id;
+    //     document.getElementById('keys2').value = key1;
+    //     let key2 = subjectsCards[currentSlide2].question;
+    //     alert(key1);
+    //     document.getElementById('keys1').value = key1;
+    //     document.getElementById('101').style.display="none";
+    // }
+    
+    function confirmFunction(){
+        document.getElementById('102').style.display="flex";
+    }
+
+    function confirmFunction2(){
+        // document.getElementById('101').style.display="none";
+        document.getElementById('102').style.display="none";
+    }
+// <!-- ABOVE JS OF 101 102 TO BE REVISED PROPERLY -->
+
+    </script>
+    
+</body>
+

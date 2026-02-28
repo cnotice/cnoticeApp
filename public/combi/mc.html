@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+<body>
+    <main class="mainContainer">
+        <section id='111' style='z-index:3;
+        display:none;
+        position:fixed;
+        width:100%;
+        height:100%;
+        background-color:rgb(0,0,0);
+        background-color:rgba(0,0,0,0.4);
+        justify-content: center;
+        align-items: center;
+        '>
+            <div class='errorMessageBox' style='
+            background-color:#02013b;
+            padding:40px 10px 30px 10px;
+            border-radius:5px;
+            color:white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            width:90%;
+            '>
+                <div>
+                <!-- <div class="deckerCard deckerHead"> Please choose an option right now:</div>
+                <div class="deckerCard deckerBody" style="text-align: left;" >
+                
+                <div style="border-radius:5px;
+                " class=" sortExtend" onclick="creategetmodel()">
+                Edit
+                </div>    
+                <hr>    
+                <div style="border-radius:5px;
+                " class=" sortExtend" onclick="confirmFunction()">
+                Delete
+                </div>
+                </div> -->
+                    <div style="position:relative;"><div class="" style="width:300px;">
+                        <div id="id3" onclick="" class="scoreBox" style="visibility:;">
+                            <div style="
+                            display: flex;
+                            flex-direction: row-reverse; "> 
+                                <div class="trophy4" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                                <div class="trophy" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                                <div class="trophy4" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                            </div>Congratulations 2!${tota}
+                  
+                            <span  id="congra">xxx</span>
+                  
+                            <div style="background-color:;font-size:px;margin:10px 0px 0px 0px;">${tota}! You have completed all for today.If there id all for today.If there is more than i will let you know. uishiusw khsukhj hk uhhhjjh jiijji 
+                                <div style="margin-top:5px;display: flex;
+                                flex-direction: row; 
+                                justify-content: space-around;"> 
+                                    <button class="button0"> Play Weak Subject</button> <button class="button0"> Play Again </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button class="button17a button0" onclick="ok2()">CancelSHDbQuit</button>
+                    </div>
+                </div>
+        </section>
+
+        <section class="introContainer">
+            <div class="introBackIcon" onclick="goBack()"></div>
+            <div class="intro intro1">Subject</div>
+            <div class="introMenuDotsIcon"></div>
+        </section>
+
+        <!-- <section class="highlight">Computer Graphics</section>  -->
+
+
+        <section style="display:flex;width:100%;background-color: ;">
+            <div style="width:10%;background-color:;"></div>
+            <div style="width:80%;background-color: ;text-align:center;">
+                <div class="highlighti">Multiple Choice</div>
+            </div>
+            <div style="position:relative;width:10%;background-color: ;">
+                <a href="information.html">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+                </a>
+            </div>
+        </section>
+        <!-- 171024 -->
+
+        <section class="containerBoard" style="">
+            <!-- <fieldset>
+            <legend>
+                Question type
+            </legend>
+                <div class="sortContainer"  >
+                    <div class="sort sort2" onclick="location.href='ow.html'">
+                        One Word 
+                    </div>
+                    <div class="sort" onclick="location.href='mc.html'">
+                    Multiple Choice 
+                    </div>
+                </fieldset>
+            </div> -->
+            <fieldset>
+                <legend>
+                    Function
+                </legend>
+                <div class="sortContainer" >
+                    <div class="sort sort2" onclick="location.href='#sacreate'">
+                        Create
+                    </div>
+                    <div class="sort" onclick="location.href='quiz/ansmc.html'">
+                    Quiz 
+                    </div>
+                    <div class="sort" onclick="location.href='revmc.html'">
+                        Review
+                    </div>
+                    <div class="sort" onclick="location.href='result.html'">
+                        Score
+                    </div>
+                    <div class="sort" onclick="location.href='settings.html#someid'">
+                        Settings
+                    </div>
+            </fieldset>
+                </div>
+        </section>
+
+
+        <section class="sortContainer">
+            <div class="sort sort2" id="sacreate">
+                Create
+            </div>
+            <!-- <div class="sort sort2">
+            date ascending 
+            </div>
+            <div class="sort">
+            date descending 
+            </div>
+            <div class="sort">
+            alphabetically
+            </div> -->
+        </section>
+
+
+    
+        <section class="sortContainer">
+            <!-- <div class="sort sort2" id="sacreate">
+            Create
+            </div>
+            <div class="sort sort2">
+            date ascending 
+            </div> -->
+            <div class="sort">
+            Question number : 10
+            </div>
+            <div class="sort">
+            Limit : 91/100
+            </div>
+            <div class="sort">
+            Time : <span id="timer" data-time="5"> 02:00</span>
+            </div>
+        </section>
+
+
+
+        <section id="" class="containerBoard">
+            
+        
+            <fieldset>
+                <legend>
+                Unit Number
+                </legend>
+                <span style="color:white;" >
+                        <input min="0" max="20" onkeydown="blockInvalidKeys(event)" onchange="enforceMaxMin(this)"  name="unitnumber" type="number" class="input0 input10 " id="keys" style="width:80px;background: ;padding:px;" placeholder="Number">
+                </span>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                Unit Name
+                </legend>
+                <span style="color:white;" >
+                    <div style="width:90px;position: relative;">
+
+                        <input data-maxlength="40" name="unitname" type="" class="input0 input10 classIdKeys" id="keys" style="width:290px;background: ;padding-right:50px;" placeholder="Unit Name">
+                        
+                        <div id="cxcxxcxc" class="keyCounter classIdTextCountKeys" style="width:45px;background-color: ;border-radius:0px 5px 5px 0px ;height:40px;margin:3px -260px;">0/40</div>
+                    </div>  
+                
+                </span>
+            </fieldset>
+        
+            <fieldset>
+                <legend>
+                Topic
+                </legend>
+                <span style="color:red;" >
+                            
+                    <div style="width:90px;position: relative;">
+
+                        <input data-maxlength="40" name="topic" type="" class="input0 input10 classIdKeys" id="keys" style="width:290px;background: ;padding-right:50px;" placeholder="Topic">
+                        
+                        <div id="xcxcxcxc" class="keyCounter classIdTextCountKeys" style="width:45px;background-color: ;border-radius:0px 5px 5px 0px ;height:40px;margin:3px -260px;">0/40</div>
+                    </div>  
+                
+                </span>
+            </fieldset>
+        
+        </section>
+
+
+
+
+
+
+
+        <!-- 171024 -->
+        <section class="stuMenu3">
+
+
+    
+            <fieldset>
+                <legend>
+                Question
+                </legend>
+                <div style="position: relative;">
+                
+                    <textarea data-maxlength="40" data-maxline="10" class="mcTextarea classIdText" placeholder="Question" name="question" id="question" cols="30" rows="15"></textarea>
+                
+                    <div  id="count" class="mcTextareaLine classIdTextCount" >0/10 lines | 0/400 characters</div>
+                </div>
+            </fieldset>
+
+
+        
+            <fieldset>
+                <legend>
+                    Correct_Answer
+                </legend>
+                <span style="color:white;" >
+
+                    <div class="mcInputContainer">
+                        <div style="width:100%;">
+                            Correct Option
+                        </div>
+                        <div style="width:190%;position: relative;">
+                            <input data-maxlength="20" name="correctanswer"  class="input0 input10 classIdKeys" id="answercorrect" style="width:180px;background: ;padding-right:50px;" placeholder="Correct_Answer">
+                            <div class="mcInputLine classIdTextCountKeys">0/20</div>
+                        </div>
+                    </div>
+                </span>
+            </fieldset>
+            
+
+        
+    
+            <fieldset>
+                <legend>
+                    Wrong_Answers
+                </legend>
+                <span style="color:white;" >
+
+                    <div class="mcInputContainer">
+                    <div style="width:100%;">
+                        Wrong Option
+                    </div>
+                    <div style="width:190%;position: relative;">
+                        <input data-maxlength="20" class="input0 input10 classIdKeys" id="answerwrongb" style="width:180px;background: ;padding-right:50px;" placeholder="Wrong_Answer">
+                        <div class="mcInputLine classIdTextCountKeys">0/20</div>
+                    </div> 
+                    </div>
+                    <div class="mcInputContainer">
+                    <div style="width:100%;">
+                        Wrong Option
+
+                    </div>
+                    <div style="width:190%;position: relative;">
+                        <input data-maxlength="20" class="input0 input10 classIdKeys" id="answerwrongc" style="width:180px;padding-right:50px;background: ;" placeholder="Wrong_Answer">
+                        <div class="mcInputLine classIdTextCountKeys">0/20</div>
+                    </div>
+                    </div>
+                    <div class="mcInputContainer">
+                    <div style="width:100%;">
+                        Wrong Option
+
+                    </div>
+                    <div style="width:190%;position: relative;">
+                        <input data-maxlength="20" class="input0 input10 classIdKeys" id="answerwrongd" style="width:180px;padding-right:50px;background: ;" placeholder="Wrong_Answer">
+                        <div class="mcInputLine classIdTextCountKeys">0/20</div>
+                    </div>
+                    </div>
+                </span>
+            </fieldset>
+
+        <div class="mcButtonBox" >
+            <button  class="button0 button10 ">Cancel</button>
+            <button  class="button0 button10 " id="send">Publish</button>
+        </div>
+
+        </section>
+    </main>
+
+    <script>
+
+    const su = localStorage.getItem('subsme');
+    const subjectId = localStorage.getItem('subjectId');
+        // document.getElementById("subject").innerHTML = su;
+    
+    
+    send.addEventListener('click', ()=>{
+    let url = "/mc ";
+    
+    let text = document.getElementById('question').value; 
+    let mc1 = document.getElementById('answercorrect').value; 
+    let mc2 = document.getElementById('answerwrongb').value; 
+    let mc3 = document.getElementById('answerwrongc').value; 
+    let mc4 = document.getElementById('answerwrongd').value; 
+    
+    let sendData = {
+        subjectId : subjectId,
+        branch : 'computer Science' ,
+    section : 'b ',
+    semester :'5 th',
+    department : 'Engineering',
+    subject : 'data science',
+    author : 'student',
+    question : text,
+    correcta: mc1 ,
+    wrongb: mc2 ,
+    wrongc: mc3 ,
+    wrongd: mc4 ,
+    writtenDate : 9
+    }
+    let h = new Headers();
+            h.append('Content-Type', 'application/json')
+    let req = new Request(url,{
+        // create
+        method: 'POST',
+        // read
+        // method: 'GET',
+        // update
+        // method: 'PATCH',
+        // delete
+        // method: 'DELETE',
+    
+    
+        headers: h
+        //CREATE,update
+        ,
+        body: JSON.stringify(sendData)
+    })
+    
+    
+    //// CREATE
+    // fetch(req).then(res=>res.json()).then((data)=>{
+    //     document.getElementById('data').innerHTML = JSON.stringify(data);
+    // })
+    
+    //// READ, UPDATE
+    fetch(req).then(res=>res.json()).then((data)=>{
+        console.log(data);
+        // document.getElementById('data').innerHTML = JSON.stringify(data);
+    })
+    
+    
+    })
+            </script>
+    <!-- <script src="exp14.js"></script> -->
+    <script src="/src/js/app.js"></script>
+</body>
+
+
+
+    <script>
+    
+    // ////////////// number 3 simple goback or and hide button
+
+    // function goBack(){
+    //     window.history.back();
+    // }
+    // document.addEventListener("DOMContentLoaded", function(){
+    //     const backButton = document.getElementsByClassName("introBackIcon");
+    //     if(window.history.length <=1){
+    //         backButton[0].style.visibility = "none";
+    //     }
+    // });
+
+    // ////////////// number 2 go back or any page , no hide button
+
+    // function goBack(){
+    //     if(window.history.length >1){
+    //         window.history.back();
+    //     }else{
+    //         window.location.href = "index.html";
+    //     }
+    // }
+
+    //  ///////////////////// number1
+
+    function goBack(){
+        // const referrer = document.referrer;
+        // const currentOrigin = window.location.origin;
+
+        // if(referrer && referrer.startsWith(currentOrigin)){
+        //     window.history.back();
+        // }else{
+            window.location.href = "/combi/subject.html";
+        // }
+    }
+    // or hide button
+    document.addEventListener("DOMContentLoaded",function(){
+    const backButton = document.getElementsByClassName("introBackIcon");
+    const referrer = document.referrer;
+    const currentOrigin = window.location.origin;
+
+    if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+            backButton[0].style.visibility = "hidden";
+    }
+    });
+
+    </script>
+
+
+    <!-- 060124 -->
+    <!-- <script>
+
+    document.querySelectorAll('input, textarea').forEach((element) => {
+        element.addEventListener('input', () => {
+            localStorage.setItem(element.name, element.value);
+        });
+    });
+    window.addEventListener('load', () => {
+        document.querySelectorAll('input, textarea').forEach((element) => {
+            if (localStorage.getItem(element.name)) {
+                element.value = localStorage.getItem(element.name);
+            }
+        });
+    });
+     </script> -->
+    <!-- 060124 -->
+
+     
+    <!-- 291224 -->
+
+
+    <style>
+    /* Style for the loading screen */
+    #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        z-index: 9999;
+    }
+    </style>
+    <script>
+    // Function to refresh the page twice, including browser back button
+    function refreshPageTwice() {
+        let refreshCount = parseInt(localStorage.getItem('refreshCount')) || 0;
+
+        if (refreshCount < 2) {
+            // Increment the refresh count and save it
+            refreshCount++;
+            localStorage.setItem('refreshCount', refreshCount);
+
+            // Show loading screen and reload the page after 1 second
+            document.getElementById('loading').style.display = 'flex';
+            setTimeout(() => {
+                location.reload();
+            }, 100);
+        } else {
+            // Reset refresh count and remove the loading screen
+            localStorage.removeItem('refreshCount');
+            document.getElementById('loading').style.display = 'none';
+        }
+    }
+
+
+    // Ensure the refresh logic runs when back button is pressed
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted || performance.navigation.type === 2) {
+            // Page loaded via back button or cache
+            refreshPageTwice();
+        }
+    });
+
+    // Trigger the refresh logic on initial page load
+    // window.onload = refreshPageTwice;
+    </script>
+
+    <!-- <div id="loading">Loading... Please wait</div> -->
+    <!-- 291224 -->
+
+
+    <script src="studyaccount.js"></script>
+    <script src="timer.js"></script>
+
+
+    <!-- 190824 -->
+    <script>
+    
+    //////////////////////////
+    
+    let urli = `/mc`;
+    // let urli = `/fcquiz`;
+    // const teabssd = document.getElementById("teabssd").value ;
+    // const sub = document.getElementById("sub").value ;
+    // console.log(teabssd);
+    // console.log(sub);
+    
+    // const datatosend = {
+    //     subject : sub,
+    //     bssd : teabssd
+    // }
+    const tokeni = localStorage.getItem("authToken");
+       let hi = new Headers();
+            hi.append('Authorization' ,`Bearer ${tokeni}`);
+            hi.append('Content-Type' ,'application/json');
+    
+            let reqi = new Request(urli,{
+                method: 'GET',
+                // method: 'POST',
+                headers: hi
+                // ,
+                // body: JSON.stringify(datatosend)
+            });
+    
+            fetch(reqi)
+            .then(res=>res.json())
+            .then((data)=> 
+            {
+            // document.getElementById('subjectId').innerHTML = JSON.stringify(data);
+            //     console.log(data);
+                
+    ///////////////////////////xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxdown
+    console.log(data);
+    localStorage.setItem("mcquiz", JSON.stringify(data));
+    for(var key in data){
+    console.log(data[key]);
+    writeData('cnotposts2', data[key]);
+    }
+    
+        }
+        )
+    //////////////////////////
+    </script>
+
+    <!-- 190824 -->
+
+    </script>
+
+    
+    <script src="/src/js/idb.js"></script>
+    <script src="/src/js/utility.js"></script>
+
+    <!-- div probs in line 88 , 148 -->

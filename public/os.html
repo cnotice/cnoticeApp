@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IndexedDB with UMD idb</title>
+  <script src="src/js/idb-umd.js"></script> <!-- Local idb -->
+  <script src="src/js/utility-umd.js"></script> <!-- Local utility -->
+</head>
+<body>
+  <h2>IndexedDB - Dynamic Stores (Modern idb-umd)</h2>
+
+  <script>
+    // --- Sample Usage ---
+    (async () => {
+      // Add stores dynamically
+      await openDynamicDB(['notes']);
+
+      // Write to "notes"
+      await writeData('notes', { title: 'new Note 3', content: 'UMD version working!' });
+
+      // Add stores dynamically
+      await openDynamicDB(['tasks']);
+
+      // Write to "tasks"
+      await writeData('tasks', { task: 'Clean room 3', completed: false });
+
+      // Read all notes
+      const notes = await readAllData('notes');
+      console.log('All Notes:', notes);
+
+      // Read a task
+      const task = await readData('tasks', 18);
+      console.log('Task with ID 1:', task);
+
+      // // Delete a note
+      // await deleteItem('notes', 1);
+
+      // // Clear the "tasks" store
+      // await clearStore('tasks');
+
+      // // Delete Database
+      // await deleteDB('myNewDynamicDB');
+    })();
+
+    
+  </script>
+</body>
+</html>

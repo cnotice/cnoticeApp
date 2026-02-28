@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+<body>
+    <main class="mainContainer">
+
+
+        
+        <div style="width:100%;">
+            <div id="creator" class="">
+                <button class="button0 button17a " onclick="xform()">Join</button>
+            </div>
+        </div>
+    
+        <div action="" method="POST" class="" id="">
+            <section id="creation" class="messageContainer" style="visibility:hidden;">
+
+                
+        
+        <!-- <section class="introContainer">
+            <div class="introBackIcon" onclick="goBack()" style="visibility:hidden;"></div>
+            <div class="intro intro1">Dashboard</div>
+            <div class="introMenuDotsIcon" onclick="playSound('clickSound','about.html');"></div>
+        </section> -->
+        <section style="display:flex;width:100%;">
+            <div style="width:10%;"></div>
+            <div style="width:80%;text-align:center;">
+                <div class="highlighti">Registration</div>
+            </div>
+            <div style="position:relative;width:10%;" onclick="playSound('bubbleSound')">
+                <a href="information.html#registration">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+                </a>
+            </div>
+        </section>
+
+
+                <div class="messageRegistration">
+                    <fieldset>
+                        <legend>
+                        Name of the Institute :
+                        </legend>
+                        <span style="color:white;margin-left:30px;" >Regional Institute of Science And Technology</span>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>
+                        Short Name :
+                        </legend>
+                        <span style="margin-left:30px;color:white;" >RIST</span>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>
+                        Select Degree
+                        </legend>
+                        <span style="color:white;margin-left:px;" ><select id="first"><option>Please Select</option></select></span>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>
+                        Select Branch
+                        </legend>
+                        <span style="color:white;margin-left:px;" ><select id="second"><option>Please Select Degree</option></select></span>
+                    </fieldset>
+                                
+                    <fieldset>
+                        <legend>
+                        Select Semester
+                        </legend>
+                        <span style="color:white;margin-left:px;" ><select id="third"><option>Please Select</option></select></span>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>
+                        Select Session Years
+                        </legend>
+                        <span style="color:white;margin-left:px;" ><select id="fourth"><option>Please Select</option></select></span>
+                    </fieldset>
+                                    
+                    <fieldset>
+                        <legend>
+                        Roll Number
+                        </legend>
+                    
+                        <div style="position: relative;">
+                            <input  id="fifth" data-maxlength="10" name="topic" type="" class=" input0 input17a   classIdKeys" style="width:100px;background: ;padding-right:50px;margin-top:11px;" placeholder="Roll Number">
+                            <div class=" classIdTextCountKeys" style="
+                            position:absolute;
+                            top:21px;
+                            right:210px;width:45px;height:40px;">0/10</div>
+                        </div>  
+
+
+                    </fieldset>
+
+                    
+                    <input id="zero" style="display:none;">
+                    <input id="nineth" style="display:none;">
+            
+                    <div style="
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;">
+                        <button  class="button0 button17a " style="color:white;bottom:0px;position:;" id="submit">Done</button>
+                    </div>
+                </div>
+            </section>
+        
+        </div>
+
+    </main>
+    
+    <script src="ifp.js"></script>
+    <!-- <script src="exp19.js"></script> -->
+    <script src="studyaccount.js"></script>
+        
+    <script>
+        
+        function xform(){
+            document.getElementById('creator').style.display = 'none';
+            document.getElementById('creation').style.visibility = 'visible';
+        }
+        
+    </script>
+
+
+
+    <!-- 190824 -->
+    <p id="someData"></p>
+    <script>
+        
+        // let urld = `/department`;
+        let urldi = `/subjectwoauth`;
+        const tokendi = localStorage.getItem("authToken");
+        let hdi = new Headers();
+                hdi.append('Authorization' ,`Bearer ${tokendi}`);
+                hdi.append('Content-Type' ,'application/json');
+        
+                let reqdi = new Request(urldi,{
+                    method: 'GET',
+                    // method: 'POST',
+                    headers: hdi
+                    // ,
+                    // body: JSON.stringify(datatosend)
+                });
+        
+                fetch(reqdi)
+                .then(res=>res.json())
+                .then((data)=> 
+                {
+                // document.getElementById('departmentId').innerHTML = JSON.stringify(data);
+                    console.log(data);
+                    
+                localStorage.setItem("subjectData", JSON.stringify(data));
+                // localStorage.setItem("degreeData", data);
+        // const degreeData = localStorage.getItem('degreeData');
+            ///////////////////////////xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxdown
+            // let data2 = [...new Set(data.map(obj=>obj.degree))];
+            let text = "";
+            //  data2.forEach(function (item, index) {
+                data.forEach(function (item, index) {
+            // text += index + `: <a href='dashboard2.html' onclick='dothis("${item.degree}","${item._id}")'>${item}</a><br>`;
+            
+            text += index + `: <a href='dashboard2.html' onclick='dothis("${item.subject}","${item._id}")'>${item.subject}</a> of ${item.branch}${item.year}semester:${item.semester}of ${item.degree}<br>`;
+            
+            })
+            
+            console.log([...new Set(data.map(obj=>obj.degree))])
+                    // document.getElementById('departmentId').innerHTML = JSON.stringify(data);
+                    document.getElementById('someData').innerHTML = text;
+                        // console.log(data);
+            ////////////////////////////xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxup
+                }
+                )
+            //////////////////////////
+        const subjectData1 = localStorage.getItem('subjectData');
+        const subjectData =JSON.parse(subjectData1)
+        console.log(subjectData);
+        // console.log(JSON.parse(subjectData));
+        console.log(JSON.stringify(subjectData));
+            </script>
+            <!-- 190824 -->
+        <script>
+
+            
+    function totalYearFun(department,branch){
+        console.log(subjectData)
+        subjectData.forEach(obj=>{
+            
+                if((obj['degree'] === department)&&(obj['branch'] === branch)){
+                totalYear =
+                obj['totalYear'];
+                }
+                })
+        console.log(totalYear);
+                return {
+                totalYear
+                }
+                }
+
+
+            submit.addEventListener("click",(e)=>{
+                    // let url = `/stusubject`;
+                        let degree = document.getElementById('first').value;   
+                        let branch = document.getElementById('second').value;   
+                        let semester = document.getElementById('third').value;    
+                        let year = document.getElementById('fourth').value;   
+                        let roll = document.getElementById('fifth').value;  
+  let degreeId = document.getElementById('zero').value;   
+                        
+                let totalYear = document.getElementById('nineth').value;  
+
+                        
+                function extractYears(input){
+                    const str = String(input).trim();
+                    const [start,end = start] = 
+                    str.split("-").map(Number);
+                    return{start,end};
+                }
+
+                let timeYear = extractYears(year);
+                let yearStart = timeYear.start;
+                let yearEnd = timeYear.end;
+
+
+                        let sendData = {
+                            degree,
+                            degreeId,
+                            branch,
+                            semester,
+                            year,
+                            roll,
+                            yearStart,
+                            yearEnd,
+                            totalYear
+                        }
+                    let url = `/subjectplus`;
+            // const stubssd = document.getElementById("stubssd").value ;
+            // console.log(stubssd);
+            // const datatosend = {
+            //     bssd : stubssd
+            // }
+            const token = localStorage.getItem("authToken");
+            let h = new Headers();
+                    h.append('Authorization' ,`Bearer ${token}`);
+                    h.append('Content-Type' ,'application/json');
+                    let req = new Request(url,{
+                        method: 'PATCH',
+                        // method: 'POST',
+                        headers: h,
+                        // body: JSON.stringify(datatosend)
+                        body: JSON.stringify(sendData)
+                    });
+                    fetch(req)
+                    .then(res=>res.json())
+                    .then((data)=> 
+                    {
+                        console.log(data);
+                }
+                )
+                })
+
+            // testDrive.addEventListener('click', ()=>{
+            //                let degree = document.getElementById('first').value;   
+            //                let branch = document.getElementById('second').value;   
+            //                let semester = document.getElementById('third').value;    
+            //                let year = document.getElementById('fourth').value;   
+            //                let roll = document.getElementById('fifth').value;  
+            //                let sendData = {
+            //                    degree,
+            //                    branch,
+            //                    semester,
+            //                    year,
+            //                    roll
+            //                }
+            //                function isEmpty(value){
+            //                    if(value === null || value === undefined || value === 'null' || value.length === 0 || value === '0'){
+            //                        return true;
+            //                    }
+            //                    return false;
+            //                }
+            //                console.log("console start")  
+            //                    console.log(isEmpty(degree))    
+            //                    console.log(isEmpty(branch))    
+            //                    // console.log(isEmpty(semester))    
+            //                    // console.log(isEmpty(year))    
+            //                    console.log(semester)     
+            //                    console.log(year)     
+            //                    console.log(roll)   
+            //                    console.log(isEmpty(roll))   
+            //                console.log(sendData)
+            //                    console.log("console stop")  
+            //                })
+            
+        console.log(subjectData);
+            // document.getElementById('first').innerHTML = selectHtmlLookAgain([...new Set(data6.map(obj=>obj.degree))]);
+            document.getElementById('first').innerHTML = selectHtmlLookAgain([...new Set(subjectData.map(obj=>obj.degree))]);
+            first.addEventListener('change',function(){
+                console.log("first");
+                // let selected = first.querySelector('select').value;
+                let selected = first.value;
+                console.log(selected);
+                let department = getDepartmentArray(selected);
+                document.getElementById('second').innerHTML = selectHtmlLookAgain(department);
+            });
+            
+            second.addEventListener('change',function(){
+                let selected = first.value;
+                let selected2 = second.value;
+         
+    const {
+                totalYear}= totalYearFun(selected,selected2);
+                console.log(totalYear)
+
+
+                const deparo2 = new Array([...new Set(subjectData.filter(obj=>(obj.degree === selected)&& (obj.branch === selected2)).map(obj =>obj.semester))]);
+            console.log(deparo2)
+            let combi2 = [];
+            // extraction of single length array to multi length array
+            for(let i = 0; i<deparo2[0].length;i++){
+                combi2.push(deparo2[0][i]);
+            }
+            console.log(combi2);
+            combi2.sort((a,b)=>a-b);
+            console.log(combi2);
+                // return combi;
+            // selectHtmlLookAgain(department)
+                // document.getElementById("third").innerHTML = firstSemester();
+                document.getElementById("third").innerHTML = selectHtmlLookAgain(combi2);
+                const deparo = new Array([...new Set(subjectData.filter(obj=>(obj.degree === selected)&& (obj.branch === selected2)).map(obj =>obj.year))]);
+            console.log(deparo)
+            console.log(deparo);
+            let combi = [];
+            // extraction of single length array to multi length array
+            for(let i = 0; i<deparo[0].length;i++){
+                combi.push(deparo[0][i]);
+            }
+            console.log(combi);
+            combi.sort((a,b)=> {
+                const startA = parseInt(a.split('-')[0].trim());
+                const startB = parseInt(b.split('-')[0].trim());
+                return startA - startB;
+            });
+            console.log(combi);
+                document.getElementById("fourth").innerHTML = selectHtmlLookAgain(combi);
+                document.getElementById("nineth").value = totalYear;
+        });
+
+            function getDepartmentArray(depart){
+            const depar = new Array([...new Set(subjectData.filter(obj=>obj.degree === depart).map(obj =>obj.branch))]);
+            // const depar = new Array([...new Set(data6.filter(obj=>obj.degree === depart).map(obj =>obj.department))]);
+            // console.log(departt);
+                console.log(depar);
+            let combi = [];
+            // extraction of single length array to multi length array
+            for(let i = 0; i<depar[0].length;i++){
+                combi.push(depar[0][i]);
+            }
+                return combi;
+            }
+
+            function selectHtmlLookAgain(arrayValues){ 
+            let str = "";
+                    str = `<option value='null'>Please Select</option>`;
+                for(let i = 0; i<arrayValues.length;i++){
+                str += `<option>${arrayValues[i]}</option>`;
+                }
+                str += "";
+                return str;
+            }
+            
+                third.addEventListener('change',function(){
+        //////////////////////310824
+        let selected1 = first.value;
+                let selected2 = second.value;
+                let selected3 = third.value;
+        const deparo2 = new Array([...new Set(subjectData.filter(obj=>(obj.degree === selected1)&& (obj.branch === selected2)).map(obj =>obj.year))]);
+        console.log(deparo2)
+        const deparo3 = new Array([...new Set(subjectData.filter(obj=>(obj.degree === selected1)&& (obj.branch === selected2)&&(obj.semester === selected3)).map(obj =>obj.year))]);
+            console.log(deparo3);
+            console.log(deparo3[0]);
+            console.log(deparo3[0][0])
+            str2 = `<option>${deparo3}</option>`;
+            let combi2 = [];
+            // extraction of single length array to multi length array
+            for(let i = 0; i<deparo2[0].length;i++){
+                combi2.push(deparo2[0][i]);
+            }
+            console.log(combi2);
+            combi2.sort((a,b)=> {
+                const startA = parseInt(a.split('-')[0].trim());
+                const startB = parseInt(b.split('-')[0].trim());
+                return startA - startB;
+            });
+            console.log(combi2);
+                // return combi;
+            // selectHtmlLookAgain(department)
+                // document.getElementById("third").innerHTML = firstSemester();
+                    let str = combi2 ;
+                str = `<option>${str}</option>`;
+                let xxx = str2;
+                xxx += selectHtmlLookAgain(combi2);
+                document.getElementById("fourth").innerHTML = xxx;
+                
+        const degId = new Array([...new Set(subjectData.filter(obj=>(obj.degree === selected1)&& (obj.branch === selected2)&&(obj.semester === selected3)).map(obj =>obj.degreeId))]);
+            console.log(degId);
+            console.log(degId[0]);
+            console.log(degId[0][0]);
+    document.getElementById('zero').value = degId[0][0];
+        ///////////////////////310824
+                });
+                fourth.addEventListener('change',function(){
+        //////////////////////310824
+        let selected1 = first.value;
+                let selected2 = second.value;
+                let selected3 = fourth.value;
+        const deparo2 = new Array([...new Set(subjectData.filter(obj=>(obj.degree === selected1)&& (obj.branch === selected2)).map(obj =>obj.semester))]);
+        console.log(selected3)
+            console.log(deparo2[0]);
+            deparo2[0].sort((a,b)=>a-b);
+            console.log(deparo2[0]);
+        // if((selected3 == "null")||(selected3 == "")){
+        //     console.log("trialandError");
+        // }
+        const deparo3 = new Array([...new Set(subjectData.filter(obj=>(obj.degree === selected1)&& (obj.branch === selected2)&&(obj.year === selected3)).map(obj =>obj.semester))]);
+            console.log(deparo3[0][0])
+            str2 = `<option>${deparo3[0][0]}</option>`;
+            console.log(str2);
+
+            let combi2 = [];
+            for(let i = 0; i<deparo2[0].length;i++){
+                combi2.push(deparo2[0][i]);
+            }
+            console.log(combi2);
+                    let str = combi2 ;
+                str = `<option>${str}</option>`;
+                let xxx = str2;
+                console.log(xxx);
+                xxx += selectHtmlLookAgain(combi2);
+                console.log(xxx);
+                // document.getElementById("fourth").innerHTML = selectHtmlLookAgain(combi2); //multi
+                // document.getElementById("fourth").innerHTML = selectHtmlLookAgain(deparo3); //single
+                // document.getElementById("fourth").innerHTML = str2;/// direct single
+                document.getElementById("third").innerHTML = xxx;
+        const degId = new Array([...new Set(subjectData.filter(obj=>(obj.degree === selected1)&& (obj.branch === selected2)&&(obj.year === selected3)).map(obj =>obj.degreeId))]);
+            console.log(degId);
+            console.log(degId[0]);
+            console.log(degId[0][0]);
+    document.getElementById('zero').value = degId[0][0];
+
+        ///////////////////////310824
+                });
+
+            document.getElementById("third").innerHTML = '<option value="null">Please Select Branch</option>';
+            document.getElementById("fourth").innerHTML = '<option value="null">Please Select Branch</option>';
+
+            
+    </script>
+    <script src="/src/js/app.js"></script>
+
+<script src="payload.js"></script>
+<script>
+
+      if(payload.designation !== "student"){
+        // document.location = `/combi/pageDoesNotExist.html`;
+
+      }
+
+console.log(payload.designation);
+
+</script>
+</body> 

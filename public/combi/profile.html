@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+</head>
+
+<body>
+    <h1>Profile</h1>
+    subject name
+    <p id="profileData">empty subject name</p>
+    <h3>My Profile</h3>
+    <p id="data"></p>    
+    <br>
+    <h3>Update Profile</h3>
+    Name : <input placeholder="name" id="name"><br>
+    Pasword : <input placeholder="password" id="password"><br>
+    Designation :<select id="designation">
+        <option value="">Change</option>
+        <option value="institute">Institute</option>
+        <option value="teacher">teacher</option>
+        <option value="student">student</option>
+    </select><br><br>
+    
+    <button id="update">Update</button>
+    <br><br><br>
+
+    <h3>Delete Profile</h3>
+    <button id="deleteme">Delete Profile Account</button>
+<script>
+    
+console.log(localStorage.getItem('subsme'));
+document.getElementById('profileData').innerHTML = localStorage.getItem('subsme');
+
+
+let url = "/users/me ";
+const token = localStorage.getItem("authToken");
+console.log(token)
+let h = new Headers();
+    h.append('Authorization', `Bearer ${token}`);
+        h.append('Content-Type', 'application/json')
+let req = new Request(url,{
+    method: 'GET',
+    headers: h
+})
+fetch(req).then(res=>res.json()).then((data)=>{
+    console.log(data);
+    // name password designation tokens
+    // f
+
+    let text = "";
+    let bssds = "";
+// const fruits = ["apple", "orange", "cherry"];
+console.log(data
+// [0].token
+// data.tokens[0].token.forEach(myFunction);
+// document.getElementById("demo").innerHTML = text;
+ )
+ data.tokens.forEach(myFunction);
+function myFunction(item, index) {
+  text += index + ": " + item.token + "<br>"; 
+// text +=  item.token + "<br><br>"; 
+}
+
+data.bssds.forEach(myFunction2);
+function myFunction2(item, index) {
+  bssds += index + ": Bssd : ' " + item.bssd + "' "+index +": Subject : '" + item.subject + "'<br>"; 
+// text +=  item.token + "<br><br>"; 
+}
+    // 
+    let dat = `Name : ${data.name} <br> Password : ${data.password} <br> Designation : ${data.designation} <br>  Tokens :<br> ${text}<br>Only student have BSSD<br>Bssd : ${data.bssd}  <br>Only teachers have BSSDS<br> Bssds :<br> ${bssds}`;
+    // document.getElementById('data').innerHTML = JSON.stringify(dat);
+    document.getElementById('data').innerHTML = dat;
+    // document.getElementById('data').innerHTML = JSON.stringify(data);
+    // console.log("this is sparta auth token")
+    // console.log(data[22].name)
+})
+
+
+
+
+// ///////////////
+
+update.addEventListener('click', ()=>{
+
+let url = "/users/profile ";
+let name = document.getElementById('name').value;    
+let password = document.getElementById('password').value;  
+let designation = document.getElementById('designation').value;    
+let sendData = {
+    name,
+    designation,
+    password
+}
+
+
+const token = localStorage.getItem('authToken');
+let h = new Headers();
+        h.append('Authorization', `Bearer ${token}`);
+        h.append('Content-Type', 'application/json')
+let req = new Request(url,{
+    // create
+    // method: 'POST',
+    // read
+    // method: 'GET',
+    // update
+    method: 'PATCH',
+    // delete
+    // method: 'DELETE',
+
+
+    headers: h
+    //CREATE,update
+    ,
+    // body: JSON.stringify({age:'11'})
+    body: JSON.stringify(sendData)
+})
+
+
+// //// CREATE
+    fetch(req).then(res=>res.json()).then((data)=>{
+        location.reload();
+        console.log(data);
+        console.log(JSON.stringify(data));
+})
+})
+
+
+
+deleteme.addEventListener('click', ()=>{
+
+let url = "/users/profile ";
+const token = localStorage.getItem('authToken');
+let h = new Headers();
+        h.append('Authorization', `Bearer ${token}`);
+        h.append('Content-Type', 'application/json')
+let req = new Request(url,{
+    // create
+    // method: 'POST',
+    // read
+    // method: 'GET',
+    // update
+    // method: 'PATCH',
+    // delete
+    method: 'DELETE',
+
+
+    headers: h
+    //CREATE,update
+    // ,
+    // body: JSON.stringify({age:'11'})
+    // body: JSON.stringify(sendData)
+})
+
+
+// //// CREATE
+    fetch(req)
+//     .then(res=>res.json()).then((data)=>{
+//         // location.reload();
+//         console.log(data);
+//         console.log(JSON.stringify(data));
+// })
+})
+
+
+
+
+
+function parseJwt(token) {
+  try {
+    // Split the token to get the payload (second part)
+    const base64Url = token.split('.')[1];
+
+    // Decode Base64URL to JSON
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(
+      atob(base64)
+        .split('')
+        .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+        .join('')
+    );
+
+    // Parse JSON and return the payload
+    return JSON.parse(jsonPayload);
+  } catch (error) {
+    console.error("Failed to parse JWT:", error);
+    return null;
+  }
+}
+
+// Example usage
+// const token = "your.jwt.token";
+// const token = localStorage.getItem("authToken");
+const payload = parseJwt(token);
+console.log("Decoded Payload:", payload);
+console.log("designation:", payload.designation);
+
+
+        </script>
+<script src="/src/js/app.js"></script>
+</body>
+
+</html>

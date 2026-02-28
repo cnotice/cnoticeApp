@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+</head>
+
+<body>
+    <h1>Log_in</h1>
+user_name : <input id="name"><br><br>
+Password : <input id="password"><br><br>
+<button id="login">Log_in</button>
+<br><br><br><br><br><br><br><br><br>
+<h1>Log_out</h1>
+<button id="logoutall">Log_Out_All</button>
+<button id="logout">Log_Out</button>
+
+    <script>
+
+login.addEventListener('click', ()=>{
+
+// let url = "/usersGet ";
+let url = "/users/login";
+let name = document.getElementById('name').value;    
+let password = document.getElementById('password').value;    
+let sendData = {
+    name,
+    password
+}
+
+
+let h = new Headers();
+        h.append('Content-Type', 'application/json')
+let req = new Request(url,{
+    // create
+    method: 'POST',
+    // read
+    // method: 'GET',
+    // update
+    // method: 'PATCH',
+    // delete
+    // method: 'DELETE',
+
+
+    headers: h
+    //CREATE,update
+    ,
+    // body: JSON.stringify({age:'11'})
+    body: JSON.stringify(sendData)
+})
+
+
+//// CREATE
+//     fetch(req).then(res=>res.json()).then((data)=>{
+//         console.log(data);
+//         console.log(JSON.stringify(data));
+//     // document.getElementById('data').innerHTML = data;
+// })
+
+//// READ, UPDATE
+fetch(req).then(res=>res.json()).then((data)=>{
+    localStorage.setItem("authToken", data.token);
+    console.log(data);
+    console.log(data.token);
+            // console.log(JSON.stringify(data));
+    // document.getElementById('data').innerHTML = JSON.stringify(data);
+})
+
+
+})
+
+
+
+logout.addEventListener('click', ()=>{
+
+
+let url = "/users/logout";
+const token = localStorage.getItem('authToken');
+let h = new Headers();
+        h.append('Authorization', `Bearer ${token}`);
+let req = new Request(url,{
+    method: 'POST',
+    headers: h
+})
+
+
+fetch(req);
+// .then(res=>res.json()).then((data)=>{
+//     localStorage.setItem("authToken", data.token);
+//     console.log(data.token);
+// })
+})
+
+
+
+logoutall.addEventListener('click', ()=>{
+let url = "/users/logoutall";
+const token = localStorage.getItem('authToken');
+let h = new Headers();
+        h.append('Authorization', `Bearer ${token}`);
+let req = new Request(url,{
+    method: 'POST',
+    headers: h
+})
+fetch(req);
+// .then(res=>res.json()).then((data)=>{
+//     localStorage.setItem("authToken", data.token);
+//     console.log(data.token);
+// })
+
+})
+
+</script>
+<script src="/src/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+            
+<body style="height:1000px;">
+    <main class="mainContainer ">
+        <section class="introContainer">
+            <div class="introBackIcon" onclick="goBack()"></div>
+            <div class="intro intro1">Dashboard</div>
+            <div class="introMenuDotsIcon" onclick="alert('intro menu')"></div>
+        </section>
+    <!-- <section  class="highlight">Attendance</section>  -->
+        <section style="display:flex;width:100%;background-color: ;">
+            <div style="width:10%;background-color:;"></div>
+            <div style="width:80%;background-color: ;text-align:center;">
+                <div class="highlighti">Score</div>
+            </div>
+            <div style="position:relative;width:10%;background-color: ;">
+                <a href="information.html">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+
+                </a>
+            </div>
+        </section>
+        <!-- 
+
+        <section class="containerBoard" style="">
+        <fieldset>
+        <legend>
+            Type
+        </legend>
+            <div class="sortContainer"  >
+                <div class="sort sort2" onclick="location.href='fc.html'">
+                     Flash Card
+                </div>
+                <div class="sort" onclick="location.href='studyaccount.html'">
+                   Study Account 
+                </div>
+            </fieldset>
+        </div>
+            <fieldset>
+            <legend>
+                Go To:
+            </legend>
+            <div class="sortContainer" >
+                <div class="sort sort2" onclick="location.href='result.html'">
+                     Multiple Choice
+                </div>
+                <div class="sort" onclick="location.href='result.html'">
+                   One Word 
+                </div>
+                <div class="sort" onclick="location.href='result.html'">
+                    Flash Card
+                </div>
+                <div class="sort" onclick="location.href='result.html'">
+                    Study Account
+                </div>
+            </fieldset>
+            </div>
+        </section> -->
+        <section class="containerBoard">
+            <section class="tablecontent" style="background:;">
+                <table id="tabla" style="background:red;width:100%;margin-bottom:5px;">
+                    <fieldset>
+                        <legend>
+                            Your 
+                            <!-- Study Account topic  -->
+                            flash card question
+                            memorization level
+                        </legend>
+                        <!-- <br> -->
+                        <tr>
+                            <th>Levels</th>
+                            <!-- <th>roll no</th> -->
+                            <th>Total number of Questions</th>
+                        </tr>
+                        <tr>
+                            <td>Level 0</td>
+                            <!-- <td>cs102/12</td> -->
+                            <td>23</td> 
+                            </tr>
+                        <tr>
+                            <td>Level 1</td>
+                            <!-- <td>cs102/12</td> -->
+                            <td>10</td> 
+                            </tr>
+                        <tr>
+                            <td>Level 2</td>
+                            <!-- <td>cs102/12</td> -->
+                            <td>15</td> 
+                        </tr>
+                        <tr>
+                            <td>Level 3</td>
+                            <!-- <td>cs102/12</td> -->
+                            <td>N/A</td> 
+                        </tr>
+                        <tr>
+                            <td>Level 4</td>
+                            <!-- <td>cs102/12</td> -->
+                            <td>N/A</td> 
+                        </tr>
+                </table>
+                    </fieldset>
+            </section>
+                <!-- <div style="display:flex;align-items: ;justify-content: ;;
+                    justify-content: space-;">
+                <button  class="button20a " onclick="press2()">Add</button>
+                <button  class="button20a " onclick="myFunction()">Save</button>
+                </div> -->
+        </section>     
+
+
+
+
+
+        
+        <section class="containerBoard" sdtyle="flex-direction: ;">
+            <!-- <fieldset>
+            <legend>
+                Type
+            </legend>
+                <div class="sortContainer"  >
+                    <div class="sort sort2" onclick="location.href='fc.html'">
+                        Flash Card
+                    </div>
+                    <div class="sort" onclick="location.href='studyaccount.html'">
+                    Study Account 
+                    </div>
+                </fieldset>
+            </div> -->
+            <fieldset>
+                <legend>
+                    Statistics (Trump Card)
+                </legend>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;" >
+                    <div class="sort sort2" onclick="location.href=''">
+                        Total number of Study Account topic
+                        <!-- OW questions -->
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                    48 
+                    </div>
+                </div>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;" >
+                    <div class="sort sort2" onclick="location.href=''">
+                        Your question contribution
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                    21 
+                    </div>
+                </div>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;" >
+                    <div class="sort sort2" onclick="location.href=''">
+                        Your question contribution percentage(MAYB)
+                        <!-- OW questions -->
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                    50 
+                    </div>
+                </div>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;" >
+                    <div class="sort sort2" onclick="location.href=''">
+                        Your Contributer Postion
+                        <!-- OW questions -->
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                    1 
+                    </div>
+                </div>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;" >
+                    <div class="sort sort2" onclick="location.href=''">
+                        Your question answer memory level position
+                        <!-- OW questions -->
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                    3 
+                    </div>
+                </div>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;" >
+                    <div class="sort sort2" onclick="location.href=''">
+                        Your Challenge
+                        <!-- OW questions -->
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                        rustom Bhai (maybenot)
+                    </div>
+                </div>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;" >
+                    <div class="sort sort2" onclick="location.href=''">
+                        Your Challenger(maybnot)
+                        <!-- OW questions -->
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                    Adi yogi 
+                    </div>
+                </div>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;">
+                    <div class="sort sort2" onclick="location.href=''">
+                        Your question answer memory level position
+                        <!-- OW questions -->
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                    3 
+                    </div>
+                </div>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;">
+                    <div class="sort sort2" onclick="location.href=''">
+                        Server calculation of challenges points
+                        <!-- OW questions -->
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                        356
+                    </div>
+                </div>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;">
+                    <div class="sort sort2" onclick="location.href=''">
+                        Daily score
+                        <!-- OW questions -->
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                        324 
+                    </div>
+                </div>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;" >
+                    <div class="sort sort2" onclick="location.href=''">
+                        weekly score
+                        <!-- OW questions -->
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                        3231
+                    </div>
+                </div>
+                <div class="sortContainer" style="justify-content: space-between;display:flex;">
+                    <div class="sort sort2" onclick="location.href=''">
+                        Monthly score
+                        <!-- OW questions -->
+                    </div>
+                    <div class="sort" onclick="location.href=''">
+                        5353534
+                    </div>
+                </div>
+            </fieldset>
+        </section>
+    </main>
+    <script src="/src/js/app.js"></script>
+</body> 
+
+                
+    <script>
+    
+    // ////////////// number 3 simple goback or and hide button
+
+    // function goBack(){
+    //     window.history.back();
+    // }
+    // document.addEventListener("DOMContentLoaded", function(){
+    //     const backButton = document.getElementsByClassName("introBackIcon");
+    //     if(window.history.length <=1){
+    //         backButton[0].style.visibility = "none";
+    //     }
+    // });
+
+    // ////////////// number 2 go back or any page , no hide button
+
+    // function goBack(){
+    //     if(window.history.length >1){
+    //         window.history.back();
+    //     }else{
+    //         window.location.href = "index.html";
+    //     }
+    // }
+
+    //  ///////////////////// number1
+
+    function goBack(){
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+
+        if(referrer && referrer.startsWith(currentOrigin)){
+            window.history.back();
+        }else{
+            window.location.href = "/index.html";
+            // window.location.href = "home.html";
+            
+        }
+    }
+    // or hide button
+    document.addEventListener("DOMContentLoaded",function(){
+        const backButton = document.getElementsByClassName("introBackIcon");
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+
+        if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+                backButton[0].style.visibility = "hidden";
+        }
+    });
+
+    </script>
+
+    <!-- check table and fieldset interchangeability -->

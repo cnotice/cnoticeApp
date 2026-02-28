@@ -1,0 +1,490 @@
+
+<section id='102' style='z-index:3;
+display:none;
+position:fixed;
+width:100%;
+height:100%;
+background-color:rgb(0,0,0);
+background-color:rgba(0,0,0,0.4);
+justify-content: center;
+align-items: center;
+'>
+    <div class='errorMessageBox' style='
+    background-color:#02013b;
+    padding:40px 10px 30px 10px;
+    border-radius:5px;
+    color:white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width:90%;
+    '>
+        <div>
+            <div class="deckerCard deckerHead"> Confirm :</div>
+            <div class="deckerCard deckerBody" style="text-align: left;" >
+                <div style="border-radius:5px;
+                /* align-items: center; */
+                /* display: flex; */
+                " class=" sortExtend">
+                Yes
+                </div>    
+                <hr>    
+                <div style="border-radius:5px;
+                /* align-items: center; */
+                /* display: flex; */
+                " class=" sortExtend" onclick="confirmFunction2()">
+                No
+                </div>
+            </div>
+            <button class="button17a button0" onclick="confirmFunction2()">Cancel</button>
+        </div>
+    </div>
+</section>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+            
+<body style="height:1000px;">
+
+    <section id='rusure' style='z-index:3;
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    '>
+        <div class='errorMessageBox' style='
+        background-color:#02013b;
+        padding:40px 10px 30px 10px;
+        border-radius:5px;
+        color:white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width:90%;
+        '>
+            <div>
+                <div class="deckerCard deckerHead"> Confirm :</div>
+                    <div class="deckerCard deckerBody" style="text-align: left;" >
+            
+                    
+                        <div style="border-radius:5px;
+                        /* align-items: center; */
+                        /* display: flex; */
+                        " class=" sortExtend" onclick="rusure2()">
+                        Yes
+                        </div>    
+                        <hr>    
+                        <div style="border-radius:5px;
+                        /* align-items: center; */
+                        /* display: flex; */
+                        " class=" sortExtend" onclick="rusure()">
+                        No
+                        </div>
+                    </div>
+                    <button class="button17a button0" onclick="rusure()">Cancel</button>
+                    <!-- <button class="button17a button0" onclick="ok()">Submit</button> -->
+                </div>
+            </div>
+    </section>
+
+                    
+    <audio id="bubbleSound" src="/src/sound/bubble.mp3"></audio>
+    <audio id="clickSound" src="/src/sound/click.mp3"></audio>
+
+
+    <main class="mainContainer ">
+        <section class="introContainer">
+            <div class="introBackIcon" onclick="goBack()"></div>
+            <div class="intro intro1">Institute</div>
+            <div class="introMenuDotsIcon" onclick="alert('intro menu')"></div>
+        </section>
+        <!-- <section  class="highlight">Attendance</section>  -->
+        <section style="display:flex;width:100%;background-color: ;">
+            <div style="width:10%;background-color:;"></div>
+            <div style="width:80%;background-color: ;text-align:center;">
+                <div class="highlighti">Degrees</div>
+            </div>
+            <div style="position:relative;width:10%;background-color: ;">
+                <a href="information.html">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+                </a>
+            </div>
+        </section>
+        <div id="reveal"></div>   
+    </main>
+    <script src="/src/js/app.js"></script>
+</body> 
+
+            
+<script>
+    
+    // ////////////// number 3 simple goback or and hide button
+
+    // function goBack(){
+    //     window.history.back();
+    // }
+    // document.addEventListener("DOMContentLoaded", function(){
+    //     const backButton = document.getElementsByClassName("introBackIcon");
+    //     if(window.history.length <=1){
+    //         backButton[0].style.visibility = "none";
+    //     }
+    // });
+
+    // ////////////// number 2 go back or any page , no hide button
+
+    // function goBack(){
+    //     if(window.history.length >1){
+    //         window.history.back();
+    //     }else{
+    //         window.location.href = "index.html";
+    //     }
+    // }
+
+    //  ///////////////////// number1
+
+    function goBack(){
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+
+        if(referrer && referrer.startsWith(currentOrigin)){
+    playSound('clickSound');
+    
+        setTimeout(function() {
+// //   console.log("This message appears after 2 seconds.");
+// window.location= location;
+            window.history.back();
+}, 200); // 2000 milliseconds = 2 seconds
+document.getElementById('clickSound').currentTime = 0;
+
+        }else{
+    playSound('clickSound','/index.html');
+            // window.location.href = "/index.html";
+        }
+    }
+// or hide button
+document.addEventListener("DOMContentLoaded",function(){
+    const backButton = document.getElementsByClassName("introBackIcon");
+    const referrer = document.referrer;
+    const currentOrigin = window.location.origin;
+
+    if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+            backButton[0].style.visibility = "hidden";
+    }
+});
+
+function sa(x,y){
+    let collection = document.getElementById(x).children[0].className;
+    if(collection == "hide"){
+        document.getElementById(x).children[0].className = "unhide";
+        document.getElementById(y).style.display = "none";
+    }else if(collection == "unhide"){
+        document.getElementById(x).children[0].className = "hide";
+        document.getElementById(y).style.display = "table-row";             
+        // extraInfo.style.display = 'table-row'; 
+    }
+    // alert(collection);
+    }
+    
+</script>
+
+<!-- 190824 -->
+<script>
+    
+    // let urld = `/department`;
+    let urldi = `/degreewoauth`;
+    const tokendi = localStorage.getItem("authToken");
+       let hdi = new Headers();
+            hdi.append('Authorization' ,`Bearer ${tokendi}`);
+            hdi.append('Content-Type' ,'application/json');
+    
+            let reqdi = new Request(urldi,{
+                method: 'GET',
+                // method: 'POST',
+                headers: hdi
+                // ,
+                // body: JSON.stringify(datatosend)
+            });
+    
+            fetch(reqdi)
+            .then(res=>res.json())
+            .then((data)=> 
+            {
+// 250402
+                // console.log(data.processedData);
+// localStorage.setItem("contactcode", JSON.stringify(data.con));
+                data.sort((a,b)=>
+                // data.processedData.sort((a,b)=>
+                    // return
+            a.degree.localeCompare(b.degree)||
+            a.department.localeCompare(b.department)
+            // }
+        );
+            // console.log(data.processedData);
+// 250402
+
+    function getMonthName(monthNumber){
+        const months = [ "January", "February","March", "April","May","June","July","August","September","October","November","December"];
+
+        if(monthNumber >=1 && monthNumber <=12){
+            return months[monthNumber -1];
+        }else{
+            return "Invalid month number";
+        }
+    }
+                let text = `   
+     
+<section class="containerBoard">
+
+<section class="tablecontent" style="background:;"><table id="tabla" style="background:red;width:100%;margin-bottom:5px;">
+    <tr>
+        <th></th>
+        <!-- <th>roll no</th> -->
+        <th>Degree</th>
+        <th>Departments</th>
+        <th>View</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>`
+    
+    data.forEach(function (item, index) {
+    // data.processedData.forEach(function (item, index) {
+    
+    text += `
+    <tr>
+    <td>${index+1}</td>
+    <td>${item.degree.charAt(0).toUpperCase()+ item.degree.slice(1)}</td> 
+    <td>
+        <label for="">
+            <div style="background: ;padding:;margin:">
+    <!-- <input class="input20a" type="checkbox" id="" name="vehicle1" value="Bike"> -->
+ ${item.department.toUpperCase()}
+            </div>
+        </label>
+    </td>
+    
+    <td>
+        <div class="reviseMenuContainer+ppp" style="
+        display: flex;
+        justify-content: center;
+        align-items: center; width:100%;height:40px;"  >
+            
+            <div  style="width:100%;height:;" class="reviseMenu" id="${index}sasa"  onclick="sa('${index}sasa','${index}qqq')">
+                <div class="unhide" onclick="" style=""></div>
+</div>
+        </div></td> 
+    
+    </tr>
+
+
+
+
+    <tr id="${index}qqq" style="display: none;">
+        <td colspan="4" style="text-align:left;padding: 15px;">
+            <div class="sort3 tableSort">
+                Total number of years : 
+
+                <div style="float:right;">${item.totalYear} Years</div>
+            </div>
+            </div>
+            <div class="sort4 tableSort">
+                Total number of Semesters :
+
+                <div style="float:right;"> ${item.semester} Semesters</div>
+            </div>
+            </div>
+            <!-- <br> -->
+            <div class="sort3 tableSort">
+                Total number of Semesters : 
+
+                <div style="float:right;">8 Semesters</div>
+            </div>
+            </div>
+            <div class="sort4 tableSort">`
+                if(item.semesterSystemStatus){
+                    text += `
+                Odd Semester Starting Month : `
+let x = item.semesterOddStart;
+                text+=`
+
+                <div style="float:right;">${getMonthName(x)}</div>
+            </div>
+            </div>
+            <div class="sort3 tableSort">
+                Odd Semester Ending Month : 
+`
+let y = item.semesterOddEnd;
+                text+=`
+
+                <div style="float:right;">${getMonthName(y)}</div>
+            </div>
+            </div>
+            <div class="sort4 tableSort">
+                Even Semester Starting Month : 
+`
+let z = item.semesterEvenStart;
+                text+=`
+
+<div style="float:right;">${getMonthName(z)}</div>
+            </div>
+
+            <div class="sort3 tableSort">
+                Even Semester Ending Month : 
+`
+let a = item.semesterEvenEnd;
+                text+=`
+
+<div style="float:right;">${getMonthName(a)}</div>`
+                }else{
+
+
+
+
+
+
+                    text += `
+                Session Year Starting Month : `
+let x = item.yearStartMonth;
+                text+=`
+
+                <div style="float:right;">${getMonthName(x)}</div>
+            </div>
+            </div>
+            <div class="sort3 tableSort">
+                Session Year Ending Month : 
+`
+let y = item.yearEndMonth;
+                text+=`
+
+                <div style="float:right;">${getMonthName(y)}</div>
+            </div>
+            </div>`
+
+
+
+
+
+
+
+                    
+                }
+
+text +=`
+            </div>
+
+
+
+            <div style="display:flex;justify-content:space-around;margin:10px 5px 0px 5px;">
+                <button onclick="window.location.href='ifp.html'" class="button0">Edit any</button>
+                <button onclick="confirmFunction()" class="button0">Delete</button>
+            </div>
+
+        </td>
+    </tr>`
+    
+
+    // text += index + `: <a href='dashboard2.html' onclick='dothis("${item.subject}","${item._id}")'>${item.subject}</a> of ${item.branch}${item.year}semester:${item.semester}of ${item.degree}<br>`;
+    
+    })
+
+    text +=`
+        
+     </table>
+        </section>
+   
+<div style="display:flex;align-items: ;justify-content: ;;
+      justify-content: space-between;">
+  <button  class="button20a " onclick="rusure1()">Add</button>
+  </div>
+</section>  `;
+
+            // localStorage.setItem("degreeData", JSON.stringify(data));
+            let text1 = "";
+     data.forEach(function (item, index) {
+    //  data.processedData.forEach(function (item, index) {
+    
+    text1 += index + `: <a href='dashboard2.html' onclick='dothis("${item.subject}","${item._id}")'>${item.subject}</a> of ${item.branch}${item.year}semester:${item.semester}of ${item.degree}<br>`;
+    
+    })
+
+            document.getElementById('reveal').innerHTML = text;
+    
+        }
+        )
+    
+
+        
+    function confirmFunction(){
+        document.getElementById('102').style.display="flex";
+    }
+
+    function confirmFunction2(){
+        // document.getElementById('101').style.display="none";
+        document.getElementById('102').style.display="none";
+    }
+
+    function rusure1(){
+        // document.getElementById('101').style.display="none";
+        document.getElementById('rusure').style.display="flex";
+        // onclick="window.location.href='ifp.html'" 
+    }
+    function rusure2(){
+        window.location.href='ifp.html';
+    }
+
+    function rusure(){
+        // document.getElementById('101').style.display="none";
+        document.getElementById('rusure').style.display="none"; 
+    }
+
+    </script>
+    <!-- 190824 -->
+     <script>
+        
+    function playSound(sound, location){
+        // alert(sound);
+    document.getElementById(sound).play();
+
+    if(location){
+            setTimeout(function() {
+    // //   console.log("This message appears after 2 seconds.");
+    window.location= location;
+    }, 1); // 2000 milliseconds = 2 seconds
+    }
+
+    document.getElementById(sound).currentTime = 0;
+    }
+    </script>
+    

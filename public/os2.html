@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PWA IndexedDB Manager</title>
+  <script src="/src/js/idb-umd.js"></script>
+  <script src="/src/js/IndexedDBManager.js"></script>
+</head>
+<body>
+  <h1>IndexedDB Manager Demo</h1>
+
+  <script>
+    const db = new IndexedDBManager('MyPwaDB', 1);
+
+    (async () => {
+      await db.init(['notes', 'tasks']); // Add your stores dynamically
+
+      await db.write('notes', { title: 'First Note', content: 'This is saved offline!' });
+      await db.write('tasks', { task: 'Wash dishes', completed: false });
+
+      const notes = await db.readAll('notes');
+      console.log('Notes:', notes);
+
+      const task = await db.read('tasks', 1);
+      console.log('First Task:', task);
+    })();
+  </script>
+</body>
+</html>

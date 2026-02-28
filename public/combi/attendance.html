@@ -1,0 +1,645 @@
+
+
+      
+<!doctype html>
+<section id='102' style='z-index:3;
+display:none;
+position:fixed;
+width:100%;
+height:100%;
+background-color:rgb(0,0,0);
+background-color:rgba(0,0,0,0.4);
+justify-content: center;
+align-items: center;
+'>
+    <div class='errorMessageBox' style='
+    background-color:#02013b;
+    padding:40px 10px 30px 10px;
+    border-radius:5px;
+    color:white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width:90%;
+    '>
+        <div>
+            <div class="deckerCard deckerHead"> Confirm :</div>
+            <div class="deckerCard deckerBody" style="text-align: left;" >
+                
+                <div style="border-radius:5px;
+                /* align-items: center; */
+                /* display: flex; */
+                " class=" sortExtend">
+                Yes
+                </div>    
+                <hr>    
+                <div style="border-radius:5px;
+                /* align-items: center; */
+                /* display: flex; */
+                " class=" sortExtend" onclick="confirmFunction2()">
+                No
+                </div>
+            </div>
+            <button class="button17a button0" onclick="confirmFunction2()">Cancel</button>
+        </div>
+    </div>
+</section>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+            
+<body >
+    <main class="mainContainer ">
+
+                    
+        <section class="introContainer">
+            <div class="introBackIcon" onclick="goBack()"></div>
+            <!-- <div class="introBackIcon"></div> -->
+            <div class="intro intro1">Subject bssd</div>
+            <div class="introMenuDotsIcon"></div>
+        </section>
+        
+        
+        <!-- <section  class="highlight">Attendance</section>  -->
+
+    
+
+        <section style="display:flex;width:100%;background-color: ;">
+            <div style="width:10%;background-color:;"></div>
+            <div style="width:80%;background-color: ;text-align:center;">
+                <div class="highlighti">Attendance</div>
+            </div>
+            <div style="position:relative;width:10%;background-color: ;">
+                <a href="information.html">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+                </a>
+            </div>
+        </section>
+
+
+             
+     
+        <section class="containerBoard">
+       <!--  -->
+            <section>
+                <div> 
+                    <div style="margin-bottom:5px;"> Go to Date : </div>
+                    <input class="input20a" style="width:110px;height:px ;" type="date">
+                </div>
+                <div style="display:flex;margin:5px 0px 5px 0px;
+                justify-content: space-between;">
+                    <button class="button20a ">Go</button>
+                    <!-- <button class="button20a ">Display Names</button> -->
+                    <button class="button20a attendanceteacherclass" onclick="window.location.href = '/combi/attendance1.html'" >Edit Roll list</button>
+                </div>
+            </section>
+
+            <section id="displayDataAgain"></section>
+            <section id="rollField"></section>
+
+            <div style="display:flex;align-items: center;justify-content: center;;
+                justify-content: space-between;">
+            <button  class="button20a attendanceteacherclass" style="visibility:;">Cancel</button>
+            <button  class="button20a attendanceteacherclass" onclick="confirmFunction()" style="visibility:;">Delete</button>
+            <!-- <button  class="button20a attendanceteacherclass" onclick="myFunction()">Save</button> -->
+            <button  class="button20a attendanceteacherclass" id="send">Save</button>
+            </div>
+        </section>     
+
+    </main>
+    
+    <!-- <script src="exp20.js"></script> -->
+    
+            <script>
+
+    let rolls = ["cs101","cs102","cs103","cs104","cs105","cs106"] ;
+    const rollNameRel = {
+        sub: "bssd",
+        rolls : [
+            {roll:"cs102" , name : "partha   h "},
+            {roll:"cs101" , name : "apurba baisya"},
+            {roll:"cs103" , name : "farhin"},
+            {roll:"cs104" , name : "himadri deka"}
+        ]
+    
+    } ;
+    let content = "";
+    
+    content = `
+    <section class="tablecontent" style="background:;">
+                            
+            <section class="sortContainer" style="margin: 0px 0px -35px 0px;">
+                <div class="sort">
+    Date:13/11/2022
+                </div>
+                <div class="sort sort2">
+                    13 November 2022
+                </div>
+                <div class="sort">
+                     2022
+                </div>
+      </section>
+                  <table id="tabla" style="background:red;width:100%;margin-bottom:5px;">
+                    <tr>
+                      <th>Sl no</th>
+                      <th>roll no</th>
+                      <th>name</th>
+                      <th>present</th>
+                    </tr>`;
+                   
+    
+            for(let i = 1; i<= rolls.length ; i++ ){
+                
+                content += ` 
+        <tr>
+         <td>${i}</td>
+         <td>${rolls[i-1]}</td>`;
+    
+    let found = false;
+            for(let j = 1; j<= rollNameRel.rolls.length ; j++ ){
+                // console.log(rollNameRel.rolls[j-1]);
+                if(rollNameRel.rolls[j-1].roll == rolls[i-1]){
+                    found = true;
+                    console.log("match");
+                    
+        content += ` 
+        <td>${rollNameRel.rolls[j-1].name}</td> `;
+                }
+            }
+            if(found == false){
+                console.log("no match");
+        content += ` 
+        <td>Unregistered</td> `;
+            }
+             
+        content += ` 
+        <td>
+            <label for="${i}">
+                <div style="background: ;padding:;margin:">
+        <input class="input20a" type="checkbox" id="${i}" name="vehicle1" value="Bike">
+                </div>
+            </label>
+        </td>    
+        </tr>
+            
+            `;
+    }
+         content += `</table>
+            </section>`;
+    
+    document.getElementById("rollField").innerHTML = content ;
+    
+            </script>
+     <script>
+
+
+    // function myFunction() {
+    //   let rcount = document.getElementById("tabla").rows.length;
+    // let array = [];
+    // //   let tabdata = "";
+    //   for(let i=1; i<rcount;i++){
+    //     // tabdata += document.getElementById("tabla").rows[i].cells[1].innerHTML;
+    //     // let chk = document.getElementById("tabla").rows[i].cells[3] .getElementsByTagName("input")[0].checked;
+    //     // tabdata += chk;
+
+    //     let tabdata = document.getElementById("tabla").rows[i].cells[1].innerHTML;
+    //     let chk = document.getElementById("tabla").rows[i].cells[3] .getElementsByTagName("input")[0].checked;
+
+    //    array.push({index:tabdata, status: chk})
+        
+
+    //   }
+    // //   alert(tabdata);
+    //   console.log(array[0]);
+    //   console.log(array[1]);
+    //   console.log(array[2]);
+    //   console.log(array[3]);
+    //   console.log(array[4]);
+    //   console.log(array[5]);
+
+    //   console.log(array);
+
+    // array.forEach(function(obj){
+    //     console.log(obj)
+    // })
+
+    // }
+
+
+
+
+
+
+
+
+    /////////////////////////////////290624
+    const subjectId = localStorage.getItem('subjectId');
+    ///// EDIT; UPDATE; GET THEN PATCH
+    console.log(`${subjectId}`);
+    let url = `/attendance/${subjectId}`;
+    let h = new Headers();
+            h.append('Content-Type', 'application/json')
+    let req = new Request(url,{
+        method: 'GET',
+        headers: h
+    })
+
+    //// READ, UPDATE
+    fetch(req).then(res=>res.json()).then((data)=>{
+        console.log(data);
+        console.log("attend");
+
+    let dat = '';
+    for(let i = 0; i<data.registration.length;i++){
+        let nam = data.registration[i].name;
+        let val = data.registration[i].roll;
+    // console.log(val);
+        dat += `<div>${nam}</div><input value=`+data.registration[i].roll+`><br>`;
+    }
+    console.log(data.registration[0].name);
+    console.log(dat);
+
+
+        // <tr><th>Name</th><th>Roll No</th><th>Presence</th></tr>
+    let attdata = `                            
+            <section class="sortContainer" style="margin: 10px 0px -15px 0px;">
+                <div class="sort">
+    Date:13/11/2022
+                </div>
+                <div class="sort sort2">
+                    14 November 2022
+                </div>
+                <div class="sort">
+                     2022
+                </div>
+      </section>
+      <table id="tabla2" style="background:red;width:100%;margin-bottom:5px;">
+        <tr>
+                      <th>Sl No</th>
+                      <th>Roll No</th>
+                      <th>Name</th>
+                      <th>Presence</th>
+                    </tr>`;
+
+    ///////////////////////testing 250408  can be deleted
+
+    console.log(data.attendances);
+        const targetDate = "4444" ;
+        const findAtten = data.attendances.find(a=> a.date === targetDate);
+
+    // if(findAtten){
+    //     const targetRoll = "d5";
+    //     console.log("attendance on", targetDate, ":", findAtten);
+    //     console.log("test roll is on", ":", findAtten.attendance[0].roll);
+    //     const findroll = findAtten.attendance.find(a=> a.roll === targetRoll);
+    //     if(findroll){
+    //         console.log("found roll ", targetRoll, ":", findroll.status);
+
+    //     }else{
+    //         console.log("Nnot able to find roll", targetRoll);
+
+    //     }
+    // }else{
+    //     console.log("No attendance found for date", targetDate);
+    // }
+
+    // for(let i = 1; i<= rolls.length ; i++ ){
+                    
+    //                 content += ` 
+    //         <tr>
+    //          <td>${i}</td>
+    //          <td>${rolls[i-1]}</td>`;
+        
+    //     let found = false;
+    //             for(let j = 1; j<= rollNameRel.rolls.length ; j++ ){
+    //                 // console.log(rollNameRel.rolls[j-1]);
+    //                 if(rollNameRel.rolls[j-1].roll == rolls[i-1]){
+    //                     found = true;
+    //                     console.log("match");
+                        
+    //         content += ` 
+    //         <td>${rollNameRel.rolls[j-1].name}</td> `;
+    //                 }
+    //             }
+    //             if(found == false){
+    //                 console.log("no match");
+    //         content += ` 
+    //         <td>Unregistered</td> `;
+    //             }
+
+    //////////////////////testing 250408  can be deleted
+    for(let i = 0; i<data.registration.length;i++){
+        let nam = data.registration[i].name;
+        let val = data.registration[i].roll;
+    console.log(nam);
+    console.log(val);
+        attdata += `<tr>
+            <td>${i+1}</td>
+            <td>${data.registration[i].roll}</td>
+            <td contenteditable="trued">${nam}</td>
+            <td>`;
+
+                    // 
+    ///////////////////////test 250419
+    let rollTrack = data.registration[i].roll ;
+    console.log(rollTrack);
+
+
+
+    console.log("1111111111;");
+
+    if(findAtten){
+
+        console.log("22222222222222;");
+
+        const findrollA = findAtten.attendance.find(a=> a.roll === rollTrack);  
+    if(findrollA){
+        console.log("3333333333333333333;");
+                console.log("found roll ", rollTrack, ":", findrollA.status);
+                if(findrollA.status == 1){
+                    console.log("444444444444444444444;");
+    console.log("true;");
+                attdata+= `
+    <label for="${i+'notImp'}">
+                    <div style="background: ;padding:;margin:">
+            <input class="input20a" type="checkbox" id="${i+'notImp'}" checked>
+                    </div>
+                </label>
+
+            </td>
+            </tr>`;
+                
+                }else{
+                    console.log("6666666666666666;");
+                    console.log("false;");
+                attdata+= `
+    <label for="${i+'notImp'}">
+                    <div style="background: ;padding:;margin:">
+            <input class="input20a" type="checkbox" id="${i+'notImp'}">
+                    </div>
+                </label>
+
+                </td>
+            </tr>`;
+            
+            }
+
+
+
+            }else{
+                console.log("77777777777777777777777777;");
+                console.log("Nnot able to find roll", rollTrack);
+                attdata+= `
+    <label for="${i+'notImp'}">
+                    <div style="background: ;padding:;margin:">
+            <input class="input20a" type="checkbox" id="${i+'notImp'}">
+                    </div>
+                </label>
+
+                </td>
+                </tr>`;
+                
+
+            }
+        }else{
+            console.log("8888888888888888888888;");
+
+            attdata+= `
+    <label for="${i+'notImp'}">
+                    <div style="background: ;padding:;margin:">
+            <input class="input20a" type="checkbox" id="${i+'notImp'}">
+                    </div>
+            </label>
+
+            </td>
+            </tr>`;
+            
+    }
+
+
+
+
+
+    ///////////////////////test 250419
+                    // 
+                    
+    ///////////////////////test 250419 [cut to dated]
+    //             attdata+= `
+    // <label for="${i+'notImp'}">
+    //                 <div style="background: ;padding:;margin:">
+    //         <input class="input20a" type="checkbox" id="${i+'notImp'}">
+    //                 </div>
+    //             </label>
+
+    //             </td>
+    //             </tr>`;
+                
+    ///////////////////////test 250419 [cut to dated]
+        }
+    // 
+
+    // <td>${i+1}</td>
+    //             <td>${data.registration[i].roll}</td>
+    //             <td>${nam}</td>
+    //             <td>`
+    //             attdata+= `<input type='checkbox'>
+    //             </td>
+
+
+
+
+    // <label for="${i}">
+    //                 <div style="background: ;padding:;margin:">
+    //         <input class="input20a" type="checkbox" id="${i}" name="vehicle1" value="Bike">
+    //                 </div>
+    //             </label>
+    // 
+        attdata += `</table></section>`;
+        // document.getElementById('displayData').innerHTML = dat;
+        document.getElementById('displayDataAgain').innerHTML = attdata;
+    })
+
+    /////////////////////////////////290624
+
+
+    ////////////////////////////////////////////////301124 delete it may be
+
+    document.body.addEventListener('click', function(event){
+        if(event.target && event.target.id === 'send')
+        {
+
+            // send.addEventListener('click', ()=>{ //301124
+                let url = "/attendance ";
+                console.log("sending")
+                
+                // let att = document.getElementById('att').checked; 
+                // console.log(att);
+            
+            //  myFunction() can be deleted as it is NOT IN USE // in use i think dated on 250421
+            function myFunction() {
+                let rcount = document.getElementById("tabla2").rows.length;
+                let array = [];
+                  for(let i=1; i<rcount;i++){
+                    let tabdata = document.getElementById("tabla2").rows[i].cells[1].innerHTML;
+                    let namesdata = document.getElementById("tabla2").rows[i].cells[2].innerHTML;
+                    let chk = document.getElementById("tabla2").rows[i].cells[3] .getElementsByTagName("input")[0].checked;
+                    if(chk == true){
+                        chk = 1;
+                    }else{
+                        chk = 0;
+                    }
+                   array.push({roll:tabdata, status: chk, name: namesdata})
+                  }
+                  return array;
+                }
+            
+            console.log(myFunction())
+            let tes = myFunction();
+            console.log(tes)
+            let sendData = {
+                subjectId : subjectId, 
+            author : 'teacher',
+            attendance : tes,
+            dateData : 4444
+            }
+            
+            console.log(sendData)
+            let h = new Headers();
+                    h.append('Content-Type', 'application/json')
+            let req = new Request(url,{
+                method: 'POST',
+            
+            
+                headers: h
+                ,
+                body: JSON.stringify(sendData)
+                
+            })
+            
+            fetch(req).then(res=>res.json()).then((data)=>{
+                console.log(data);
+            })
+            
+            
+            // }) //301124
+                
+        }
+        })
+
+
+    ////////////////////////////////////////////////301124 delete it may be
+
+
+
+        </script>
+
+        <style>
+            .attendanceteacherclass{
+                /* visibility: hidden; */
+                visibility: visible !important;
+            }
+        </style>
+
+        
+    <script>
+    
+    // ////////////// number 3 simple goback or and hide button
+
+    // function goBack(){
+    //     window.history.back();
+    // }
+    // document.addEventListener("DOMContentLoaded", function(){
+    //     const backButton = document.getElementsByClassName("introBackIcon");
+    //     if(window.history.length <=1){
+    //         backButton[0].style.visibility = "none";
+    //     }
+    // });
+
+    // ////////////// number 2 go back or any page , no hide button
+
+    // function goBack(){
+    //     if(window.history.length >1){
+    //         window.history.back();
+    //     }else{
+    //         window.location.href = "index.html";
+    //     }
+    // }
+
+    //  ///////////////////// number1
+
+    function goBack(){
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+
+        if(referrer && referrer.startsWith(currentOrigin)){
+            window.history.back();
+        }else{
+            window.location.href = "/index.html";
+            }
+        }
+    // or hide button
+    document.addEventListener("DOMContentLoaded",function(){
+        const backButton = document.getElementsByClassName("introBackIcon");
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+
+        if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+                backButton[0].style.visibility = "hidden";
+        }
+    });
+
+    </script>
+    <script src="/src/js/app.js"></script>
+</body> 
+
+                
+    <!-- <script>
+        window.onpageshow = function (event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    };
+    </script> -->
+
+    <style>
+        #tabla2 td{
+            height:30px;
+        }
+        #tabla2 th{
+            height:30px;
+        }
+    </style>
+    <script>
+        
+        function confirmFunction(){
+            document.getElementById('102').style.display="flex";
+        }
+
+        function confirmFunction2(){
+            // document.getElementById('101').style.display="none";
+            document.getElementById('102').style.display="none";
+        }
+    </script>

@@ -1,0 +1,59 @@
+<button id="stopButton">Stop Timer</button>
+<div id="timer" data-time="10"></div>
+<div id="111" style="display:none;">
+  Time's up! <button onclick="ok()">OK</button>
+</div>
+
+
+<script>
+    let timerInterval;  // Make it global
+
+function startTimer() {
+  const el = document.getElementById('timer');
+  let timeLeft;
+
+  if (el.dataset.time !== undefined) {
+    timeLeft = parseInt(el.dataset.time, 10);
+    if (isNaN(timeLeft)) {
+      console.warn('Invalid data-time, using default.');
+      timeLeft = 10;
+    }
+  } else {
+    timeLeft = 10;
+  }
+
+  const updateDisplay = secs => {
+    const mm = String(Math.floor(secs / 60)).padStart(2, '0');
+    const ss = String(secs % 60).padStart(2, '0');
+    el.textContent = `${mm}:${ss}`;
+  };
+
+  updateDisplay(timeLeft);
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      updateDisplay(0);
+      document.getElementById('111').style.display = "flex";
+      return;
+    }
+    updateDisplay(timeLeft);
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+  console.log('Timer stopped by user.');
+}
+
+function ok(){
+  document.getElementById('111').style.display = "none";
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  startTimer();
+  document.getElementById('stopButton').addEventListener('click', stopTimer);
+});
+
+</script>

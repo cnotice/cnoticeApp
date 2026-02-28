@@ -1,0 +1,129 @@
+<!-- contents: 1>simple multichoice answers 2> multiple questions and four multiple answers -->
+
+<!--  1>simple multichoice answers -->
+<!-- <div id="q-c">
+    <p id="q">
+        what is the capital of france
+    </p>
+    <ul id="a"></ul>
+</div>
+
+<script>
+    //fisher yates shuffle
+    const q = {
+        text: "what is ythe capital of france?",
+        correct :"paris",
+        incorrect: ["madrid","berlin","rome"]
+    };
+//fisher yates shuffle 
+    function sa(array){
+        for (let i =array.length - 1; i>0; i--){
+            const j = Math.floor(Math.random()*(i+1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function sq(q){
+        const al = document.getElementById("a");
+        al.innerHTML = "";
+
+        const aa = [...q.incorrect, q.correct];
+        sa(aa);
+
+        aa.forEach(a=>{
+            const li = document.createElement("li");
+            li.textContent =a;
+            li.addEventListener("click",()=>{
+                if(a=== q.correct){
+                    alert("correct");
+                }else{
+                    alert("incorrect");
+                }
+            });
+            al.appendChild(li);
+        });
+    }
+    sq(q);
+</script> -->
+
+
+
+
+
+
+<!-- 2> multiple questions and four multiple answers -->
+<div id="quiz-container">
+    <h2 id="question-text"></h2>
+    <ul id="answer-list"></ul>
+    <button onclick="nextQuestion()">Next</button>
+</div>
+
+<script>
+    const questions = [{
+        text: "what is ythe capital of france?",
+        correct :"paris",
+        incorrect: ["madrid","berlin","rome"]
+    },
+    {
+        text: "which planet is known as the red planet",
+        correct :"mars",
+        incorrect: ["earth","venus","jupiter"]
+    },
+    {
+        text: "what is the largest mammal",
+        correct :"blue whale",
+        incorrect: ["elephant","giraffe","hippo"]
+    }];
+
+    let currentIndex=0;
+
+    function shuffleArray(arr){
+        // console.log(arr.length);
+        for (let i =arr.length - 1; i>0; i--){
+        console.log(arr[i]);
+            console.log("i is" +i);
+            const j = Math.floor(Math.random()*(i+1));
+        console.log(arr[j]);
+            console.log("j is" +j);
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        console.log(arr[i]);
+            console.log("i is" +i);
+        console.log(arr[j]);
+            console.log("j is" +j);
+        }
+    }
+
+    function showQuestion(index){
+        const question = questions[index];
+        const allAnswers = [...question.incorrect, question.correct];
+        shuffleArray(allAnswers);
+
+        document.getElementById("question-text").textContent = question.text;
+        const answerList = document.getElementById("answer-list");
+        answerList.innerHTML = "";
+
+        allAnswers.forEach(a=>{
+            const li = document.createElement("li");
+            li.textContent =a;
+            li.onclick = () => {
+                if(a=== question.correct){
+                    li.style.color = "green";
+                    alert("correct");
+                }else{
+                    li.style.color = "red";
+                    alert("incorrect. correct answer :" +question.correct);
+                }
+            };
+            answerList.appendChild(li);
+        });
+    }
+    function nextQuestion(){
+        currentIndex++;
+        if(currentIndex < questions.length){
+            showQuestion(currentIndex);
+        }else{
+            document.getElementById("quiz-container").innerHTML = "<h2>Quiz-Complete</h2>";
+        }
+    }
+    showQuestion(currentIndex);
+</script>

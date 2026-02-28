@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+
+<body>
+
+    <main class="mainContainer">
+        <div style="width:100%;">
+            <div id="creator" class="">
+                <button class="button0 button17a " onclick="xform()">Create</button>
+            </div>
+        </div>
+
+        <div action="" method="POST" class="" id="">
+            <section id="creation" class="messageContainer" style="visibility:hidden;">
+
+                
+        
+        <!-- <section class="introContainer">
+            <div class="introBackIcon" onclick="goBack()" style="visibility:hidden;"></div>
+            <div class="intro intro1">Dashboard</div>
+            <div class="introMenuDotsIcon" onclick="playSound('clickSound','about.html');"></div>
+        </section> -->
+        <section style="display:flex;width:100%;">
+            <div style="width:10%;"></div>
+            <div style="width:80%;text-align:center;">
+                <div class="highlighti">Creation</div>
+            </div>
+            <div style="position:relative;width:10%;" onclick="playSound('bubbleSound')">
+                <a href="/target-page.html#xxx">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+                </a>
+            </div>
+        </section>
+
+
+                <div class="messageRegistration">
+                    <fieldset>
+                        <legend>
+                        Name of the Institute :
+                        </legend>
+                        <span style="color:white;margin-left:30px;" >Regional Institute of Science And Technology</span>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                        Short Name :
+                        </legend>
+                        <span style="margin-left:30px;color:white;" >RIST</span>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                        Postal Pin Code :
+                        </legend>
+                        <span style="margin-left:30px;color:white;" >781001</span>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                        Select Degree
+                        </legend>
+                        <span style="color:white;margin-left:px;" ><select id="pDegreeId"></select></span>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                        Select Branch
+                        </legend>
+                        <span id="pDepartmentId" style="color:white;margin-left:px;" >
+                            <select style="width:;">
+                                <option>Please Select Degree</option>
+                            </select>
+                        </span>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                        Total Number Of Semesters/Classes
+                        </legend>
+                        <input type="number" class="input0 input10 " style="width:82px;" placeholder="Semesters" id="pSemesterId" required readonly> *
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                        Total Number Of Years
+                        </legend>
+                        <input type="number" class="input0 input10 " style="width:82px;" placeholder="Years" id="pYearId" required readonly> *
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                        Select Session Type : 
+                        </legend>
+                        <button id="sortFirst" class="buttontest2" >Semester</button>
+
+                        <button id="sortSecond" class="buttontest" >Year</button>
+                        <button style="visibility:hidden;" class="buttontest">butt</button>
+                        <fieldset id="textid">
+                            <legend>
+                            Semester Session System
+                            </legend>
+                            <span style="color:white;margin-left:px;" >
+                                Odd Semester Session Start -to- End Month:
+                                <br>
+                                <select id="semesterOddStart" class="monthSelect" style="margin-top:5px;">
+                                </select>
+                            </span>
+
+                            <span style="color:white;margin-right:5px;" > 
+                                -to- 
+                                <select id="semesterOddEnd" class="monthSelect"> 
+                                </select>
+                            </span> *
+                            <br><br>
+                            <span style="color:white;margin-left:px;" >
+                                Even Semester Session Start -to- End Month:
+                                <br>
+                                <select id="semesterEvenStart" class="monthSelect" style="margin-top:5px;">
+                                </select>
+                            </span>
+
+                            <span style="color:white;margin-right:5px;" >
+                                -to- 
+                                <select id="semesterEvenEnd" class="monthSelect">
+                                </select>
+                            </span>  *
+                        </fieldset>
+
+                        <fieldset id="imageid">
+                            <legend>
+                            Year Session System
+                            </legend>
+
+                            <span style="color:white;margin-left:px;" >Year Start Month -to- Year End Month :<br>
+                                <select id="yearStartMonth" class="monthSelect" style="margin-top:5px;">
+                                </select>
+                            </span>
+
+                            <span style="color:white;margin-right:5px;" > -to- <select id="yearEndMonth" class="monthSelect"> </select></span> *
+                            <br><br>
+
+                        </fieldset>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                        Contact Code For Teachers
+                        </legend>
+                        <span style="color:white;">
+                            <div style="position: relative;">
+                            <input  id="pContactcode" data-maxlength="10" name="topic" type="" class=" input0 input17a   classIdKeys" style="width:100px;padding-right:50px;margin-top:11px;" placeholder="Contact Code">
+                                <div class=" classIdTextCountKeys" style="
+                                position:absolute;
+                                top:21px;
+                                right:210px;width:45px;height:40px;">0/10
+                                </div>
+                            </div>  
+                        </span>
+                    </fieldset>
+
+                    <div style="
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;">
+
+                        <button  class="button0 button17a " style="color:white;bottom:0px;" id="submit">Done</button>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- brlow not needed exp19.js script file -->
+    <!-- <script src="exp19.js"></script> -->
+    <script src="studyaccount.js"></script>
+    <script src="ifp.js"></script>
+
+    <script>
+
+    function xform(){
+    document.getElementById('creator').style.display = 'none';
+    document.getElementById('creation').style.visibility = 'visible';
+    }
+
+    </script>
+
+
+    <script> 
+    let data1 = {
+    "degree" : "engineering",
+    "semester" : ["8"],
+    "courseDuration" : ["4"],
+    "department" : ['cse','mech','eee','ece']
+    }
+    let data2 = {
+    "degree" : "mba",
+    "semester" : ["4"],
+    "courseDuration" : ["2"],
+    "department" : ['hr','sales','mktr','retail']
+    }
+    let data3= {
+    "degree" : "medical",
+    "semester" : ["10"],
+    "courseDuration" : ["5"],
+    "department" : ['mbbs','bds','ms','md']
+    }
+    let data4 = {
+    "degree" : "pharmacy",
+    "semester" : ["4"],
+    "courseDuration" : ["2"],
+    "department" : ['medicine']
+    }
+    let data6 = {
+    "degree" : "Senior Secondary Education",
+    "semester" : ["2"],
+    "courseDuration" : ["2"],
+    "department" : ['arts','science','commerce']
+    }
+    let data7 = {
+    "degree" : "Primary to Secondary Education",
+    "semester" : ["10"],
+    "courseDuration" : ["10"],
+    "department" : ['Class 1 to 10']
+    }
+
+    let data5 = [data1,data2,data3,data4,data6,data7]; 
+    let dataset = data5.map(obj=>obj['degree']); 
+    document.getElementById('pDegreeId').innerHTML = selectHtmlLook(dataset);
+
+    pDegreeId.addEventListener('change',function(){
+    console.log("changeing")
+    let selected = pDegreeId.value;
+    console.log(selected);
+    let department = getDepartmentArray(selected);
+    console.log(department);
+    sessionYear();
+    document.getElementById('pDepartmentId').innerHTML = checkboxHtmlLook(department);
+    });
+
+    function getDepartmentArray(depart){
+    const depar = new Array([...new Set(data5.filter(obj=>obj.degree === depart).map(obj =>obj.department))]);
+    let combi = [];
+    for(let i = 0; i<depar[0].length;i++){
+    combi.push(depar[0][i]);
+    }
+    console.log(combi[0]);
+    return combi[0];
+    }
+
+    function selectHtmlLook(arrayValues){
+    console.log("reached");
+    let str = "";
+    str = `<option value='null'>Please Select </option>`;
+    for(let i = 0; i<arrayValues.length;i++){
+    str += `<option>${arrayValues[i]}</option>`;
+    }
+    str += "";
+    return str;
+    }
+
+    function checkboxHtmlLook(arrayValues){
+    let values = arrayValues ;
+    /////////////////////////////////////////////////////////250824
+    // let huhu = [];
+    // console.log(huhu);
+    // if(huhu==0){
+    //     console.log("nothing");
+    //     str = `<p >All departments have been listed already</p><br>`;
+
+    //     return str
+    // }else{
+
+    let str2 = "";
+    for(let i = 0; i<values.length;i++){
+    str2 += `<input type="checkbox" id="${values[i]}" name="department" value="${values[i]}"><label for="${values[i]}">${values[i]}</label><br>`;
+    }
+    return str2
+
+    // }
+    /////////////////////////////////////////////////////////250824
+    }
+
+    function sessionYear(that){
+    let selectedValue = document.getElementById('pDegreeId').value;  
+    data5.forEach(obj=>{
+    if(obj['degree'] === selectedValue){
+    resultOfSearch =
+    obj['courseDuration'];
+    resultOfSearch2 =
+    obj['semester'];
+    }
+    })
+    document.getElementById('pSemesterId').value = resultOfSearch2;
+    document.getElementById('pYearId').value = resultOfSearch;
+    }
+
+    submit.addEventListener("click",(e)=>{
+    let url = `/degree`;
+    let yearStartMonth = document.getElementById('yearStartMonth').value;    
+    let yearEndMonth = document.getElementById('yearEndMonth').value;  
+    let semesterOddStart = document.getElementById('semesterOddStart').value;    
+    let semesterOddEnd = document.getElementById('semesterOddEnd').value;  
+    let semesterEvenStart = document.getElementById('semesterEvenStart').value;  
+    let semesterEvenEnd = document.getElementById('semesterEvenEnd').value;  
+    // let degree = document.getElementById('pDegreeId').childNodes[0].value;   
+    let degree = document.getElementById('pDegreeId').value;   
+    let semester = document.getElementById('pSemesterId').value;   
+    let totalYear = document.getElementById('pYearId').value;     
+    let contactcode = document.getElementById('pContactcode').value;   
+    let sendData = {
+    degree,
+    department :[],
+    semester,
+    semesterSystemStatus : semesterSystemStatus,
+    courseDuration:semester,
+    totalYear,
+    yearStartMonth,
+    yearEndMonth,
+    semesterOddStart,
+    semesterOddEnd,
+    semesterEvenStart,
+    semesterEvenEnd,
+    contactcode
+    }
+    document.querySelectorAll('input[name="department"]:checked').forEach(depart =>{
+    sendData.department.push(depart.value)
+    })
+
+    function isEmpty(value){
+    if(value === null || value === undefined || value === 'null' || value.length === 0 || value === '0'){
+    return true;
+    }
+    return false;
+    }
+
+    const token = localStorage.getItem("authToken");
+    let h = new Headers();
+    h.append('Authorization' ,`Bearer ${token}`);
+    h.append('Content-Type' ,'application/json');
+    let req = new Request(url,{
+    method: 'POST',
+    headers: h,
+    body: JSON.stringify(sendData)
+    });
+    fetch(req)
+    .then(res=>res.json())
+    .then((data)=> 
+    {
+    console.log(data);
+    // testing below line
+            // localStorage.setItem("degreeData", JSON.stringify(data));
+    }
+    )
+    })
+
+    const months = [ 'Please Select', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    const selectElementQuery = document.querySelectorAll('.monthSelect');
+    for(let i = 0 ; i<selectElementQuery.length;i++){
+    months.forEach(function(monthName, index){
+    const option = document.createElement('option');
+    option.value = index;
+    option.textContent = monthName;
+    selectElementQuery[i].appendChild(option);
+    });
+    }
+
+    testDrive.addEventListener('click', ()=>{
+    let semesterOddStart = document.getElementById('semesterOddStart').value;    
+    let semesterOddEnd = document.getElementById('semesterOddEnd').value;  
+    let semesterEvenStart = document.getElementById('semesterEvenStart').value;  
+    let semesterEvenEnd = document.getElementById('semesterEvenEnd').value;  
+    let degree = document.getElementById('pDegreeId').childNodes[0].value;    
+    let semester = document.getElementById('pSemesterId').value;   
+    let totalYear = document.getElementById('pYearId').value;   
+    let sendData = {
+    degree,
+    department :[],
+    semester,
+    totalYear,
+    semesterOddStart,
+    semesterOddEnd,
+    semesterEvenStart,
+    semesterEvenEnd
+    }
+    document.querySelectorAll('input[name="department"]:checked').forEach(depart =>{
+    sendData.department.push(depart.value)
+    })
+    })
+    </script>
+
+
+    <!-- 190824 -->
+    <script>
+
+    // let urld = `/department`;
+    let urld = `/degree`;
+    const tokend = localStorage.getItem("authToken");
+    let hd = new Headers();
+    hd.append('Authorization' ,`Bearer ${tokend}`);
+    hd.append('Content-Type' ,'application/json');
+
+    let reqd = new Request(urld,{
+    method: 'GET',
+    // method: 'POST',
+    headers: hd
+    // ,
+    // body: JSON.stringify(datatosend)
+    });
+
+    fetch(reqd)
+    .then(res=>res.json())
+    .then((pokua)=> 
+    {
+    // document.getElementById('departmentId').innerHTML = JSON.stringify(data);
+    console.log(pokua);
+    localStorage.setItem("degreeData", JSON.stringify(pokua));
+
+
+    ///////////////////////////xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxdown
+    let data2 = [...new Set(pokua.map(obj=>obj.degree))];
+    console.log(data2);
+    let text = "";
+    pokua.forEach(function (item, index) {
+
+    text += index + `: <a href='dashboard2.html' onclick='dothis("${item.degree}","${item._id}")'>Department:${item.department} of ${item.degree} degree</a><br>`;
+
+    })
+
+
+    console.log([...new Set(pokua.map(obj=>obj.degree))])
+    document.getElementById('departmentId').innerHTML = text;
+    // console.log(data);
+    ////////////////////////////xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxup
+    }
+    )
+
+    //////////////////////////
+    </script>
+    <!-- 190824 -->
+
+
+    <!-- 250525 -->
+
+    <script>
+
+    // List of all the clickable IDs
+    const ids = ["sortFirst", "sortSecond"];
+
+    // Define unique functions for each div
+    let semesterSystemStatus="true";
+    function handleDiv1() {
+    console.log("Div 1 clicked");
+    // document.getElementById('reveal').innerHTML = "drgrrdgtrt";
+    document.getElementById('textid').style.display = "";
+    document.getElementById('imageid').style.display = "none";
+    semesterSystemStatus="true";
+    }
+
+    function handleDiv2() {
+    console.log("Div 2 clicked");
+    // document.getElementById('reveal').innerHTML = "fhjfdthtdh";
+    document.getElementById('textid').style.display = "none";
+    document.getElementById('imageid').style.display = "";
+    semesterSystemStatus="false";
+    }
+
+
+    // Map each ID to its corresponding handler
+    const handlers = {
+    sortFirst: handleDiv1,
+    sortSecond: handleDiv2
+    };
+
+    ids.forEach(function(id) {
+    document.getElementById(id).addEventListener("click", function() {
+    // First, remove the "active" class from all
+    ids.forEach(function(otherId) {
+    // document.getElementById(otherId).classList.remove("buttontest2");
+    document.getElementById(otherId).classList.add("buttontest");
+    });
+
+    // Then add it only to the clicked one
+    this.classList.add("buttontest2");
+    this.classList.remove("buttontest");
+
+
+    // Call the corresponding function
+    handlers[id]();
+    });
+    });
+
+    handleDiv1();
+
+
+
+    const contactcode = localStorage.getItem('contactcode');
+    document.getElementById('pContactcode').value = 
+    // contactcode;
+    JSON.parse(contactcode);
+    </script>
+    <!-- 250525 -->
+    <script src="/src/js/app.js"></script>
+
+<script src="payload.js"></script>
+<script>
+
+      if(payload.designation !== "institute"){
+        // document.location = `/combi/pageDoesNotExist.html`;
+
+      }
+
+console.log(payload.designation);
+
+</script>
+</body> 

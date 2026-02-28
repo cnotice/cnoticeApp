@@ -1,0 +1,313 @@
+
+
+  <link rel="stylesheet" href="style.css">
+
+
+
+<style>
+    .overlay{
+        /* position:fixed;
+        inset:0;
+        background:green;
+        opacity:0;
+        visibility: hidden;
+        pointer-events:none;
+        transition: opacity 0.9s ease,
+        visibility 0s linear 0.9s; */
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100dvh;
+        background:rgba(0,0,0,0.7);
+        transform:translateX(-100%);
+        transition:transform 0.9s
+        cubic-bezier(0.22, 1, 0.36,1);
+        z-index: 9;
+    }
+
+    .overlay.active{
+        /* opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+        transition: opacity 0.9s ease; */
+    }
+
+    
+    .menu{
+        position:fixed;
+        top:0;
+        right:0;
+        width:50%;
+        height:100dvh;
+        background:red;
+        padding:20px;
+        transform:translate(100%);
+        transition: transform .9s ease;
+        z-index:10;
+    }
+
+    .menu a{
+        display:block;
+        padding:15px 0;
+        color:white;
+        text-decoration: none;
+    }
+
+    .menu.active{
+        /* opacity:1; */
+        transform: translateX(0);
+    }
+
+    .overlay.active{
+        /* opacity:1;
+         */
+         
+        transform: translateX(-50%);
+        /* pointer-events: auto; */
+    }
+
+
+</style>
+
+
+    <section id='101' 
+    onclick="ok()"
+    style='z-index:3;
+display:none;
+position:fixed;
+width:100%;
+height:100%;
+background-color:rgb(0,0,0);
+background-color:rgba(0,0,0,0.4);
+justify-content: ;
+align-items: ;
+'>
+    <div 
+    onclick="event.stopPropagation()"
+    class='' style='
+    background-color:white;
+    color:white;
+    text-align: ;
+    display: flex;
+    justify-content: ;
+    width:50%;
+    float:right;
+    height:100%
+    '>
+        <div style="display:;float:">
+        <button class="" onclick="ok()">Cancel</button>
+    </div>
+    </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="introContainer" style="width:100%;" id="menuB">
+    <div style="width:95%;" class="" onclick="window.location='';"></div>
+    <!-- <div class="introMenuDotsIcon" id="menuBtn" onclick="fetch()"></div> -->
+    <div class="introMenuDotsIcon" id="menuBtn"></div>
+
+    
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+    </div>
+</section>
+
+
+
+
+
+  
+<section style="width:100%; background-color:white;height:90px;">
+
+    <div style="width:50%;background-color:pink;height:90px;float:left;">
+
+    <!-- //<di/////v style="display:flex; justify-content: space-between;margin-right:100px;;font-size: 25px;padding:30px;"> /////// -->
+        <div style="display:flex;height:100%;padding:;margin-left:50px;">
+            <div style="background-color:red;width:300px; height:100%;"> icon</div>
+            <div style="background-color:yellow;width:300px;; height:100%; display:flex;"> 
+                article<br>
+                again
+            </div>
+        </div>
+    </div>
+        
+    <div id="menuA" style="width:50%;background-color:brown;height:90px;float:right;">
+
+        <div style="display:flex; justify-content: space-between;margin-right:100px;;font-size: 25px;padding:30px;">
+            <a> home</a>
+            <a> gallery</a>
+            <a> contact us</a>
+        </div>
+
+    </div>
+</section>
+
+
+<div class="slider" style="width:100%; background-color:green;height:100vh;display:flex; flex-direction:column; justify-content:space-between; align-items:center;">
+    <div style="background-color:red;width:300px;height:20%;font-size:40px;justify-content:center; align-items:center; display:flex;">Heading Gallery</div>
+    <div style="background-color:pink;width:200px;height:70%;">article</div>
+    <div style="background-color:blue;width:200px;height:10%;">button</div>
+</div>
+
+<section class="photo2WithDesciption" style="width:100%; background-color:blue;height:500px;"></section>
+
+
+<section class="gallery" style="width:100%; background-color:pink;height:500px;">Gallery</section>
+
+
+<section class="footer">
+
+    <div class="footer-item" >
+
+        <div  style="background-color:maroon;width:100%;height:25%;">icon</div>
+        <div  style="background-color:blue;width:100%;height:25%;">text</div>
+        <div  style="background-color:green;width:100%;height:25%;">links</div>
+        <div  style="background-color:yellow;width:100%;height:25%;">text</div>
+
+    </div>
+    <div class="footer-item" style="background-color:red;">article 
+        
+        <div style="background-color:pink;display:flex;"> 
+
+            <div class="arrow-right">
+            </div> 
+
+            <div>one</div>
+        </div>
+
+
+        <a class="clickableAnchor" href="/combi.html">
+
+            <div style="background-color:yellow;display:flex;height:60px; justify-content:; align-items:center; "> 
+                <div class="arrow-right">
+                </div> 
+                <p>one</p>
+            </div>
+        </a>
+
+
+        <p>two</p>
+        <p>three</p>
+        <p>four</p>
+    </div>
+    <div class="footer-item" style="background-color:orange" >articleB</div>
+
+
+</section>
+
+
+<section style="justify-content:center;width:100%;align-items:center;display:flex;"> 
+Copyright @ 2026. All rights reserved.
+</section>
+
+
+
+
+<script>
+    
+    function fetch(){
+        event.stopPropagation();
+        document.getElementById('101').style.display="block";
+    }
+
+
+    function ok(){
+        document.getElementById('101').style.display="none";
+    }
+
+</script>
+
+
+<script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    const overlay = document.getElementById('overlay');
+
+    btn.addEventListener('click',()=> {
+        menu.classList.add('active');
+        overlay.classList.add('active');
+    });
+
+    
+    overlay.addEventListener('click',()=> {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+</script>
+
+
+
+
+
+<style>
+    .arrow-right {
+        margin-right:10px;
+  width: 10px;
+  height: 10px;
+  border-right: 3px solid #333;
+  border-bottom: 3px solid #333;
+  transform: rotate(-45deg);
+
+    }
+    
+    .footer{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        padding:20px;
+        background:#222;
+        color:white;
+    }
+
+    .footer-item{
+        width:100%;
+        margin-bottom:15px;
+    }
+
+    .footer-item:last-child{
+        margin-bottom:0;
+    }
+
+    @media(min-width:768px){
+        #menuB{
+            /* display:none; */
+        }
+        
+        #menuA{
+            /* display:none; */
+        }
+
+
+        .footer{
+            flex-direction:row;
+            justify-content:space-between;
+            align-items:flex-start;
+            text-align:left;
+        }
+
+        .footer-item{
+            width: 33%;
+            margin-bottom:0;
+            height:100%;
+
+            padding:10px;
+            box-sizing:border-box;
+        }
+    }
+        </style>

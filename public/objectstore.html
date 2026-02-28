@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic IDB Example (Custom idb.js)</title>
+  <script src="/src/js/idb.js"></script>
+</head>
+<body>
+  <h1>Custom idb.js — Dynamic Stores + CRUD</h1>
+
+  <script>
+    const DB_NAME = 'myDynamicDB';
+    const DEVELOPER_VERSION = 1;
+    const META_STORE = '__meta__';
+
+    let dbPromise;
+
+    // Load meta
+    async function getMeta() {
+      const db = await idb.open(DB_NAME, DEVELOPER_VERSION * 1000, function(upgradeDb) {
+        if (!upgradeDb.objectStoreNames.contains(META_STORE)) {
+          upgradeDb.createObjectStore(META_STORE);
+        }
+      });
+
+      const tx = db.transaction(META_STORE, 'readonly');
+      const store = tx.objectStore(META_STORE);
+      const userVersion = await store.get('userVersion') || 0;
+      const userStores = await store.get('userStores') || [];
+      await tx.complete;
+      return { userVersion, userStores };
+    }
+
+    async function saveMeta(userVersion, userStores) {
+      const db = await idb.open(DB_NAME, DEVELOPER_VERSION * 1000, function(upgradeDb) {
+        if (!upgradeDb.objectStoreNames.contains(META_STORE)) {
+          upgradeDb.createObjectStore(META_STORE);
+        }
+      });
+
+      const tx = db.transaction(META_STORE, 'readwrite');
+      const store = tx.objectStore(META_STORE);
+      await store.put(userVersion, 'userVersion');
+      await store.put(userStores, 'userStores');
+      await tx.complete;
+    }
+
+    // Open or upgrade DB with new user-defined stores
+    async function openDynamicDB(newStores = []) {
+      const { userVersion, userStores } = await getMeta();
+      const storesToAdd = newStores.filter(s => !userStores.includes(s));
+
+      if (storesToAdd.length === 0) {
+        dbPromise = idb.open(DB_NAME, DEVELOPER_VERSION * 1000 + userVersion);
+        return dbPromise;
+      }
+
+      const nextUserVersion = userVersion + 1;
+      const version = DEVELOPER_VERSION * 1000 + nextUserVersion;
+      const allStores = [...userStores, ...storesToAdd];
+
+      dbPromise = idb.open(DB_NAME, version, function(upgradeDb) {
+        if (!upgradeDb.objectStoreNames.contains(META_STORE)) {
+          upgradeDb.createObjectStore(META_STORE);
+        }
+        for (const store of storesToAdd) {
+          if (!upgradeDb.objectStoreNames.contains(store)) {
+            upgradeDb.createObjectStore(store, { keyPath: 'id', autoIncrement: true });
+          }
+        }
+      });
+
+      await saveMeta(nextUserVersion, allStores);
+      return dbPromise;
+    }
+
+    // --- CRUD Utilities ---
+
+    async function writeData(storeName, data) {
+      const db = await dbPromise;
+      const tx = db.transaction(storeName, 'readwrite');
+      await tx.objectStore(storeName).put(data);
+      return tx.complete;
+    }
+
+    async function readAllData(storeName) {
+      const db = await dbPromise;
+      const tx = db.transaction(storeName, 'readonly');
+      const result = await tx.objectStore(storeName).getAll();
+      await tx.complete;
+      return result;
+    }
+
+    async function readData(storeName, key) {
+      const db = await dbPromise;
+      const tx = db.transaction(storeName, 'readonly');
+      const result = await tx.objectStore(storeName).get(key);
+      await tx.complete;
+      return result;
+    }
+
+    async function deleteItem(storeName, key) {
+      const db = await dbPromise;
+      const tx = db.transaction(storeName, 'readwrite');
+      await tx.objectStore(storeName).delete(key);
+      return tx.complete;
+    }
+
+    async function clearAllData(storeName) {
+      const db = await dbPromise;
+      const tx = db.transaction(storeName, 'readwrite');
+      await tx.objectStore(storeName).clear();
+      return tx.complete;
+    }
+
+    // --- Example Usage ---
+
+    (async () => {
+      await openDynamicDB(['notes', 'tasks']);
+
+      await writeData('notes', { title: 'Dynamic Note', content: 'This works!' });
+      await writeData('tasks', { title: 'Do the dishes', completed: false });
+
+      const notes = await readAllData('notes');
+      console.log('All Notes:', notes);
+
+      const note1 = await readData('notes', 1);
+      console.log('Note with ID 1:', note1);
+
+      // await deleteItem('notes', 1);
+      // await clearAllData('tasks');
+    })();
+  </script>
+</body>
+</html>
