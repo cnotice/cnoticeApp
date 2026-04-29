@@ -1,6 +1,9 @@
-const mongoose = require ('mongoose');
+// const mongoose = require ('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/notes-app-api',{
-    useNewUrlParser: true
-})
+// mongoose.connect('mongodb://127.0.0.1:27017/notes-app-api',{
+//     useNewUrlParser: true
+// })
 
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URL);
