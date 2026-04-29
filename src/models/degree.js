@@ -2,6 +2,9 @@ const mongoose = require ('mongoose');
 
 // const Degree = mongoose.model('Degreeccbb',{
 const degreeSchema = new mongoose.Schema({
+                    // let d = req.body.department ;
+                    // let dsd = b + s+ d;
+                        // dsd: b+s+depart, 
     dsd:{
         type: String
         // ,
@@ -56,7 +59,12 @@ const degreeSchema = new mongoose.Schema({
     },
     author:{
         type: String
-    }
+    },
+        institute:{
+            type: mongoose.Schema.Types.ObjectId,
+            // required: true,
+            ref: 'Institute'
+        },
 })
 
 
@@ -70,12 +78,7 @@ const degreeSchema = new mongoose.Schema({
 
 degreeSchema.methods.generateUpdateDegree = async function(data){
     const {semesterSystemStatus, semesterOddStart, semesterOddEnd, semesterEvenStart, semesterEvenEnd, yearStartMonth, yearEndMonth} = data;
-    console.log("ggggg")
     const user = this;
-    // console.log(data)
-    // console.log("user")
-    // console.log(user)
-    // console.log("user")
      user.semesterSystemStatus = semesterSystemStatus;
     user.semesterOddStart = semesterOddStart; 
     user.semesterOddEnd = semesterOddEnd;
@@ -85,8 +88,6 @@ degreeSchema.methods.generateUpdateDegree = async function(data){
      user.yearEndMonth = yearEndMonth;
     
     // user.bssds = user.bssds.concat(data)
-    // console.log(user.bssds);
-    // console.log(data)
     await user.save();
     
     return user;

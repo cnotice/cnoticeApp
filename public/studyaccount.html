@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+<body >
+    <main class="mainContainer ">
+        <section id='111' style='z-index:3;
+            display:none;
+            position:fixed;
+            width:100%;
+            height:100%;
+            background-color:rgb(0,0,0);
+            background-color:rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+            '>
+            <div class='errorMessageBox' style='
+            background-color:#02013b;
+            padding:40px 10px 30px 10px;
+            border-radius:5px;
+            color:white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            width:90%;
+            '>
+            <div>
+                    <!-- <div class="deckerCard deckerHead"> Please choose an option right now:</div>
+                    <div class="deckerCard deckerBody" style="text-align: left;" >
+                    
+                <div style="border-radius:5px;
+                " class=" sortExtend" onclick="creategetmodel()">
+                Edit
+                </div>    
+                <hr>    
+                <div style="border-radius:5px;
+                " class=" sortExtend" onclick="confirmFunction()">
+                Delete
+                </div>
+                    </div> -->
+                <div style="position:relative;"><div class="" style="width:300px;">
+                    <div id="id3" onclick="" class="scoreBox" style="visibility:;">
+                        <div style="display: flex;flex-direction: row-reverse;"> 
+                            <div class="trophy4xShield" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                            <div class="timer" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                            <div class="trophy4xShield" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                        </div>
+                        <div id="mess1" >Time's up!<br>Atleast you tried.
+                  </div>
+                        <span  id="congra"></span>
+                  
+                        <div style="background-color:;font-size:px;margin:10px 0px 0px 0px;">
+
+                            <!-- imp -->
+                            <!-- Streak : 0 [atleast written once, renews every time]
+                            combo: 2[with 2 minutes written how many]
+                            Total: how many total have you contributed -->
+                            <!-- <div style="margin-top:5px;
+                                display: flex;
+                                flex-direction: row; 
+                                justify-content: space-around;"> 
+                                <button class="button0"> Play Weak Subject</button> <button class="button0"> Play Again </button>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- imp -->
+                    <!-- <button class="button17a button0" onclick="ok2()">CancelSHDbQuit</button> -->
+                    <button class="button17a button0" onclick="location.reload()">Again</button>
+                </div>
+            </div>
+        </section>
+
+
+        <div id="errorModal"></div>
+        <section class="introContainer">
+            <!-- <div class="introBackIcon" onclick="goBack()"></div> -->
+            <div style="
+            width:35px;
+            height:40px;
+            margin:0px 0px 0px 3px;"></div>
+            <div class="intro intro1">Study Account</div>
+            <div class="introMenuDotsIcon"></div>
+        </section>
+
+        <!-- <section class="highlight">Study Account</section>  -->
+
+
+        <section style="display:flex;width:100%;background-color: ;">
+            <div style="width:10%;background-color:;"></div>
+            <!-- <div style="width:80%;background-color: ;text-align:center;">
+                <div class="highlighti">Keywords</div>
+            </div> -->
+
+            
+            <div style="width:80%;text-align:center;" class="marqueeMain" onclick="marqueeClick(this)">
+                <div class="marqueeContainerHorizontal marqueeContainer highlighti" style=" width:200px;text-align:center;" data-direction="horizontal">
+                    <div class="marqueeTextHorizontal marqueeText" id="highlighti" style="white-space: nowrap;  
+                    ">Subject</div>
+                </div>
+            </div>
+            <div style="position:relative;width:10%;background-color: ;">
+                <a href="information.html">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+                </a>
+            </div>
+        </section>
+
+
+        <section class="containerBoard" style="">
+            <!-- <fieldset>
+            <legend>
+                Type
+            </legend>
+                <div class="sortContainer"  >
+                    <div class="sort sort2" onclick="location.href='fc.html'">
+                        Flash Card
+                    </div>
+                    <div class="sort" onclick="location.href='studyaccount.html'">
+                    Study Account 
+                    </div>
+                </fieldset>
+            </div> -->
+            <fieldset>
+            <legend>
+                Function
+            </legend>
+            <div class="sortContainer" >
+                <div class="sort sort2" onclick="location.href='#sacreate'">
+                    Create
+                </div>
+                <!-- <div class="sort" onclick="location.href='#quizid'"> -->
+                    <div class="sort" onclick="location.href='revise.html'">
+                Revise 
+                <!-- <a href="target-page.html#yyy" class="button">Go to Section</a> -->
+                </div>
+                <!-- <div class="sort" onclick="location.href='revfc.html'">
+                    Edit
+                </div> -->
+                <div class="sort" onclick="location.href='result.html'">
+                    Score
+                </div>
+                <div class="sort" onclick="location.href='settings.html#someid'">
+                    Settings
+                </div>
+            </fieldset>
+            </div>
+        </section>
+
+        
+    
+        <section class="sortContainer">
+            <div class="sort sort2" id="sacreate">
+                Create
+            </div>
+            <!-- <div class="sort sort2">
+            date ascending 
+            </div>
+            <div class="sort">
+            date descending 
+            </div>
+            <div class="sort">
+            alphabetically
+            </div> -->
+        </section>
+
+    
+        <section class="sortContainer">
+            <!-- <div class="sort">
+                Topic Number : 1
+            </div>
+            <div class="sort">
+                Limit : 5/5
+            </div> -->
+            <div class="sort">
+                Time : <span id="timer" data-time="50000"> 02:00</span>
+            </div>
+        </section>
+
+
+
+        
+        <section id="noOfStuSection" class="containerBoard">
+        
+    
+            <fieldset>
+                <legend>
+                    Unit Number
+                </legend>
+                <span style="color:white;" >
+                    
+                    <!-- <input class="input0 input17a " type="number" style="width:80px" id="stunumber"> -->
+                
+                    <!-- <div style="width:90px;position: relative;"> -->
+
+                    <input name="third" type="number" min="0" max="20" onkeydown="blockInvalidKeys(event)" onchange="enforceMaxMin(this)" class="input0 input10 " id="keys" style="width:80px;background: ;padding:px;" placeholder="Number">
+                    
+                    <!-- <div id="count" class="keyCounter" style="width:45px;background-color:black ;border-radius:0px 5px 5px 0px ;height:40px;margin:3px -119px;">0/30</div> -->
+                        <!-- <div style="width:20px;background-color:black ;border-radius:500px ;height:20px;margin:10px -135px;" class="mcInputLine" onclick="clearInput('third')">X</div> -->
+                    <!-- </div> -->
+                </span>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    Unit Name
+                </legend>
+                <span style="color:white;" >
+                    
+                    <!-- <input class="input0 input17a " id="subject"> -->
+                    
+                    <div style="width:90px;position: relative;">
+
+                        <input data-maxlength="40" name="third" type="" class="input0 input10 classIdKeys" id="keys" style="width:300px;background: ;padding-right:50px;" placeholder="Unit Name">
+                        
+                        <div id="count" class="keyCounter classIdTextCountKeys" style="width:45px;background-color: ;border-radius:0px 5px 5px 0px ;height:40px;margin:3px -270px;">0/40</div>
+                        <!-- <div style="width:20px;background-color:black ;border-radius:500px ;height:20px;margin:10px -135px;" class="mcInputLine" onclick="clearInput('third')">X</div> -->
+                    </div>  
+                
+                </span>
+            
+            </fieldset>
+    
+    
+        
+            <fieldset>
+                <legend>
+                    Topic
+                </legend>
+                <span style="color:red;" >
+                    <div style="position: relative;">
+                        <textarea id="satopic" style="height:90px;" class="classIdText charLimit" placeholder="Topic"></textarea>
+                        
+                        <div  id="count" class="line classIdTextCount charCount">0/5 lines | 0/200 characters</div>
+                    </div>
+                </span>
+            </fieldset>
+        
+            <fieldset>
+                <legend>
+                    Description(optional)
+                </legend><span style="color:white;" ></span>
+            
+                <div style="position: relative;">
+                    <textarea id="sadesc" style="height:90px;" class="classIdText charLimit" placeholder="Description(optional) "></textarea>
+                    
+                    <div  id="count" class="line classIdTextCount charCount">0/5 lines | 0/200 characters</div>
+                </div></span>
+                <!-- someing wong eith span -->
+            </fieldset>
+        
+                <!-- <div style="margin-left:32px;">Enter number of students :</div>
+                <input class="input0 input8a" style="width:70px;margin-left:32px;" type="number" id="noOfStu" min="1" max="120"><br>
+                
+                <input class="input0 input8a" style="width:70px;margin-left:32px;" type="" id="noOfStu" min="1" max="120"> <br>
+                
+                <input class="input0 input8a" style="width:70px;margin-left:32px;float: left;" type="" id="noOfStu" min="1" max="120"> -->
+                
+                
+
+                <!-- <div class="mcInputContainer">
+                    <div style="width:90px;position: relative;">
+                        <input name="firstLogic" type="number" class="input0 input10 " id="answercorrect" style="background: green;" placeholder="Correct_Answer">
+                        <div style="width:30px;background-color:black ;border-radius:0px 5px 5px 0px ;height:40px;margin:-1px 1px;" class="mcInputLine" onclick="clearInput('firstLogic')">X</div>
+                    </div>
+                </div> -->
+
+                
+
+                <!-- <div class="mcInputContainer">
+                    <div style="width:90px;position: relative;">
+                        <input name="second" type="number" class="input0 input10 " id="answercorrect" style="background: green;" placeholder="Correct_Answer">
+                        <div style="width:30px;background-color:black ;border-radius:0px 5px 5px 0px ;height:40px;margin:-1px 1px;" class="mcInputLine" onclick="clearInput('second')">X</div>
+                    </div>
+                </div> -->
+
+                
+            
+                <!-- <div class="mcInputContainer" id="keysubmit" > -->
+                    <!-- <div style="width:90px;position: relative;">
+
+                        <input name="third" type="" class="input0 input10 " id="keys" style="width:200px;background: green;" placeholder="Correct_Answer">
+                        
+                    <div id="count" class="keyCounter" style="width:45px;background-color:black ;border-radius:0px 5px 5px 0px ;height:40px;margin:3px -119px;">0/30</div>
+                        <div style="width:20px;background-color:black ;border-radius:500px ;height:20px;margin:10px -135px;" class="mcInputLine" onclick="clearInput('third')">X</div>
+                    </div> -->
+                <!-- </div> -->
+  
+
+<script src="marquee.js"></script>
+    <script>
+
+    const subN = localStorage.getItem('subsme');
+    document.getElementById("highlighti").innerHTML = subN;
+        // //////////////////////////////////////////
+
+        //     var box = document.getElementById('keys');
+        // var charlimit = 30; // char limit per line
+        // var linelimit = 1; // char limit per line
+        // box.value = "";
+        // box.onkeyup = function() {
+        //     var lines = box.value.split('\n');
+        //     for (var i = 0; i < lines.length; i++) {
+        //         if (lines[i].length <= charlimit) 
+        //         continue;
+        //         var j = 0; space = charlimit;
+        //         while (j++ <= charlimit) {
+        //             if (lines[i].charAt(j) === ' ') 
+        //             space = j;
+        //         }
+        //         lines[i + 1] = lines[i].substring(space + 1) + (lines[i + 1] || "");
+        //         lines[i] = lines[i].substring(0, space);
+                
+        //     }
+        //     console.log("lines");
+        //     console.log(lines.length)
+        //     console.log("char");
+        //     console.log(keys.value.length);
+        //     box.value = lines.slice(0,linelimit ).join('\n');
+        //     document.getElementById("count").innerHTML =  keys.value.length +"/30";
+        // };
+        // /////////////////////////////////////
+        function clearInput(inputName){
+            var inputField = document.querySelector('input[name="' + inputName + '"]');
+            if(inputField){
+                inputField.value = '';
+            }
+        }
+
+    </script>
+
+        <!-- <button style="float: right;" class="button0">Autofill</button><br> -->
+        <!-- <textarea class="textarea"></textarea>
+
+        <button class="button0 butt" id="noOfStuButt">Ok</button> -->
+        
+        <!-- <div style="position: relative;">
+        <textarea id="noticetext" style="height:90px;"></textarea>
+        
+        <div  id="count" class="line">0/5 lines | 0/200 characters</div>
+        </div> -->
+
+
+
+            
+        <div style="display:flex;">
+            <button  class="button0 button4 " id="noticesubmit" onclick="goBack()">Quit</button>
+            <button class="button0 button4 " id="ok">Done</button>
+            <!-- <button class="button0 button4 " id="send">Done</button> -->
+            <button class="button0 button4 " id="skip">To do</button>
+        </div>
+        <!-- </section> -->
+    </section>
+  
+
+    </main>
+
+    <script>
+
+    // const su = localStorage.getItem('subsme');
+    const subjectId = localStorage.getItem('subjectId');
+        // document.getElementById("subject").innerHTML = su;
+    
+    
+            
+    let url = "/sa ";
+    let h = new Headers();
+            h.append('Content-Type', 'application/json')
+    let req = new Request(url,{
+        method: 'GET',
+        headers: h
+    })
+    
+    //// READ, UPDATE
+    // fetch(req).then(res=>res.json()).then((data)=>{
+    //     console.log(data);
+        
+    //     let dat = [];
+    //     for(let i = 0; i<data.length;i++){
+    //         dat += data[i].question + "<br> ";
+    //     }
+    
+    //     document.getElementById('data').innerHTML = JSON.stringify(dat);
+    // })
+    
+    
+    
+        function showNextSlide2() {
+
+        stopTimer();
+            document.getElementById("111").style.display = "flex";
+            document.querySelectorAll(".trophy4xShield").forEach(el=>{
+                el.classList.remove("trophy4xShield");
+                el.classList.add("trophy4");
+            });
+            document.querySelectorAll(".timer").forEach(el=>{
+                el.classList.remove("timer");
+                el.classList.add("trophy");
+            })
+            document.getElementById("congra").innerHTML = getRandomWord();
+            document.getElementById("mess1").style.display ="none";
+    // send.addEventListener('click', ()=>{
+    let url = "/sa ";
+    
+    let text = document.getElementById('satopic').value; 
+    let sa = document.getElementById('sadesc').value; 
+    
+    let sendData = {
+        subjectId : subjectId,
+        branch : 'computer Science' ,
+    section : 'a ',
+    semester :'5 th',
+    department : 'Engineering',
+    subject : 'data science',
+    author : 'teacher',
+    topic : text,
+    description: sa
+    }
+    let h = new Headers();
+            h.append('Content-Type', 'application/json')
+    let req = new Request(url,{
+        // create
+        method: 'POST',
+        // read
+        // method: 'GET',
+        // update
+        // method: 'PATCH',
+        // delete
+        // method: 'DELETE',
+    
+    
+        headers: h
+        //CREATE,update
+        ,
+        body: JSON.stringify(sendData)
+    })
+    
+    
+    //// CREATE
+    fetch(req).then(res=>res.json()).then((data)=>{
+        document.getElementById('data').innerHTML = JSON.stringify(data);
+        console.log(JSON.stringify(data));
+    })
+    
+    
+    // })
+}
+    
+    
+    
+            </script>
+    <!-- <script src="exp8a.js"></script> -->
+
+
+    <script>
+    
+    // ////////////// number 3 simple goback or and hide button
+
+    // function goBack(){
+    //     window.history.back();
+    // }
+    // document.addEventListener("DOMContentLoaded", function(){
+    //     const backButton = document.getElementsByClassName("introBackIcon");
+    //     if(window.history.length <=1){
+    //         backButton[0].style.visibility = "none";
+    //     }
+    // });
+
+    // ////////////// number 2 go back or any page , no hide button
+
+    // function goBack(){
+    //     if(window.history.length >1){
+    //         window.history.back();
+    //     }else{
+    //         window.location.href = "index.html";
+    //     }
+    // }
+
+    //  ///////////////////// number1
+
+    function goBack(){
+        // const referrer = document.referrer;
+        // const currentOrigin = window.location.origin;
+
+        // if(referrer && referrer.startsWith(currentOrigin)){
+        //     window.history.back();
+        // }else{
+        //     window.location.href = "/index.html";
+            window.location.href = "/subject.html";
+        // }
+    }
+    // or hide button
+    // document.addEventListener("DOMContentLoaded",function(){
+    //     const backButton = document.getElementsByClassName("introBackIcon");
+    //     const referrer = document.referrer;
+    //     const currentOrigin = window.location.origin;
+
+    //     if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+    //             backButton[0].style.visibility = "hidden";
+    //     }
+    // });
+
+
+
+    function sa(x,y){
+    let collection = document.getElementById(x).children[0].className;
+    if(collection == "hide"){
+        document.getElementById(x).children[0].className = "unhide";
+        document.getElementById(y).style.display = "none";
+    }else if(collection == "unhide"){
+        document.getElementById(x).children[0].className = "hide";
+        document.getElementById(y).style.display = "block";
+    }
+    // alert(collection);
+    }
+    </script>
+
+    <script src="studyaccount.js"></script>
+    <script src="timer.js"></script>
+    <script src="random.js"></script>
+
+
+    <!-- 190824 -->
+    <script>
+        
+        //////////////////////////
+        
+        let urli = `/sa`;
+        // let urli = `/fcquiz`;
+        // const teabssd = document.getElementById("teabssd").value ;
+        // const sub = document.getElementById("sub").value ;
+        // console.log(teabssd);
+        // console.log(sub);
+        
+        // const datatosend = {
+        //     subject : sub,
+        //     bssd : teabssd
+        // }
+        const tokeni = localStorage.getItem("authToken");
+        let hi = new Headers();
+                hi.append('Authorization' ,`Bearer ${tokeni}`);
+                hi.append('Content-Type' ,'application/json');
+        
+                let reqi = new Request(urli,{
+                    method: 'GET',
+                    // method: 'POST',
+                    headers: hi
+                    // ,
+                    // body: JSON.stringify(datatosend)
+                });
+        
+                fetch(reqi)
+                .then(res=>res.json())
+                .then((data)=> 
+                {
+                // document.getElementById('subjectId').innerHTML = JSON.stringify(data);
+                //     console.log(data);
+                    
+        ///////////////////////////xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxdown
+        console.log(data);
+
+        const defaultLevels = [
+            { level:1, day: 1, wrong: 0, right: 0},
+            { level:2, day: 2, wrong: 0, right: 0},
+            { level:3, day: 4, wrong: 0, right: 0},
+            { level:4, day: 8, wrong: 0, right: 0},
+            { level:5, day: 16, wrong: 0, right: 0}
+        ];
+
+        const updatedData = data.map(items=>
+        ({
+            ...items,
+            levels: 
+            JSON.parse(JSON.stringify(defaultLevels)),
+            lastLevel : 1,
+            lastTriedDate:"date",
+            writtenDate:"date"
+
+        }));
+        console.log(updatedData);
+
+    localStorage.setItem("saquiz", JSON.stringify(data));
+
+        
+            }
+            )
+        //////////////////////////
+
+
+
+        // need to do or done properly in the future may be 260324 year 2026
+        const previousButton2 = document.getElementById("ok");
+        const nextButton2 = document.getElementById("skip");
+        // previousButton2.addEventListener("click", gameFunction2);
+        previousButton2.addEventListener("click", showNextSlide2);
+        // nextButton2.addEventListener("click", gameFunction);
+        nextButton2.addEventListener("click", showNextSlide2);
+        </script>
+
+        <!-- 190824 -->
+    <script src="/src/js/app.js"></script>
+</body>
+

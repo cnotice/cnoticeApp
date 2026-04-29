@@ -113,7 +113,8 @@ try{
                     // 250530
 
     // res.status(201).send(newDepartment);
-    res.status(201).send({'done':'oki'});
+    let redirect= "dashboard.html"
+    res.status(201).send({'done':'oki',redirect});
 }catch(e){
     if(e.code === 11000){
         return res.status(400).json({done: 'duplicate exists'});

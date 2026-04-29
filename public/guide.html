@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+<body>
+  <main class="mainContainer">
+    
+    <section class="introContainer">
+      <div class="introBackIcon" onclick="goBack()"></div>
+      <div class="intro intro1">Menu</div>
+      <div class="introMenuDotsIcon"></div>
+    </section>
+    
+    <section style="display:flex;width:100%;background-color: ;">
+      <div style="width:10%;background-color:;"></div>
+      <div style="width:80%;background-color: ;text-align:center;">
+        <div class="highlighti">Guide</div>
+      </div>
+      <div style="position:relative;width:10%;background-color: ;">
+        <a href="information.html">
+          <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+        </a>
+      </div>
+    </section>
+
+    <section id="institute" class="messageContainer" style="visibility:;">
+      <div class="messageRegistration span">
+        <fieldset>
+          <legend>
+            Institute Guide :
+          </legend>
+          <span>Enter all Degres of the institute.</span>
+          
+          <span>Teachers and Students will fill itself.</span>
+          
+          <span>Post Timetable, Calender, Syllabus, Question Papers.</span>
+          
+          <span>Post Notice to update students and teachers.</span>
+        
+        </fieldset>
+      </div>
+    </section>
+
+
+
+    
+    <section id="teacher" class="messageContainer" style="visibility:;">
+      <div class="messageRegistration span">
+        <fieldset>
+          <legend>
+            Teachers Guide :
+          </legend>
+          <span>Enter a new subject for students by clicking.</span>
+          
+          <span>Teachers and Students will fill itself.</span>
+          
+          <span>Post Timetable, Syllabus, Question Papers.</span>
+          
+          <span>Post SubjectNotice to update students.</span>
+          
+          <span>Post Keywords to expand student's vocabulary and important words of their subject and lessons.</span>
+          
+          <span>Taking attendace will update students also.</span>
+          
+          <span>Reviews are optional and only flagged or reported questions can be seen by teachers. Accepted questions will increase the students score and declined questions will decrease students score.</span>
+          
+        </fieldset>
+      </div>
+    </section>
+
+
+    
+    <section id="student" class="messageContainer" style="visibility:;">
+      <div class="messageRegistration span">
+        <fieldset class="content">
+          <legend>
+            Student's Guide :
+          </legend>
+          <span>Enter into any subject to learn and only teachers can create a subject.</span>
+          
+          <span>Calendar, timetable, syllabus and questions papers can be only updated by teachers or institute.</span>
+          
+          <span>Please click at the top right for more information on study account.</span>
+          
+          <span>Keywords is updated by teachers for your subject and lesson vocabulary expansion.</span>
+          
+          <span>Attendance is updated by teachers and only then you can view your attendance.</span>
+          
+          <span>Ow,Mc, Fc are all spaced repitition application. please google search spaced repition for more information. This will allow you to technically never forget important formula, dates, words and whatever important. For example a school student forgets the multiplication of 8 X 7 and vice versa, a college student forgets one of the elements from the periodic table say upto the 30th element. The possibilities are endless and you can technically use this to never forget.</span>
+          
+          <span>Play xxx is to test yourself and it is equipped with spaced repitation algorith to help you remember important questions shared by your classmates</span>
+          
+          <span>Review xxx will be avalable for a day after either you have written a question so that you can edit as there were some mistakes or if you have flagged or failed a question while you were playing.</span>
+          
+        </fieldset>
+      </div>
+    </section>
+    
+        
+
+    
+  </main>
+    
+  <script>
+    
+    // ////////////// number 3 simple goback or and hide button
+
+    // function goBack(){
+    //     window.history.back();
+    // }
+    // document.addEventListener("DOMContentLoaded", function(){
+    //     const backButton = document.getElementsByClassName("introBackIcon");
+    //     if(window.history.length <=1){
+    //         backButton[0].style.visibility = "none";
+    //     }
+    // });
+
+    // ////////////// number 2 go back or any page , no hide button
+
+    // function goBack(){
+    //     if(window.history.length >1){
+    //         window.history.back();
+    //     }else{
+    //         window.location.href = "index.html";
+    //     }
+    // }
+
+    //  ///////////////////// number1
+
+    function goBack(){
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+
+        if(referrer && referrer.startsWith(currentOrigin)){
+            window.history.back();
+        }else{
+            window.location.href = "/index.html";
+        }
+    }
+  // or hide button
+  document.addEventListener("DOMContentLoaded",function(){
+    const backButton = document.getElementsByClassName("introBackIcon");
+    const referrer = document.referrer;
+    const currentOrigin = window.location.origin;
+
+    if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+            backButton[0].style.visibility = "hidden";
+    }
+  });
+
+  </script>
+  <script src="/src/js/app.js"></script>
+</body>
+
+    <style>
+        .span span {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-left: 4px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+  text-align: justify;
+  /* text-justify: inter-word; */
+  /* transition: background-color 0.3s; */
+}
+
+.messageRegistration span:hover {
+  /* background-color: rgba(255, 255, 255, 0.25); */
+}
+/* @media (max-width: 768px) { */
+  .mainContainer {
+    /* width: 100%; */
+    /* padding: 10px; */
+  }
+
+  /* .messageContainer, */
+  .messageRegistration {
+    /* width: 94%; */
+  }
+
+  .messageRegistration span {
+    font-size: 1rem;
+  }
+/* } */
+/* .messageRegistration legend {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+} */
+
+    </style>
+
+    
+  <script src="payload.js"></script>
+  <script>
+
+    
+      if(payload.designation == "teacher"){
+        // document.location = `/combi/class.html`;
+    console.log("teacher");
+        document.getElementById('institute').style.display = 'none';
+        document.getElementById('student').style.display = 'none';
+        document.getElementById('teacher').style.display = 'block';
+
+      }else if(payload.designation == "student"){
+        // document.location = `/combi/subject.html`;
+    console.log("student");
+        document.getElementById('institute').style.display = 'none';
+        document.getElementById('teacher').style.display = 'none';
+        document.getElementById('student').style.display = 'block';
+
+      }else if(payload.designation == "institute"){
+        // document.location = `/combi/pageDoesNotExist.html`;
+    console.log("institute");
+        document.getElementById('teacher').style.display = 'none';
+        document.getElementById('student').style.display = 'none';
+        document.getElementById('institute').style.display = 'block';
+
+      }else{
+        document.location = `/pageDoesNotExist.html`;
+
+      }
+  </script>

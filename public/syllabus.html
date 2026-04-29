@@ -1,0 +1,959 @@
+<!-- <h1>calender timetable syllabus qp</h1>
+<h2>onlyIns ; nosub,sec ; sub,nosec ; sub,nosec </h2> -->
+<!-- 170824 -->
+<!-- <h1>Teachers image upload with data</h1>
+
+institute : <input id="xxx" value="Regional Institute Of science and technology" readonly><br>
+institute short name : <input id="xxx" value="RIST" readonly><br>
+degree: <select id="first">here is a test</select><br>
+branch:<select id="second" style="width:106px;"><option value="null">Select First</option>here is a test</select><br>
+semester:<select id="third" style="width:106px;"><option value="null">Select fuk</option>here is a test</select><br>
+subject: <input placeholder="subject" id="fifth"><br> -->
+
+<!-- <h1>File Upload</h1>
+<input type="file" name="notice" id="file" style="display:;" capture="environment" accept="">
+    <button id="submit">Submit</button> -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<body>
+
+    <section id='102' style='z-index:3;
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    '>
+        <div class='errorMessageBox' style='
+        background-color:#02013b;
+        padding:40px 10px 30px 10px;
+        border-radius:5px;
+        color:white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width:90%;
+        '>
+            <div>
+                <div class="deckerCard deckerHead"> Confirm :</div>
+                    <div class="deckerCard deckerBody" style="text-align: left;" >
+            
+                    
+                        <div style="border-radius:5px;
+                        /* align-items: center; */
+                        /* display: flex; */
+                        " class=" sortExtend">
+                        Yes
+                        </div>    
+                        <hr>    
+                        <div style="border-radius:5px;
+                        /* align-items: center; */
+                        /* display: flex; */
+                        " class=" sortExtend" onclick="confirmFunction2()">
+                        No
+                        </div>
+                    </div>
+                    <button class="button17a button0" onclick="confirmFunction2()">Cancel</button>
+                    <!-- <button class="button17a button0" onclick="ok()">Submit</button> -->
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main class="mainContainer ">
+        
+        <section class="introContainer">
+            <div class="introBackIcon" onclick="goBack()"></div>
+            <div class="intro intro1">Dashboard</div>
+            <div class="introMenuDotsIcon"></div>
+        </section>
+        
+        <section style="display:flex;width:100%;background-color: ;">
+            <div style="width:10%;background-color:;"></div>
+            <div style="width:80%;background-color: ;text-align:center;">
+                <div class="highlighti">Syllabus</div>
+            </div>
+            <div style="position:relative;width:10%;background-color: ;">
+               <a href="information.html">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+               </a>
+            </div>
+        </section>
+        
+        <!-- <div style="width:100%;">
+
+            <div id="creator" class="">
+                <button class="button0 button17a " onclick="xform()">Create Class</button>
+                    </div>
+        </div> -->
+        
+        <div action="" method="POST" class="" >
+            <section id="creation" class="messageContainer" style="visibility:;display:none;">
+    
+                <div class="messageRegistration">
+        
+                    <fieldset>
+                        <legend>
+                        Name of the Institute :
+                        </legend>
+                        <span style="color:white;margin-left:30px;" >Regional Institute of Science And Technology</span>
+                    </fieldset>
+        
+                    <fieldset>
+                        <legend>
+                        Short Institute Name :
+                        </legend>
+                        <span style="margin-left:30px;color:white;" >RIST</span>
+                    </fieldset>
+        
+                    <fieldset>
+                        <legend>
+                        Degree
+                        </legend>
+                        <span style="color:white;" ><select id="first">
+                            <option>Please Select Degree</option>
+                            <!-- <option>1st</option><option>2nd</option><option>3rd</option><option>4th</option><option>5th</option><option>6th</option><option>7th</option><option>8th</option> -->
+                        </select>
+                        </span>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>
+                        Branch
+                        </legend>
+                        <span style="color:white;" ><select id="second">
+                            <option>Please Select Degree</option>
+                            <!-- <option>1st</option><option>2nd</option><option>3rd</option><option>4th</option><option>5th</option><option>6th</option><option>7th</option><option>8th</option> -->
+                        </select>
+                        </span>
+                    </fieldset>
+            
+                    <fieldset>
+                        <legend>
+                        Semester
+                        </legend>
+                        <span style="color:white;" ><select id="third">
+                            <option>Please Select Degree</option>
+                            <!-- <option>1st</option><option>2nd</option><option>3rd</option><option>4th</option><option>5th</option><option>6th</option><option>7th</option><option>8th</option> -->
+                        </select></span>
+                    </fieldset>
+    
+                    <!-- <fieldset>
+                    <legend>
+                    Session Year
+                    </legend>
+                    <span style="color:white;" ><select id="fourth"><option>none</option><option>2011-2015</option><option>2012-2016</option><option>2013-2017</option><option>2014-2018</option></select></span>
+                    </fieldset> -->
+        
+    
+                    <fieldset>
+                        <legend>
+                        Subject Name(optional)
+                        </legend>
+                        <!-- <span style="color:white;" ><input class="input0 input17a " id="fifth"></span> -->
+                        
+                        <!-- <div style="position: relative;">
+                            <input class="input0 "  >
+                            <div id="count" class="keyCounter">0/30</div>
+                        </div> -->
+
+
+                        <div style="width:;position: relative;">
+                            <input id="fifth" data-maxlength="40" name="topic" type="" class=" input0 input17a classIdKeys" style="
+                            width:auto;background: ;padding-right:70px;margin-top:11px;" placeholder="Subject Name">
+                            <div class=" classIdTextCountKeys" style="
+                            position:absolute;
+                            top:21px;
+                            right:105px;width:45px;background-color: ;height:40px;margin:;">0/40</div>
+                        </div>  
+
+
+                    </fieldset>
+            
+                    <!-- <fieldset>
+                    <legend>
+                    Section Name(optional)
+                    </legend>
+                    <span style="color:white;" ><input class="input0 input17a " id="section"></span>
+                    </fieldset> -->
+                    
+                    <!-- <fieldset>
+                        <legend>
+                        Total Number Of Students
+                        </legend>
+                        <span style="color:white;" ><input class="input0 input17a " type="number" style="width:80px" id="stunumber"></span>
+                        </fieldset> -->
+                
+                
+                    <!-- <fieldset>
+                    <legend>
+                    contact code password
+                    </legend><span style="color:white;" ></span>
+                    <input class="input0 input17a " placeholder="contact code" id="contactcode" required> *</span>
+                    </fieldset> -->
+                    
+                    <!-- <div style="
+                    display:flex;
+                    align-items:center;
+                justify-content:center;">
+                    <button class="button0 button17a " id="submit">Create</button>
+                    </div> -->
+                    
+                
+                <!-- 220924 -->
+                
+                
+                <!-- <section style="display:flex;width:100%;background-color: ;">
+                    <div style="width:10%;background-color:;"></div>
+                    <div style="width:80%;background-color: ;text-align:center;">
+                        <div class="highlighti">Notice</div>
+                    </div>
+                    <div style="position:relative;width:10%;background-color: ;">
+                    <a href="information.html">
+                        <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+                
+                    </a>
+                
+                    </div>
+                    </section> -->
+                
+                    
+                
+                
+                    <!-- <fieldset>
+                        <legend>
+                        Write Text :
+                        </legend>
+                
+                    <div style="position: relative;">
+                        <textarea id="noticetext"></textarea>
+                        
+                        <div  id="count" class="line">0/5 lines | 0/200 characters</div>
+                        </div>
+                
+                    <div style="display:;">
+                    <button  class="button0 button4 " style="float:right;margin-top:15px;" id="noticesubmit">Submit</button>
+                    </div>
+                
+                </fieldset>
+                
+                
+                
+                    <div style="
+                    display:flex;
+                    align-items:center;
+                justify-content:center;height:100px;">
+                    Write Text And Submit "OR" Select Image And Submit
+                    </div> -->
+        
+    
+                <fieldset>
+                    <legend>
+                    Select Image :
+                    </legend>
+                    <!-- <span style="color:white;margin-left:30px;" >Regional Institute of Science And Technology</span> -->
+                
+                    <div id="imageDisplay" src="" alt="Selected Image" style="display:; width: ;"> 
+                        <!-- <input type="file" name="notice" id="file" style="display:;" capture="environment" accept=""> -->
+                    </div>
+                    <!-- <img id="imageDisplay" src="" alt="Selected Image" style="display:none; width:100% ;">  -->
+                    <!-- <input type="file" name="notice" id="file" style="display:;" capture="environment" accept=""> -->
+                
+                    <div style="display:;">
+                        
+                    <input type="file" id="file" style="display:none;" capture="environment" accept="image/*">
+                    <label class="buttonDiv16" style="margin-left:15px;float:left;" for="file">Select Image</label>
+                
+                    
+                    <!-- <div class="buttonDiv16" style="display:grid; place-items: center; justify-content:center;align-items:center;" id="submit">Submit</div> -->
+                    <button class="button0 button4 "  style="float:right;margin-top:20px;" id="submit">Submit</button>
+                    <!-- <div class="buttonDiv16"  class="button0 button4 "  style="float:right;" id="submit">Submitf</div> -->
+                
+                    </div>
+                </fieldset>
+                    <!-- <div style="
+                    display:flex;
+                    align-items:center;
+                justify-content:center;">
+                
+                <button class="button0 button17a " style="color:;bottom:0px;position:absolute;" 
+                id="inscreate">Submit</button>
+                    </div> -->
+                <!-- 
+                    <div style="
+                    display:flex;
+                    align-items:center;
+                justify-content:center;height:200px;">
+                    <button class="button0 button17a " id="xxsxx">Submit</button>
+                    </div> -->
+                    
+                <!-- <h1>File Upload</h1> -->
+                
+                <!-- <script>
+                    file.addEventListener('change', function(event){
+                        const file = event.target.files[0]; // Get the selected file
+                if (file) {
+                const reader = new FileReader(); // Create a FileReader object
+                // When the file is loaded, set the image src to the file's data URL
+                reader.onload = function(e) {
+                imageDisplay.src = e.target.result;
+                imageDisplay.style.display = 'block'; // Make the image visible
+                };
+                reader.readAsDataURL(file); // Read the file as a data URL
+                }
+                    });
+                    </script> -->
+                <!-- 220924 -->
+                
+        
+    
+                    <script>
+                        file.addEventListener('change', function(event){
+                            const file = event.target.files[0]; // Get the selected file
+                    if (file) {
+                    const reader = new FileReader(); // Create a FileReader object
+                    reader.onload = function(e) {
+                        var img = document.createElement("img");
+                    
+                    img.src = e.target.result;
+                    img.style.width = "100%";
+                    // img.style.display = 'block'; // Make the image visible
+                    
+                    // append the image to the container
+                    var container = document.getElementById("imageDisplay");
+                    container.innerHTML = ""; //clear any existing content
+                    container.appendChild(img);
+                    // CReate a new inpput field and append it below the image
+                    var input = document.createElement("input");
+                    input.type = "text";
+                    input.placeholder = "Add a caption...(Optional)";
+                    input.classList.add("input0");
+                    input.id = "captionTextId";
+                    container.appendChild(input);
+                    };
+                    reader.readAsDataURL(file); // Read the file as a data URL
+                    }
+                        });
+                        </script>
+
+
+            </div>
+        </section>
+
+
+        <div id="noticeAndImage"></div>
+        <div class="images"></div>
+
+
+        
+
+
+
+
+
+
+        <!-- <section>
+            <fieldset>
+                <div class="" style="
+                width:;
+                padding:10px;
+                margin-bottom: ;
+                border-radius:10px 10px 0px 0px;
+                box-shadow:4px 4px 6px rgba(0,0,0,.2);
+                color:grey;
+                border:1px solid rgba(255,255,255,.20);
+                position:relative;
+                ">
+                    <button  class=" buttonDelete" onclick="confirmFunction()">Delete</button>
+
+                Address to:<br>
+                    Regional Institute of science and technologyRegional Institute of science and technology<br>
+                    semester: 1 <br>
+                    degree: engineeing<br>
+                    branch: cse<br>
+                    subject : to be thought of s
+                
+                </div>
+                <img style="width:100%" src="/testimage.jpg">
+                <div style="
+                color:white;
+                font-size:13px;
+                padding:10px;
+                background-color: #3333ff;
+                border-radius:0px 0px 5px 5px;
+                box-shadow: 0px 2px 3px rgba(0,0,0,1) inset;
+                margin-left:0px;">
+                This is the most impressive work that I have done in this world and I am glad that this is going to seize the opprtunity of realizing freedom. Financial freedom is what i am looking for.
+                </div>
+            </fieldset>
+            
+        </section>
+    
+        <section>
+            <fieldset>
+                <div class="" style="
+                width:;
+                padding:10px;
+                margin-bottom: -10px;
+                border-radius:10px 10px 0px 0px;
+                box-shadow:4px 4px 6px rgba(0,0,0,.2);
+                color:grey;
+                border:1px solid rgba(255,255,255,.20);
+                    position:relative;
+                    ">
+                                            <button  class="buttonDelete" onclick="confirmFunction()">Delete</button>
+                    Address to:<br>
+                    Regional Institute of science and technology<br>
+                    semester: 1 <br>
+                    degree: engineeing<br>
+                    branch: cse<br>
+                    subject : to be thought of s
+                
+                </div>
+                <div style="
+                color:white;
+                font-size:13px;
+                padding:10px;
+                background-color: #3333ff;
+                border-radius:0px 0px 5px 5px;
+                box-shadow: 0px 2px 3px rgba(0,0,0,1) inset;
+                margin:10px 0px 10px 0px;">
+                This is the most impressive work that I have done in this world and I am glad that this is going to seize the opprtunity of realizing freedom. Financial freedom is what i am looking for.
+                </div>
+            
+            </fieldset>
+        
+        </section> -->
+        
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// for institute DO NOT DELETE IMPORTANT 
+
+//     const subjectData = localStorage.getItem('degreeData');
+// let data6 = JSON.parse(subjectData);
+    
+// // let data6 = [data10,data11,data12,data13,data14,data15];
+// console.log([...new Set(data6.map(obj=>obj.degree))])
+//     document.getElementById('first').innerHTML = selectHtmlLookAgain([...new Set(data6.map(obj=>obj.degree))]);
+
+//     first.addEventListener('change',function(){
+//         console.log("first");
+//         let selected = first.value;
+//         console.log(selected);
+//         let department = getDepartmentArray(selected);
+//         document.getElementById('second').innerHTML = selectHtmlLookAgain(department);
+//      getSemesterArray(selected);
+//     });
+
+//     function getDepartmentArray(depart){
+//     const depar = new Array([...new Set(data6.filter(obj=>obj.degree === depart).map(obj =>obj.department))]);
+//     // console.log(departt);
+//         console.log(depar);
+//     let combi = [];
+//     // extraction of single length array to multi length array
+//     for(let i = 0; i<depar[0].length;i++){
+//         combi.push(depar[0][i]);
+//     }
+//         return combi;
+//     }
+
+//     function selectHtmlLookAgain(arrayValues){
+//     let str = "";
+//             str = `<option value='null'>Please3 Select</option>`;
+//         for(let i = 0; i<arrayValues.length;i++){
+//         str += `<option>${arrayValues[i]}</option>`;
+//         }
+//         str += "";
+//         return str;
+//     }
+    
+//         function getSemesterArray(depart){
+//     const depar = new Array([...new Set(data6.filter(obj=>obj.degree === depart).map(obj =>obj.semester))]);
+//         let xy = depar[0][0];
+//         console.log(xy);
+//     let combi = [];
+//         for(let x =1; x<=xy;x++){
+//             combi.push(x);
+//         }
+//         document.getElementById('third').innerHTML = selectHtmlLookAgain(combi);
+//     }
+</script>
+
+<script>
+
+// // for teacher DO NOT DELETE IMPORTANT
+//     const subjectData = localStorage.getItem('subjectData');
+// let data6 = JSON.parse(subjectData);
+//     // let data6 = [data10,data11,data12,data13,data14,data15];
+// console.log([...new Set(data6.map(obj=>obj.degree))])
+//     document.getElementById('first').innerHTML = selectHtmlLookAgain([...new Set(data6.map(obj=>obj.degree))]);
+
+//     first.addEventListener('change',function(){
+//         console.log("first");
+//         let selected = first.value;
+//         console.log(selected);
+//         let department = getDepartmentArray(selected);
+//         document.getElementById('second').innerHTML = selectHtmlLookAgain(department);
+//     document.getElementById("third").innerHTML = '<option value="null">Please Select Branch</option>'
+
+//     });
+
+//     second.addEventListener('change',function(){
+//         let selected = second.value;
+//      getSemesterArray(selected);
+
+//     });
+    
+//     function getDepartmentArray(depart){
+//     const depar = new Array([...new Set(data6.filter(obj=>obj.degree === depart).map(obj =>obj.branch))]);
+//         console.log(depar);
+//     let combi = [];
+//     // extraction of single length array to multi length array
+//     for(let i = 0; i<depar[0].length;i++){
+//         combi.push(depar[0][i]);
+//     }
+//         return combi;
+//     }
+
+//     function selectHtmlLookAgain(arrayValues){
+//         console.log(arrayValues);
+//     let str = "";
+//             str = `<option value='null'>Please Select</option>`;
+//         for(let i = 0; i<arrayValues.length;i++){
+//         str += `<option>${arrayValues[i]}</option>`;
+//         }
+//         str += "";
+//         return str;
+//     }
+    
+//         function getSemesterArray(depart){
+//             console.log(depart);
+//     const depar = new Array([...new Set(data6.filter(obj=>obj.branch === depart).map(obj =>obj.semester))]);
+//         console.log(depar);
+//         // return depar;
+//         let xy = depar[0][0];
+//         console.log(xy)
+//         for(let x =0; x<xy;x++){
+//             console.log(x)
+//         }
+//     document.getElementById("third").innerHTML = selectHtmlLookAgain(depar[0]);
+//     }
+    
+    </script>
+
+
+
+
+
+
+
+
+
+<script>
+
+submit.addEventListener('click', (e)=>{
+e.preventDefault();
+    submit.disabled = true;
+    submit.innerText= "processing...";
+    setTimeout(()=>{
+        submit.disabled = false;
+        submit.innerText = 'Submit';
+    },5000);
+    console.log("hello");
+
+let imgage = document.getElementById("file");
+let fileData = imgage.files[0];
+    console.log(fileData.size)
+    // x is just an initial value
+    let x = 0;
+    const min_x = 0.00;
+    // max_x is maximum compression
+    const max_x = 0.8;
+    // max_y is maximum image size from capture or else full compression i.e 0
+    const max_y = 1024 * 1024 * 1;
+
+    function updateX(y){
+        const decrementStep = (max_x/max_y);
+        x = max_x - (decrementStep *y);
+        x=Math.max(x,min_x);
+        x= Math.round(x*100)/100;
+        console.log(`updated value of file: ${x}`);
+    }
+    updateX(fileData.size);
+
+    const url = URL.createObjectURL(fileData);
+    const img = new Image();
+    img.src = url;
+    img.onload = function(){
+        // document.body.appendChild(img);
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        ctx.drawImage(img,0,0);
+        let compressedSize = x;
+        canvas.toBlob((blob)=>{
+            console.log(blob, blob.size);
+            const fr = new FileReader();
+            fr.readAsDataURL(blob);
+            fr.addEventListener('load',()=>{
+                const dataURL = fr.result;
+                const img2 = new Image();
+                img2.src = dataURL;
+                // document.body.appendChild(img2);
+                console.log(blob.size);
+const data = new FormData();
+
+let degree = document.getElementById('first').value;   
+                let department = document.getElementById('second').value;   
+                let semester = document.getElementById('third').value;    
+                let subject = document.getElementById('fifth').value;     
+                let caption = document.getElementById('captionTextId').value;  
+                console.log(caption);  
+                let sendData = {
+                    degree,
+                    department,
+                    // branch,
+                    semester,
+                    subject,
+                    caption
+                }
+
+    data.append('syllabus', blob, 'img.jpeg');
+    data.append('jsonData', JSON.stringify(sendData));
+// changes
+        // 090924
+const token = localStorage.getItem("authToken");
+   let h = new Headers();
+        h.append('Authorization' ,`Bearer ${token}`);
+        // 090924
+        // h.append('Content-Type', 'application/json');
+fetch("/uploadsyllabus",{
+    method:"POST",
+    // 090924
+    headers: h,
+    // 090924
+    //  {
+    //     'Authorization': `Bearer ${token}`
+    //     // ,
+    //     // 'Content-Type':'application/json'
+    // },
+    body:data,
+}).then((result)=>{
+    console.log("file sent successfully");
+}).catch((err)=>{
+    console.log(err.message);
+});
+            })
+         },'image/jpeg',compressedSize)
+    }
+});
+
+
+
+
+
+
+
+function parseJwt(token) {
+  try {
+    // Split the token to get the payload (second part)
+    const base64Url = token.split('.')[1];
+
+    // Decode Base64URL to JSON
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(
+      atob(base64)
+        .split('')
+        .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+        .join('')
+    );
+
+    // Parse JSON and return the payload
+    return JSON.parse(jsonPayload);
+  } catch (error) {
+    console.error("Failed to parse JWT:", error);
+    return null;
+  }
+}
+
+// Example usage
+// const token = "your.jwt.token";
+const token = localStorage.getItem("authToken");
+const payload = parseJwt(token);
+console.log("Decoded Payload:", payload);
+console.log("designation:", payload.designation);
+
+if((payload.designation === "institute")||(payload.designation === "teacher")){
+    document.getElementById("creation").style.display = "block";
+}
+
+</script>
+
+
+<script>
+    function ok(){
+        document.getElementById('101').style.display="none";
+    }
+    
+    // function fetch(){
+    //     document.getElementById('101').style.display="flex";
+    // }
+
+    function confirmFunction(){
+        document.getElementById('102').style.display="flex";
+    }
+
+    function confirmFunction2(){
+        // document.getElementById('101').style.display="none";
+        document.getElementById('102').style.display="none";
+    }
+
+    
+    function press2(rrr){
+        // alert(rrr);
+        document.location = `/fc.html`;
+    }
+</script>
+<style>
+.sortExtend:hover{
+background-color:green;
+}
+
+.sortExtend:active{
+    background-color:red;
+}
+
+</style>
+
+
+<script>
+    
+    // ////////////// number 3 simple goback or and hide button
+
+    // function goBack(){
+    //     window.history.back();
+    // }
+    // document.addEventListener("DOMContentLoaded", function(){
+    //     const backButton = document.getElementsByClassName("introBackIcon");
+    //     if(window.history.length <=1){
+    //         backButton[0].style.visibility = "none";
+    //     }
+    // });
+
+    // ////////////// number 2 go back or any page , no hide button
+
+    // function goBack(){
+    //     if(window.history.length >1){
+    //         window.history.back();
+    //     }else{
+    //         window.location.href = "index.html";
+    //     }
+    // }
+
+    //  ///////////////////// number1
+
+    function goBack(){
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+
+        if(referrer && referrer.startsWith(currentOrigin)){
+            window.history.back();
+        }else{
+            window.location.href = "/index.html";
+        }
+    }
+// or hide button
+document.addEventListener("DOMContentLoaded",function(){
+    const backButton = document.getElementsByClassName("introBackIcon");
+    const referrer = document.referrer;
+    const currentOrigin = window.location.origin;
+
+    if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+            backButton[0].style.visibility = "hidden";
+    }
+});
+
+
+
+
+
+
+
+
+const loadImages2 = async()=>{
+        const response1 = await fetch('/getsyllabus').then(response => response.json());
+
+            console.log(response1);
+        
+
+        
+
+                    let test = JSON.stringify({ ...response1})
+                localStorage.setItem('syllabusCard', test );
+
+
+    const syllabusCard = localStorage.getItem('syllabusCard');
+                    const response = JSON.parse(syllabusCard);
+
+            console.log(response);
+
+        const imagesElement = document.querySelector('.images');
+        imagesElement.innerHTML = '';
+        let noticeAndImage = "";
+
+        response.images.forEach(image => {
+            // const img = document.createElement('img');
+            // console.log(image.filePath);
+            console.log(image);
+
+            // // changed by employee 250517
+            // // img.src = image.filePath;
+            // img.src = `/images/${image.filePath.split('/').pop()}`;
+            // // changed by employee 250517
+
+            // console.log(img.src);
+            // img.height = '200';
+            // imagesElement.appendChild(img);
+            noticeAndImage += `
+<section>
+    <fieldset>
+        <div class="addressBox">
+                                <button  class=" buttonDelete" onclick="confirmFunction()">Delete</button>
+
+        Address to:<br>
+            ${image.institute}<br>
+            semester: ${image.semester} <br>
+            degree: ${image.degree}<br>
+            branch: ${image.branch}<br>
+            subject : to be thought of s
+        
+        </div>
+        <img style="width:100%" src="/images/${image.filePath.split('/').pop()}">`;
+        let caption = image.caption;
+        if(caption){
+            noticeAndImage += `<div class="captionBox">
+            ${image.caption}
+            </div>`
+        }else{
+            noticeAndImage += `<div class="emptyCaptionBox">
+            </div>`
+
+        }
+        noticeAndImage+= `
+    </fieldset>
+    
+    </section>`
+            
+        });
+        
+        document.getElementById('noticeAndImage').innerHTML = noticeAndImage;;
+    }
+
+    window.onload = loadImages2;
+
+</script>
+
+
+
+<script src="studyaccount.js"></script>
+
+
+<script src="/src/js/app.js"></script>
+
+
+    <!-- <script src="/combi/payload.js"></script> -->
+
+    <script>
+        console.log(payload.designation);
+        // use below for important for institute or teacher
+        function loadUserScript(userType) {
+  let script = document.createElement("script");
+  script.type = "text/javascript";
+
+  if (userType === "institute") {
+    script.src = "instituteoptions.js";
+  } else if (userType === "teacher") {
+    script.src = "teacheroptions.js";
+  }
+
+  document.head.appendChild(script);
+}
+
+// Example: user type fetched from API or session
+// const currentUserType = getUserTypeFromSession(); // Implement this function
+const currentUserType = payload.designation;
+loadUserScript(currentUserType);
+
+    </script>
+<!-- no end/body -->
+

@@ -58,7 +58,8 @@ if((subjectFromTea.degree == "null")||(subjectFromTea.branch == "null" )||(subje
         {upsert:true}
         );
         await sub.save();
-        res.status(201).send(sub);
+    let redirect= "hub.html";
+        res.status(201).send({sub,redirect});
     }catch(e){
         res.status(500).send(e);
     }
@@ -528,8 +529,10 @@ router.patch('/subjectplus',auth, async(req,res)=>{
         // });
         // await user.save();
         // console.log(req.body + "here it is")
-        const bssd = await user.generateStuBssd(req.body)
-        res.send(bssd);
+        const bssd = await user.generateStuBssd(req.body);
+    let redirect= "home.html";
+        // res.status(201).send({sub,redirect});
+        res.send({bssd,redirect});
     }catch(e){
         res.status(400).send(e);
     }

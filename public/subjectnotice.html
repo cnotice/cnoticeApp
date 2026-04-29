@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+<body >
+    <main class="mainContainer ">
+
+        <section class="introContainer">
+            <div class="introBackIcon" onclick="goBack()"></div>
+            <div class="intro intro1">Subject Notice Board</div>
+            <div class="introMenuDotsIcon"></div>
+        </section>
+
+
+        <!-- <section class="highlight">Notice</section>  -->
+
+
+        <section style="display:flex;width:100%;background-color: ;">
+            <div style="width:10%;background-color:;"></div>
+            <!-- <div style="width:80%;background-color: ;text-align:center;">
+                <div class="highlighti">Notice</div>
+            </div> -->
+
+            
+            
+            <div style="width:80%;text-align:center;" class="marqueeMain" onclick="marqueeClick(this)">
+                <div class="marqueeContainerHorizontal marqueeContainer highlighti" style=" width:200px;text-align:center;"" data-direction="horizontal">
+                    <div class="marqueeTextHorizontal marqueeText" id="highlighti" style="white-space: nowrap;  
+                    ">Subject</div>
+                </div>
+            </div>
+
+
+
+            <div style="position:relative;width:10%;background-color: ;">
+                <a href="information.html">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+
+                </a>
+            </div>
+        </section>
+
+    
+
+        <section class="containerBoard" id="creation" style="display:none;">
+            <!--  -->
+
+            <div style="position: relative;">
+                <textarea id="noticetext" class="classIdText"> </textarea>
+                <div  id="count" class="line classIdTextCount">0/5 lines | 0/200 characters</div>
+            </div>
+
+            <div style="display:flex;float:right;">
+                <button  class="button0 button4 " id="send">Submit</button>
+                <!-- <button class="button0 button4 ">capture</button>
+                <button class="button0 button4 ">attach</button> -->
+            </div>
+        </section>
+    
+
+    
+            <section class="sortContainer" style="margin-bottom:5px;margin-left:10px;">
+                <div id="seeSubjectNotice"  class="sort sort2" >
+                Subject Notice Board
+                </div>
+            </section>
+
+        <!-- 250522 -->
+        <div id="noticeAndImage"></div>
+        <div class="images"></div>
+        <!-- 250522 -->
+
+
+        <!-- <section class="messageContainer">
+            <div class="messageBox"></div>
+        </section> -->
+    
+    </main>
+
+
+    <script>
+        
+                
+
+            function parseJwt(token) {
+            try {
+                // Split the token to get the payload (second part)
+                const base64Url = token.split('.')[1];
+
+                // Decode Base64URL to JSON
+                const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                const jsonPayload = decodeURIComponent(
+                atob(base64)
+                    .split('')
+                    .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+                    .join('')
+                );
+
+                // Parse JSON and return the payload
+                return JSON.parse(jsonPayload);
+            } catch (error) {
+                console.error("Failed to parse JWT:", error);
+                return null;
+            }
+            }
+
+            // Example usage
+            // const token = "your.jwt.token";
+            const token = localStorage.getItem("authToken");
+            const payload = parseJwt(token);
+            console.log("Decoded Payload:", payload);
+            console.log("designation:", payload.designation);
+
+            if((payload.designation === "teacher")){
+                document.getElementById("creation").style.display = "block";
+            }
+
+
+    /////////////////////////////////////////////080724
+    
+    const tokens1 = localStorage.getItem("authToken");
+       let hs1 = new Headers();
+            hs1.append('Authorization' ,`Bearer ${tokens1}`);
+            hs1.append('Content-Type' ,'application/json');
+    
+            // const subjectid1 = localStorage.getItem('subjectId');
+    let urls1 = `/subjectnotice`;
+    // let sendDatastu = {
+    
+    // subjectkeywords : subjectid
+    // }
+            let reqs1 = new Request(urls1,{
+                method: 'GET',
+                headers: hs1
+        // ,
+        // body: JSON.stringify(sendDatastu)
+            });
+    
+            fetch(reqs1)
+            .then(res=>res.json())
+            .then((data)=> 
+            {
+    
+                console.log(data);
+                // console.log(data[9].semester);
+    
+        }
+        )
+            /////////////////////////////////////////////080724
+    /////////////////////////////////////////////240624
+    
+    const tokens = localStorage.getItem("authToken");
+       let hs = new Headers();
+            hs.append('Authorization' ,`Bearer ${tokens}`);
+            hs.append('Content-Type' ,'application/json');
+    
+            const subjectid = localStorage.getItem('subjectId');
+    let urls = `/subjectnotice/${subjectid}`;
+    // let sendDatastu = {
+    
+    // subjectkeywords : subjectid
+    // }
+            let reqs = new Request(urls,{
+                method: 'GET',
+                headers: hs
+        // ,
+        // body: JSON.stringify(sendDatastu)
+            });
+    
+            fetch(reqs)
+            .then(res=>res.json())
+            .then((data)=> 
+            {
+    
+                console.log(data);
+    
+        }
+        )
+            /////////////////////////////////////////////240624
+    
+    const su = localStorage.getItem('subsme');
+    const subjectId = localStorage.getItem('subjectId');
+        // document.getElementById("subject").innerHTML = su;
+    
+    
+    send.addEventListener('click', ()=>{
+    let url = "/subjectnotice";
+    
+    let notice = document.getElementById('noticetext').value; 
+    
+    let sendData = {
+    //     branch : 'computer Science' ,
+    // section : 'b ',
+    // semester :'5 th',
+    // department : 'Engineering',
+    // subject : 'data science',
+    author : 'teacher',
+    subjectId : subjectId, //come frm indexeddb now localstorage
+    // subjectnotice : subjectId, //come frm indexeddb now localstorage
+    text: notice
+    }
+    const token = localStorage.getItem("authToken");
+       let h = new Headers();
+            h.append('Authorization' ,`Bearer ${token}`);
+            h.append('Content-Type', 'application/json')
+    let req = new Request(url,{
+        // create
+        method: 'POST',
+        // read
+        // method: 'GET',
+        // update
+        // method: 'PATCH',
+        // delete
+        // method: 'DELETE',
+    
+    
+        headers: h
+        //CREATE,update
+        ,
+        body: JSON.stringify(sendData)
+    })
+    
+    
+    //// CREATE
+    // fetch(req).then(res=>res.json()).then((data)=>{
+    //     document.getElementById('data').innerHTML = JSON.stringify(data);
+    // })
+    
+    //// READ, UPDATE
+    fetch(req).then(res=>res.json()).then((data)=>{
+        console.log(data);
+        // document.getElementById('data').innerHTML = JSON.stringify(data);
+    })
+    
+    
+    })
+                </script>
+    <!-- can be removed maybe -->
+    <!-- <script src="exp12.js"></script> -->
+    <!-- <script src="exp4.js"></script> -->
+    <!-- <script src="subjectnotice.js"></script> DELETED -->
+    <script src="studyaccount.js"></script>
+    <script src="/src/js/app.js"></script>
+</body>
+
+
+
+<script>
+    
+    // ////////////// number 3 simple goback or and hide button
+
+    // function goBack(){
+    //     window.history.back();
+    // }
+    // document.addEventListener("DOMContentLoaded", function(){
+    //     const backButton = document.getElementsByClassName("introBackIcon");
+    //     if(window.history.length <=1){
+    //         backButton[0].style.visibility = "none";
+    //     }
+    // });
+
+    // ////////////// number 2 go back or any page , no hide button
+
+    // function goBack(){
+    //     if(window.history.length >1){
+    //         window.history.back();
+    //     }else{
+    //         window.location.href = "index.html";
+    //     }
+    // }
+
+    //  ///////////////////// number1
+
+    function goBack(){
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+
+        if(referrer && referrer.startsWith(currentOrigin)){
+            window.history.back();
+        }else{
+            window.location.href = "/index.html";
+        }
+    }
+// or hide button
+document.addEventListener("DOMContentLoaded",function(){
+    const backButton = document.getElementsByClassName("introBackIcon");
+    const referrer = document.referrer;
+    const currentOrigin = window.location.origin;
+
+    if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+            backButton[0].style.visibility = "hidden";
+    }
+});
+
+    
+
+
+
+
+
+
+
+    
+const loadImages = async()=>{
+        const response1 = await fetch('/subjectnotice').then(response => response.json());
+        console.log(response1);
+        
+                
+                    // console.log(response1.notices);
+                    console.log(JSON.stringify({ response1}));
+
+                    let test = JSON.stringify({ response1})
+                localStorage.setItem('subjectnoticeCard', test );
+
+
+                    console.log(subjectId);
+                    console.log(JSON.parse(test));
+
+    const subjectnoticeCard = localStorage.getItem('subjectnoticeCard');
+                    let response = JSON.parse(subjectnoticeCard);
+                    response = response.response1;
+
+                    
+    const arr = Object.values(response).filter(obj => obj.subjectId === subjectId);
+    response = arr;
+                    // console.log(response.response1);
+                    console.log(Array.isArray(response));
+                    console.log(typeof response);
+
+
+
+                // response.notices.sort((a,b)=>
+                // // new Date(a.date) - new Date(b.date)) //according to my first free employee
+                // a._id.localeCompare(b._id));
+                // console.log(response);
+// Make a copy and sort in LIFO (newest first)
+// const sortedUsers = [...response.notices].sort((a, b) => b._id.localeCompare(a._id));
+
+// console.log(sortedUsers);
+
+                
+        const imagesElement = document.querySelector('.images');
+        imagesElement.innerHTML = '';
+        let noticeAndImage = "";
+
+        // sortedUsers.forEach(image => {
+        response.forEach(image => {
+            // const img = document.createElement('img');
+            // console.log(image.filePath);
+            console.log(image);
+
+            // // changed by employee 250517
+            // // img.src = image.filePath;
+            // img.src = `/images/${image.filePath.split('/').pop()}`;
+            // // changed by employee 250517
+
+            // console.log(img.src);
+            // img.height = '200';
+            // imagesElement.appendChild(img);
+            noticeAndImage += `
+<section class="writeMessageContainer">
+    <fieldset>
+        <div class="addressBox">
+                                <button  class=" buttonDelete" onclick="confirmFunction()">Delete</button>
+
+        Address to:<br>
+            ${image.institute}<br>
+            semester: ${image.semester} <br>
+            degree: ${image.degree}<br>
+            branch: ${image.branch}<br>
+            subject : to be thought of s
+        
+        </div>`;
+        let filepath = image.filePath;
+        if(filepath){
+            noticeAndImage += `
+        <img style="width:100%" src="/images/${image.filePath.split('/').pop()}">`;
+        let caption = image.caption;
+        if(caption){
+            noticeAndImage += `<div class="captionBox">
+            ${image.caption}
+            </div>`
+        }else{
+            noticeAndImage += `<div class="emptyCaptionBox">
+            </div>`
+
+        }
+        }else{
+            noticeAndImage += `<div class="captionBox">
+            ${image.text}
+            </div>`;
+        }
+        noticeAndImage+= `
+    </fieldset>
+    
+    </section>`;
+            
+        });
+        
+        document.getElementById('noticeAndImage').innerHTML = noticeAndImage;;
+    }
+
+    window.onload = loadImages;
+
+    
+// new260407
+window.addEventListener("load",function(){
+    if(window.location.hash){
+        const el = document.querySelector(window.location.hash);
+        if(el){
+            setTimeout(()=>{
+                el.scrollIntoView({block:"start"});
+            },100);
+            // const offset = 60;
+            // const top = el.getBoundingClientRect().top+window.scrollY - offset;
+            // window.scrollTo({
+            //     top: top,
+            //     behaviour: "auto"
+            // });
+        }
+    }
+});
+
+
+
+
+
+
+    const subN = localStorage.getItem('subsme');
+    document.getElementById("highlighti").innerHTML = subN;
+
+    </script>
+<script src="marquee.js"></script>

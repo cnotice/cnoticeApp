@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+<body >
+    <main class="mainContainer ">
+        
+        <section class="introContainer">
+            <div class="introBackIcon" onclick="goBack()"></div>
+            <div class="intro intro1">Dashboard</div>
+            <div class="introMenuDotsIcon"></div>
+        </section>
+        
+        <section style="display:flex;width:100%;background-color: ;">
+            <div style="width:10%;background-color:;"></div>
+            <div style="width:80%;background-color: ;text-align:center;">
+                <div class="highlighti">Calendar</div>
+            </div>
+            <div style="position:relative;width:10%;background-color: ;">
+               <a href="information.html">
+                    <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+               </a>
+            </div>
+        </section>
+        
+        
+        <section id="creation" class="messageContainer attendanceteacherclass" style="visibility:;display:none;">
+    
+            <div class="messageRegistration">
+        
+                <fieldset>
+                    <legend>
+                    Name of the Institute :
+                    </legend>
+                    <span style="color:white;margin-left:30px;" >Regional Institute of Science And Technology</span>
+                </fieldset>
+        
+                <fieldset>
+                    <legend>
+                    Short Institute Name :
+                    </legend>
+                    <span style="margin-left:30px;color:white;" >RIST</span>
+                </fieldset>
+        
+                <!-- <fieldset>
+                <legend>
+                Degree
+                </legend>
+                <span style="color:white;" ><select id="first">
+                    <option>Please Select Degree</option>
+                </select>
+                </span>
+                </fieldset> -->
+            
+                <!-- <fieldset>
+                    <legend>
+                    Branch
+                    </legend>
+                    <span style="color:white;" ><select id="second">
+                        <option>Please Select Degree</option>
+                    </select>
+                    </span>
+                    </fieldset> -->
+                    
+                <!-- <fieldset>
+                    <legend>
+                    Semester
+                    </legend>
+                    <span style="color:white;" ><select id="third">
+                        <option>Please Select Degree</option>
+                    </select></span>
+                    </fieldset> -->
+            
+            
+                <!-- <fieldset>
+                    <legend>
+                    Section(optional)
+                    </legend>
+                    <span style="color:white;" ><input class="input0 input17a " id="fifth"></span>
+                    </fieldset> -->
+            
+                <fieldset>
+                    <legend>
+                    Select Image :
+                    </legend>
+                    <!-- <span style="color:white;margin-left:30px;" >Regional Institute of Science And Technology</span> -->
+                
+                    
+                    <div id="imageDisplay" src="" alt="Selected Image" style="display:; width: ;"> 
+                        <!-- <input type="file" name="notice" id="file" style="display:;" capture="environment" accept=""> -->
+                    </div>
+                    <!-- <img id="imageDisplay" src="" alt="Selected Image" style="display:none; width:100% ;">  -->
+                    <!-- <input type="file" name="notice" id="file" style="display:;" capture="environment" accept=""> -->
+                
+                    <div style="display:;">
+                        
+                        <input type="file" id="file" style="display:none;" capture="environment" accept="image/*">
+                        <label class="buttonDiv16" style="margin-left:15px;float:left;" for="file">Select Image</label>
+                    
+                        
+                        <!-- <div class="buttonDiv16" style="display:grid; place-items: center; justify-content:center;align-items:center;" id="submit">Submit</div> -->
+                        <button class="button0 button4 "  style="float:right;margin-top:20px;" id="submit">Submit</button>
+                        <!-- <div class="buttonDiv16"  class="button0 button4 "  style="float:right;" id="submit">Submitf</div> -->
+                
+                    </div>
+                </fieldset>
+    
+                <!-- <script>
+                    file.addEventListener('change', function(event){
+                        const file = event.target.files[0]; // Get the selected file
+                if (file) {
+                const reader = new FileReader(); // Create a FileReader object
+                // When the file is loaded, set the image src to the file's data URL
+                reader.onload = function(e) {
+                imageDisplay.src = e.target.result;
+                imageDisplay.style.display = 'block'; // Make the image visible
+                };
+                reader.readAsDataURL(file); // Read the file as a data URL
+                }
+                    });
+                    </script> -->
+        
+        
+                <script>
+                    file.addEventListener('change', function(event){
+                        const file = event.target.files[0]; // Get the selected file
+                if (file) {
+                const reader = new FileReader(); // Create a FileReader object
+                reader.onload = function(e) {
+                    var img = document.createElement("img");
+                
+                img.src = e.target.result;
+                img.style.width = "100%";
+                // img.style.display = 'block'; // Make the image visible
+                
+                // append the image to the container
+                var container = document.getElementById("imageDisplay");
+                container.innerHTML = ""; //clear any existing content
+                container.appendChild(img);
+                // CReate a new inpput field and append it below the image
+                var input = document.createElement("input");
+                input.type = "text";
+                input.placeholder = "Add a caption...(Optional)";
+                input.classList.add("input0");
+                input.id = "captionTextId";
+                container.appendChild(input);
+                };
+                reader.readAsDataURL(file); // Read the file as a data URL
+                }
+                    });
+                    </script>
+        
+            </div>
+        </section>
+        
+
+    
+        <div id="noticeAndImage"></div>
+        <div class="images"></div>
+        
+    </main>
+
+    <script>
+        
+    //     const subjectData = localStorage.getItem('subjectData');
+    // let data6 = JSON.parse(subjectData);
+    // console.log([...new Set(data6.map(obj=>obj.degree))])
+    //     document.getElementById('first').innerHTML = selectHtmlLookAgain([...new Set(data6.map(obj=>obj.degree))]);
+
+    //     first.addEventListener('change',function(){
+    //         console.log("first");
+    //         let selected = first.value;
+    //         console.log(selected);
+    //         let department = getDepartmentArray(selected);
+    //         document.getElementById('second').innerHTML = selectHtmlLookAgain(department);
+    //     document.getElementById("third").innerHTML = '<option value="null">Please Select Branch</option>'
+
+    //     });
+
+    //     second.addEventListener('change',function(){
+    //         let selected = second.value;
+    //      getSemesterArray(selected);
+
+    //     });
+        
+    //     function getDepartmentArray(depart){
+    //     const depar = new Array([...new Set(data6.filter(obj=>obj.degree === depart).map(obj =>obj.branch))]);
+    //         console.log(depar);
+    //     let combi = [];
+    //     // extraction of single length array to multi length array
+    //     for(let i = 0; i<depar[0].length;i++){
+    //         combi.push(depar[0][i]);
+    //     }
+    //         return combi;
+    //     }
+
+    //     function selectHtmlLookAgain(arrayValues){
+    //         console.log(arrayValues);
+    //     let str = "";
+    //             str = `<option value='null'>Please Select</option>`;
+    //         for(let i = 0; i<arrayValues.length;i++){
+    //         str += `<option>${arrayValues[i]}</option>`;
+    //         }
+    //         str += "";
+    //         return str;
+    //     }
+        
+    //         function getSemesterArray(depart){
+    //             console.log(depart);
+    //     const depar = new Array([...new Set(data6.filter(obj=>obj.branch === depart).map(obj =>obj.semester))]);
+    //         console.log(depar);
+    //         // return depar;
+    //         let xy = depar[0][0];
+    //         console.log(xy)
+    //         for(let x =0; x<xy;x++){
+    //             console.log(x)
+    //         }
+    //     document.getElementById("third").innerHTML = selectHtmlLookAgain(depar[0]);
+    //     }
+        
+        </script>
+
+
+    <style>
+        /* img{
+            display: block;;
+            width: 400px;
+            margin: 1rem;
+        } */
+    </style>
+
+    <script>
+
+    submit.addEventListener('click', (e)=>{
+    e.preventDefault();
+        submit.disabled = true;
+        submit.innerText= "processing...";
+        setTimeout(()=>{
+            submit.disabled = false;
+            submit.innerText = 'Submit';
+        },5000);
+        console.log("hello");
+
+    let imgage = document.getElementById("file");
+    let fileData = imgage.files[0];
+        console.log(fileData.size)
+        // x is just an initial value
+        let x = 0;
+        const min_x = 0.00;
+        // max_x is maximum compression
+        const max_x = 0.8;
+        // max_y is maximum image size from capture or else full compression i.e 0
+        const max_y = 1024 * 1024 * 1;
+
+        function updateX(y){
+            const decrementStep = (max_x/max_y);
+            x = max_x - (decrementStep *y);
+            x=Math.max(x,min_x);
+            x= Math.round(x*100)/100;
+            console.log(`updated value of file: ${x}`);
+        }
+        updateX(fileData.size);
+
+        const url = URL.createObjectURL(fileData);
+        const img = new Image();
+        img.src = url;
+        img.onload = function(){
+            // document.body.appendChild(img);
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            ctx.drawImage(img,0,0);
+            let compressedSize = x;
+            canvas.toBlob((blob)=>{
+                console.log(blob, blob.size);
+                const fr = new FileReader();
+                fr.readAsDataURL(blob);
+                fr.addEventListener('load',()=>{
+                    const dataURL = fr.result;
+                    const img2 = new Image();
+                    img2.src = dataURL;
+                    // document.body.appendChild(img2);
+                    console.log(blob.size);
+    const data = new FormData();
+
+    // let degree = document.getElementById('first').value;   
+    //                 let department = document.getElementById('second').value;   
+    //                 let semester = document.getElementById('third').value;    
+    //                 let subject = document.getElementById('fifth').value; 
+                    let caption = document.getElementById('captionTextId').value;    
+                    let sendData = {
+                        // degree,
+                        // department,
+                        // branch,
+                        // semester,
+                        // subject
+                        institute: 'RIST',
+                        caption
+                    }   
+
+
+        data.append('calendar', blob, 'img.jpeg');
+        data.append('jsonData', JSON.stringify(sendData));
+    // changes
+            // 090924
+    const token = localStorage.getItem("authToken");
+    let h = new Headers();
+            h.append('Authorization' ,`Bearer ${token}`);
+            // 090924
+            // h.append('Content-Type', 'application/json');
+    fetch("/uploadcalendar",{
+        method:"POST",
+        // 090924
+        headers: h,
+        // 090924
+        //  {
+        //     'Authorization': `Bearer ${token}`
+        //     // ,
+        //     // 'Content-Type':'application/json'
+        // },
+        body:data,
+    }).then((result)=>{
+        console.log("file sent successfully");
+    }).catch((err)=>{
+        console.log(err.message);
+    });
+                })
+            },'image/jpeg',compressedSize)
+        }
+    });
+
+
+
+
+
+
+
+
+
+    function parseJwt(token) {
+    try {
+        // Split the token to get the payload (second part)
+        const base64Url = token.split('.')[1];
+
+        // Decode Base64URL to JSON
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(
+        atob(base64)
+            .split('')
+            .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+            .join('')
+        );
+
+        // Parse JSON and return the payload
+        return JSON.parse(jsonPayload);
+    } catch (error) {
+        console.error("Failed to parse JWT:", error);
+        return null;
+    }
+    }
+
+    // Example usage
+    // const token = "your.jwt.token";
+    const token = localStorage.getItem("authToken");
+    const payload = parseJwt(token);
+    console.log("Decoded Payload:", payload);
+    console.log("designation:", payload.designation);
+
+    if((payload.designation === "institute")||(payload.designation === "teacher")){
+        document.getElementById("creation").style.display = "block";
+    }
+
+    </script>
+
+    <!-- 041224 -->
+
+    <div class="images"></div>
+    <script>
+        const loadImages = async()=>{
+            const response = await fetch('/images').then(response => response.json());
+            const imagesElement = document.querySelector('.images');
+            imagesElement.innerHTML = '';
+            console.log(response.images)
+
+            // response.images.forEach(image => {
+                
+            // function cleanImagePath(filePath){
+            //     if(filePath.startsWith('/combi')){
+            //         return filePath.replace('/combi', '');
+            //     }
+
+            //     const image = { filePath : image.filePath}
+            //     let cleanedFilePath = cleanImagePath(image.filePath);
+
+            //     const img = document.createElement('img');
+            //     img.src = image.filePath;
+            //     console.log(img.src);
+            //     img.height = '200';
+            //     imagesElement.appendChild(img);
+            // }
+                
+            // });
+            
+            response.images.forEach(image => {
+                const img = document.createElement('img');
+                
+                const newElement = document.createElement('div');
+                newElement.innerHTML = `<p>${image._id}</p>`;
+                // console.log(image);
+                img.src = image.filePath;
+                img.src = img.src.includes("/combi") ? img.src.replace("/combi", "") : img.src;
+                console.log(img.src);
+                if(img.src.includes("timetable") ){
+                img.height = '200';
+                imagesElement.appendChild(img);
+                imagesElement.appendChild(newElement);
+
+                }
+                
+            });
+        }
+
+        window.onload = loadImages;
+    </script>
+    <!-- 041224 -->
+    <style>
+        /* .attendanceteacherclass{
+            visibility: hidden;
+            visibility: visible;
+        } */
+    </style>
+
+    <script>
+        
+        // ////////////// number 3 simple goback or and hide button
+
+        // function goBack(){
+        //     window.history.back();
+        // }
+        // document.addEventListener("DOMContentLoaded", function(){
+        //     const backButton = document.getElementsByClassName("introBackIcon");
+        //     if(window.history.length <=1){
+        //         backButton[0].style.visibility = "none";
+        //     }
+        // });
+
+        // ////////////// number 2 go back or any page , no hide button
+
+        // function goBack(){
+        //     if(window.history.length >1){
+        //         window.history.back();
+        //     }else{
+        //         window.location.href = "index.html";
+        //     }
+        // }
+
+        //  ///////////////////// number1
+
+        function goBack(){
+            const referrer = document.referrer;
+            const currentOrigin = window.location.origin;
+
+            if(referrer && referrer.startsWith(currentOrigin)){
+                window.history.back();
+            }else{
+                window.location.href = "/index.html";
+            }
+        }
+    // or hide button
+    document.addEventListener("DOMContentLoaded",function(){
+        const backButton = document.getElementsByClassName("introBackIcon");
+        const referrer = document.referrer;
+        const currentOrigin = window.location.origin;
+
+        if(window.history.length <=1 || !(referrer && referrer.startsWith(currentOrigin))){
+                backButton[0].style.visibility = "hidden";
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+    const loadImages2 = async()=>{
+            const response1 = await fetch('/getcalendar').then(response => response.json());
+
+            
+
+        
+
+                    let test = JSON.stringify({ ...response1})
+                localStorage.setItem('calendarCard', test );
+
+
+    const calendarCard = localStorage.getItem('calendarCard');
+                    const response = JSON.parse(calendarCard);
+
+
+
+
+
+
+
+
+            const imagesElement = document.querySelector('.images');
+            imagesElement.innerHTML = '';
+            let noticeAndImage = "";
+
+            response.images.forEach(image => {
+                // const img = document.createElement('img');
+                // console.log(image.filePath);
+                console.log(image);
+
+                // // changed by employee 250517
+                // // img.src = image.filePath;
+                // img.src = `/images/${image.filePath.split('/').pop()}`;
+                // // changed by employee 250517
+
+                // console.log(img.src);
+                // img.height = '200';
+                // imagesElement.appendChild(img);
+                noticeAndImage += `
+    <section>
+        <fieldset>
+            <div class="addressBox">
+                                    <button  class=" buttonDelete" onclick="confirmFunction()">Delete</button>
+
+            Address to:<br>
+                ${image.institute}<br>
+                semester: ${image.semester} <br>
+                degree: ${image.degree}<br>
+                branch: ${image.branch}<br>
+                subject : to be thought of s
+            
+            </div>
+            <img style="width:100%" src="/images/${image.filePath.split('/').pop()}">`;
+            let caption = image.caption;
+            if(caption){
+                noticeAndImage += `<div class="captionBox">
+                ${image.caption}
+                </div>`
+            }else{
+                noticeAndImage += `<div class="emptyCaptionBox">
+                </div>`
+
+            }
+            noticeAndImage+= `
+        </fieldset>
+        
+        </section>`
+                
+            });
+            
+            document.getElementById('noticeAndImage').innerHTML = noticeAndImage;;
+        }
+
+        window.onload = loadImages2;
+
+    </script>
+
+
+    <script src="/src/js/app.js"></script>
+<!-- no end /body -->

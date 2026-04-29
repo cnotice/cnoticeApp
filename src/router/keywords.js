@@ -3,6 +3,19 @@ const Keywords = require('../models/keywords');
 const router = new express.Router();
 const auth = require('../middleware/auth')
 
+
+
+        // let datas = new Date();
+        // console.log(datas);
+
+        function normalizeDate(date){
+            return new Date(date.setHours(0,0,0,0));
+        }
+        
+        // console.log(normalizeDate(new Date()));
+        // console.log(normalizeDate(new Date('2026-04-05')));
+
+
 router.post('/keywords',auth,async(req,res)=>{
     console.log("req.user.designation")
     // console.log(req.user.designation)
@@ -11,7 +24,8 @@ router.post('/keywords',auth,async(req,res)=>{
     }
     const keywords = new Keywords({
         ...req.body,
-    keywords: [{keyword : req.body.keyword, date: 'static'}]
+    // keywords: [{keyword : req.body.keyword, date: 'static'}]
+    keywords: [{keyword : req.body.keyword, date: normalizeDate(new Date())}]
 });
 console.log(req.body.keyword + 'this');
 
@@ -48,7 +62,10 @@ console.log(req.body.keyword + 'this');
 // 
         // console.log(existingDocument)
 // const update = { author : 'nnn'}
-const update = {keywords: [{keyword : req.body.keyword, date: 'staticUpdated'}]};
+// const update = {keywords: [{keyword : req.body.keyword, date: 'staticUpdated'}]};
+// commented on 260409 i think update is of no use
+// const update = {keywords: [{keyword : req.body.keyword, date: normalizeDate(new Date())}]};
+// commented on 260409 i think update is of no use
         if(existingDocument){
             /////////////////////1111111111111111
             // await Keywords.updateOne({
@@ -77,7 +94,8 @@ console.log("trying to do this part2");
 console.log(existingDocument.keywords);
 
 
-existingDocument.keywords = existingDocument.keywords.concat({keyword : req.body.keyword, date: 'Newstatic'}) 
+// existingDocument.keywords = existingDocument.keywords.concat({keyword : req.body.keyword, date: 'Newstatic'}) 
+existingDocument.keywords = existingDocument.keywords.concat({keyword : req.body.keyword, date: normalizeDate(new Date())}) 
 
 
 console.log("trying to do this part");

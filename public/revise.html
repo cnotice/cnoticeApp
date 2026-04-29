@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cNotice</title>
+  <link rel="stylesheet" href="estyle.css">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="cNotice">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<!-- <body> -->
+<body>
+
+    <!-- <section id='101' style='z-index:3;
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    '>
+    <div class='errorMessageBox' style='
+    background-color:#02013b;
+    padding:40px 10px 30px 10px;
+    border-radius:5px;
+    color:white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width:90%;
+    '>
+        <div>
+        <div class="deckerCard deckerHead"> Please mark the problem about this question for which the creator can rectify </div>
+        <div class="deckerCard deckerBody" style="text-align: left;" >
+
+           
+    <div style="border-radius:5px;
+    /* align-items: center; */
+    /* display: flex; */
+    " class=" sortExtend" > <input type="radio" id="${values[i]}" name="department" value="${values[i]}"><label for="${values[i]}">incorrect information/ offtopic/ out of syllabus</label></div>
+    <hr>    
+           
+    <div style="border-radius:5px;
+    align-items: center;
+    display: flex;
+    " class=" sortExtend" > <input type="radio" id="xxxxz" name="department" value="${values[i]}"><label for="xxxxz">Inappropriate content/ malicious links</label>
+    </div>
+    <br>
+           
+    <hr>    
+    <div style="border-radius:5px;
+    align-items: center;
+    display: flex;
+    " class=" sortExtend" > <input type="radio" id="" name="department" value="${values[i]}"><label for="${values[i]}">Spam/ duplicate</label></div>
+            
+    <hr>    
+    <div style="border-radius:5px;
+    align-items: center;
+    display: flex;
+    " class=" sortExtend" ><input type="radio" id="${values[i]}" name="department" value="${values[i]}"><label for="${values[i]}">promotional/ advertisement</label></div>
+    
+        </div>
+        <button class="button17a button0" onclick="ok()">Cancel</button>
+        <button class="button17a button0" onclick="ok()">Submit</button>
+    </div>
+    </div>
+    </section> -->
+
+        <section id='111' style='z-index:3;
+        display:none;
+        position:fixed;
+        width:100%;
+        height:100%;
+        background-color:rgb(0,0,0);
+        background-color:rgba(0,0,0,0.4);
+        justify-content: center;
+        align-items: center;
+        '>
+            <div class='errorMessageBox' style='
+            background-color:#02013b;
+            padding:40px 10px 30px 10px;
+            border-radius:5px;
+            color:white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            width:90%;margin-top:60px;
+            '>
+                <div>
+                    <!-- <div class="deckerCard deckerHead"> Please choose an option right now:</div>
+                    <div class="deckerCard deckerBody" style="text-align: left;" >
+                    
+                <div style="border-radius:5px;
+                " class=" sortExtend" onclick="creategetmodel()">
+                Edit
+                </div>    
+                <hr>    
+                <div style="border-radius:5px;
+                " class=" sortExtend" onclick="confirmFunction()">
+                Delete
+                </div>
+                    </div> -->
+                    <div style="position:relative;">
+                        <div class="" style="width:300px;">
+                            <div id="id3" onclick="" class="scoreBox" style="visibility:;">
+                                <div style="display: flex;flex-direction: row-reverse;"> 
+                                    <div class="trophy4xShield" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                                    <div class="timer" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                                    <div class="trophy4xShield" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                                </div>
+                        <div id="mess1" >Time's up! <br> You Scored
+                  </div>
+                  
+                                <span  id="congra">0</span>
+                  
+                                <!-- <div style="background-color:;font-size:px;margin:10px 0px 0px 0px;"> Correct 3/ 9 score 0 [ correct 12 mark incorrect -2 marks skip -1 marks]
+                                $! You have completed all for today.If there id all for today.If there is more than i will let you know. uishiusw khsukhj hk uhhhjjh jiijji 
+                                    <div style="margin-top:5px;
+                                        display: flex;
+                                        flex-direction: row; 
+                                        justify-content: space-around;"> 
+                                        <button class="button0"> Play Weak Subject</button> <button class="button0"> Play Again </button>
+                                    </div>
+                                </div> -->
+                            </div>
+
+
+                            <button class="button17a button0" onclick="location.reload();">Again</button>
+                        </div>
+                    </div>
+        </section>
+    <main class="mainContainer ">
+
+    
+
+            <section class="introContainer">
+                <div class="introBackIcon" onclick="goBack()"></div>
+                <div class="intro intro1">Study Account</div>
+                <div class="introMenuDotsIcon"></div>
+            </section>
+    
+
+        <section style="display:flex;width:100%;background-color: ;">
+            <div style="width:10%;background-color:;"></div>
+            <!-- <div style="width:80%;background-color: ;text-align:center;">
+                <div class="highlighti">Keywords</div>
+            </div> -->
+
+            
+            <div style="width:80%;text-align:center;" class="marqueeMain" onclick="marqueeClick(this)">
+                <div class="marqueeContainerHorizontal marqueeContainer highlighti" style=" width:200px;text-align:center;" data-direction="horizontal">
+                    <div class="marqueeTextHorizontal marqueeText" id="highlighti" style="white-space: nowrap;  
+                    ">Subject</div>
+                </div>
+            </div>
+                <div style="position:relative;width:10%;background-color: ;">
+                    <a href="information.html">
+                        <button  style="width:35px;height:35px;margin:9px 2px 2px 0px;text-align:center;align-items:center;justify-content:center; " class="buttonq buttonr mcAnsFlagx" >i</button>
+
+                    </a>
+                </div>
+            </section>
+
+            <section class="sortContainer" id="quizid">
+                <div class="sort sort2">
+                    Revise
+                </div>
+            </section>
+
+    
+    
+            <section class="sortContainer">
+                <!-- <div class="sort" >
+                    Max Topic : 10
+                </div> -->
+            <div class="sort" >
+            Question Number : <span id="questionNo" style="display:block;text-align:center;"> 0</span>
+            </div>
+                <div class="sort" >
+                    To-do: <span id="gamePoints2" style="display:block;text-align:center;"> 0</span>
+                </div>
+                <div class="sort" >
+                    Done: <span id="gamePoints" style="display:block;text-align:center;"> 0</span>
+                </div>
+            <!-- <div class="sort" >
+            Score : <span id="xxx" style="display:block;text-align:center;"> 0</span>
+            </div> -->
+                <div class="sort">
+                    Time : <span id="timer" data-time="5" style="display:block;text-align:center;"> 02:00</span>
+                </div>
+            </section>
+
+
+
+            <section class="quizContainer" id="quiz3">
+
+            </section>
+            <br>
+
+            <div style="width:80%; display: flex;justify-content: space-around;margin-top: 10px;background-color: ;">
+                <button class="button0" style="width:90px" id="edit" onclick="creategetmodel()">Edit</button>
+                <button class="button0" style="width:90px" id="skip" >Done</button>
+                <button class="button0" style="width:90px" id="ok">To-do</button>
+
+            </div>
+    </main>
+
+
+    <div id='create' style='z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4);'>
+        <div class='errorMessageBox' style='margin-top:auto;margin-left:auto;margin-bottom:50px;margin-right:auto;background-color:#02013b;position:relative;padding:10px 10px 30px 10px;outline:0;width:90%; border-radius:5px;color:white;text-align: center;'>
+            <div style='padding-bottom: 50px;margin-top: 20px;
+            text-align:center;
+            justify-content:center;
+            align-items:center;
+            display:flex;
+            flex-direction:column;'>
+        
+        
+
+
+
+
+
+
+
+
+        
+        <section id="noOfStuSection" class="containerBoard">
+            <fieldset>
+                <legend>
+                    Unit Number
+                </legend>
+                <span style="color:white;" >
+                    <input name="third" type="number" min="0" max="20" onkeydown="blockInvalidKeys(event)" onchange="enforceMaxMin(this)" class="input0 input10 " id="keys" style="width:80px;background: ;padding:px;float:left;" placeholder="Number">
+                    
+                </span>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Unit Name
+                </legend>
+                <span style="color:white;" >
+                    <div style="width:90px;position: relative;">
+
+                        <input data-maxlength="40" name="third" type="" class="input0 input10 classIdKeys" id="keys" style="width:290px;background: ;padding-right:50px;" placeholder="Unit Name">
+                        <div id="count" class="keyCounter classIdTextCountKeys" style="width:45px;background-color: ;border-radius:0px 5px 5px 0px ;height:40px;margin:3px -260px;">?/40</div>
+                    </div>  
+                
+                </span>
+            
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Topic
+                </legend>
+                <span style="color:red;" >
+                    <div style="position: relative;">
+                        <textarea id="keys1" style="height:90px;" class="classIdText charLimit" placeholder="Topic"></textarea> 
+                        <div  id="count" class="line classIdTextCount charCount">?/5 lines | ?/200 characters</div>
+                    </div>
+                </span>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Description(optional)
+                </legend><span style="color:white;" ></span>
+                <div style="position: relative;">
+                    <textarea id="keys2" style="height:90px;" class="classIdText charLimit" placeholder="Description(optional) "></textarea>
+                    <div  id="count" class="line classIdTextCount charCount">?/5 lines | ?/200 characters</div>
+                </div></span>
+            </fieldset>
+        <div style="display:flex;">
+            <button  class="button0 button4 " id="noticesubmit" onclick="ok()">Cancel</button>
+            <button class="button0 button4 " id="ok">Done</button>
+            <button class="button0 button4 " id="skip">To do</button>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+       
+        </div>
+    </div>
+
+    <script src="timer.js"></script>
+    <script src="random.js"></script>
+
+<script src="marquee.js"></script>
+    <script>
+
+    const subN = localStorage.getItem('subsme');
+    document.getElementById("highlighti").innerHTML = subN;
+
+// 260327
+    function shuffleArray(array){
+        for (let i =array.length - 1; i>0; i--){
+            const j = Math.floor(Math.random()*(i+1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+    // 260327
+        // changed in 260324
+    // let todayDate = 0; 
+    let now = new Date();
+    let todayDate = Math.floor(now.getTime()/(1000 *60*60*24));
+    // console.log(daysSince1970);
+    // alert(daysSince1970)
+// changed in 260324
+
+
+        const noOfStuButt = document.getElementById("show");
+    
+    </script>
+    
+    <script>
+    
+        function goBack(){
+            window.location.href = "/studyaccount.html";
+        }
+    
+        
+    function sa(x,y){
+    let collection = document.getElementById(x).children[0].className;
+    if(collection == "hide"){
+        document.getElementById(x).children[0].className = "unhide";
+        document.getElementById(y).style.display = "none";
+    }else if(collection == "unhide"){
+        document.getElementById(x).children[0].className = "hide";
+        document.getElementById(y).style.display = "block";
+    }
+    // alert(collection);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+    function ok(){
+        resumeTimer();
+            // document.getElementById('101').style.display="none";
+            document.getElementById('create').style.display="none";
+        }
+        
+        function fetch(){
+            document.getElementById('101').style.display="flex";
+        }
+    
+    </script>
+    
+    <script>
+        
+        function buildQuiz2(){
+        let itnum2 = subjectsCards.length ; // iteration no of frames skeleton imp chng
+        let string2 = "";
+        let stringans = "";
+        let totalquestion2 = subjectsCards.length ; // for array pointer
+        totalquestion2 = totalquestion2 - 1; // as above
+        let test1 = 0;
+        
+        let countDown2 = function f2(fromNumber2) { // fromnumber is itnum
+        let nextNumber2 = fromNumber2 - 1;  // for repeat iteration and last frame
+        console.log(fromNumber2);
+        if (fromNumber2 > 0) {
+            stringans += `<div class=" slide answerbox">${subjectsCards[test1].description} <br> ${test1}</div>`;
+            
+    
+            string2 += `<div class="slide2" id="${subjectsCards[test1]._id}">
+        <section class="reviseContainer ">
+            <div class="reviseContent">
+                <div style="width:25%;background-color:;">Today0</div>
+                <div style="width:65%;background-color: ;
+                xtext-align:center;">
+                    <div class="">Streak Level 50</div>
+                </div>
+                <div class="reviseMenuContainer">
+                    
+                    <div  class="reviseMenu" id="${test1+'sa1'}"  onclick="sa('${test1+'sa1'}','${test1+'1sa'}')">
+                        <div class="unhide" onclick="" style="font-size:;background-color:;"></div>
+        </div>
+                </div>
+                </div>
+            <div style="padding:15px;display: none;" id="${test1+'1sa'}">
+                Unit number : ${subjectsCards[test1].unitnumber}
+                <br>
+                Unit Name : ${subjectsCards[test1].unitname}
+                <br>
+                Description : ${subjectsCards[test1].topic}
+            </div>
+        
+            <article class="reviseArticle" >
+        ${subjectsCards[test1].topic}
+        
+        
+            </article>
+            </section>
+            </div>`;
+    
+        totalquestion2 = totalquestion2 - 1;
+         test1 = test1 + 1;
+    
+            string2 += `
+    </div>
+    `;
+    
+         if (nextNumber2 == 0) {
+        //  string2 += `<div style="position:relative;"><div class="slide2">`;
+        //  string2 += `<div id="id3" onclick="" class="subjectBox modclass" style="visibility:;">
+        //      <div class="subjects" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+        //              <div style="background-color:;font-size:px;margin:10px 0px 0px 0px;">congratulations! You have completed all for today. </div>
+        //  </div>`;
+        //  totalquestion2 = totalquestion2 - 1;
+        
+        //  string2 += `</div></div>`;
+    stringans += `<div class=" slide " style="display:none;">`;
+        
+        stringans += `    </div>
+                `;
+        
+             string2 += `<div style="position:relative;"><div class="slide2">`;
+             string2 += `<div id="id3" onclick="" class="scoreBox" style="visibility:;">
+                <div style="
+          display: flex;
+          flex-direction: row-reverse; "> 
+                 <div class="trophy4" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                  <div class="trophy" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                  <div class="trophy4" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+                  </div>
+                  <div>Congratulations !
+                    </div>You have reached the end . <div>You Scored</div>
+                  <p  id="congra2">oooo</p>
+                         <div style="background-color:;font-size:px;margin:10px 0px 0px 0px;">
+                             <div style="margin-top:5px;
+          display: flex;
+          flex-direction: row; 
+          justify-content: space-around;"> 
+                            <button class="button0" onclick="location.reload();">Try Again</button>
+           </div>
+           </div>
+             </div>`;
+            //  test1 = test1 + 1;
+            
+             string2 += `</div></div>`;
+     }
+        f2(nextNumber2);
+        }
+        
+        if((subjectsCards === ''||subjectsCards === null)||subjectsCards.length === 0){
+            console.log("njjuhuhftftrdese");
+        document.getElementById("timer").dataset.time = 599940;
+        // const previousButton2 = document.getElementById("previous");
+        // const nextButton2 = document.getElementById("next");
+        const quizContainer23 = document.getElementById('quiz3');
+        const previousButton2 = document.getElementById("ok");
+        const nextButton2 = document.getElementById("skip");
+        const editButton = document.getElementById("edit");
+        previousButton2.style.visibility = 'hidden';
+        nextButton2.style.visibility = 'hidden';
+        editButton.style.visibility = 'hidden';
+            // console.log(quizContainer23);
+            console.log("this is the if part");
+                // quizContainer2.innerHTML = "<div style='background-color:red;height:200px;width:200px;'>There is nere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz datere is no quiz dato quiz data</div>";
+                quizContainer23.innerHTML = 
+         `<div style="position:relative;"><div class="introCard">
+         <div id="id3" onclick="" class="scoreBox" style="visibility:;">
+            <div style="
+      display: flex;
+      flex-direction: row-reverse; "> 
+              <div class="error" onclick="" style="font-size:;background-color:;margin:20px 0px 0px 0px;"></div>
+              </div>Sorry !
+                     <div style="background-color:;font-size:px;margin:10px 0px 0px 0px;padding:10px;display: flex; text-align: center;">Either All quiz questions has already been answered or no quiz has been created yet. Please create new quiz or wait for spaced repititon algorithm to work and solidify your memory. That will take a day or more. The longer the difference in days, the better for your memory.
+       </div>
+         </div>
+        </div></div>`;
+        // console.log(quizContainer23);
+        // showAnswer.style.visibility = 'hidden';
+        // tagId.style.visibility = 'hidden';
+        // untagId.style.visibility = 'hidden';
+        // nextButton2.style.visibility = 'hidden';
+        // previousButton2.style.visibility = 'hidden';
+        // quizContainer2.innerHTML = string2;
+        }else{
+        quizContainer2.innerHTML = string2;
+        // quizAns.innerHTML = stringans;
+    
+        }
+        // quizContainer2.innerHTML = string2;
+        }
+        
+        let newYearCountDown2 = countDown2;
+        countDown2 = null;
+        newYearCountDown2(itnum2);
+        }
+        
+    // let tota = "3 out of 9" ;
+
+    let points = 0;
+    let points2 = 0;
+    function gameFunction(){
+
+        points = points + 1;
+        document.getElementById("gamePoints").innerHTML = points;
+        // document.getElementById("gamePoints2").innerHTML = points2;
+        updatePointsInStorage("added");
+
+    }
+    function gameFunction2(){
+        points2 = points2 + 1;
+
+        // document.getElementById("gamePoints").innerHTML = points;
+        document.getElementById("gamePoints2").innerHTML = points2;
+        updatePointsInStorage("subtracted");
+    }
+
+    
+    function updatePointsInStorage(data){
+ 
+  const activeSlide = document.querySelector('.active-slide2');
+  if (!activeSlide) {
+    console.warn('No active slide found');
+    return null;
+  }else{
+    console.warn('Active slide found');
+
+  }
+       const xxx = activeSlide.id;
+
+    // let data2update = localStorage.getItem("saquiz");
+    let data2update = localStorage.getItem("saquizAns");
+    // let data2update = result;
+    let array2update = data2update ? JSON.parse(data2update): [];
+    let idToUpdate2 = xxx;
+
+    const finder = array2update.find(item=>item._id === idToUpdate2);
+
+    let lastAskedDate = 0; // to find
+    let nextAskAtSRDaysLevel = 0; // to find
+    if(finder){
+        lastAskedDate = finder.lastAskedDate || 0; 
+        nextAskAtSRDaysLevel = finder.nextAskAtSRDaysLevel ?? 0;
+        console.log(lastAskedDate, nextAskAtSRDaysLevel);
+    }else{
+        console.log("id not found aiiiii")
+    }
+
+    let sRDaysLevelArray = [0,1,2,4,8,16,32,64,128,256,512,1024,2048,4096]
+    // let lastAskedDate = 0; // to find
+    // let todayDate = 9;
+
+    let timeElapsed = todayDate - lastAskedDate;
+
+    // let nextAskAtSRDaysLevel = 8; // to find
+    // let lastLevel = 4;
+        console.log(lastAskedDate, nextAskAtSRDaysLevel);
+    const index = sRDaysLevelArray.indexOf(nextAskAtSRDaysLevel);
+
+    switch (data) {
+  case "added":{
+    console.log("It's added!");
+    //3 getting and updating with id from loalstorage to localstorage
+    nextAskAtSRDaysLevel = sRDaysLevelArray[index+1];
+    break;
+  }
+  case "subtracted":{
+    console.log("It's subtracted!");
+    //3 getting and updating with id from loalstorage to localstorage
+    nextAskAtSRDaysLevel = 0;
+    break;}
+  case "skipped":{
+    console.log("It's skipped!");
+    //3 getting and updating with id from loalstorage to localstorage
+    nextAskAtSRDaysLevel = 0;
+    break;
+    }
+  default:
+    console.log("Unknown Command");
+    }
+
+    // lastAskedDate = today   ///change below updatedData2 accordingly //done
+    let updatedData2 = {nextAskAtSRDaysLevel: nextAskAtSRDaysLevel, lastAskedDate : todayDate};
+    array2update = array2update.map(obj=> obj._id === idToUpdate2 ? { ...obj, ...updatedData2}: obj);
+    // localStorage.setItem("saquiz", JSON.stringify(array2update));
+    // alert("result");
+    localStorage.setItem("saquizAns", JSON.stringify(array2update));
+    }
+            // document.getElementById('congra').innerHTML = tota;
+    
+        function showSlide2(n) {
+        slides2[currentSlide2].classList.remove('active-slide2');
+        slides2[n].classList.add('active-slide2');
+        currentSlide2 = n;
+    document.getElementById("questionNo").innerHTML = n +1;
+        if(currentSlide2 === 0){
+        // previousButton2.style.display = 'none';
+        // previousButton2.style.visibility = 'hidden';
+        }
+        else{
+        // previousButton2.style.display = '';
+        // previousButton2.style.visibility = '';
+        }
+        if(currentSlide2 === slides2.length-1){
+    document.getElementById("questionNo").innerHTML = n;
+    // alert("ssssssssssss");
+        stopTimer();
+
+    //         setTimeout(function() {
+    // //   console.log("This message appears after 2 seconds.");
+
+        const message = "To-do : " + points2 + " <br> Done : " + points;
+    document.getElementById("congra2").innerHTML = message;
+    // }, 100); // 2000 milliseconds = 2 seconds
+
+
+        
+        nextButton2.style.visibility = 'hidden';
+        previousButton2.style.visibility = 'hidden';
+        editButton.style.visibility = 'hidden';
+        }
+        else{
+        nextButton2.style.visibility = '';
+        }
+        }
+    
+        function showNextSlide2() {
+        showSlide2(currentSlide2 + 1);
+        }
+        const quizContainer2 = document.getElementById('quiz3');
+        const getSubjects = localStorage.getItem('saquiz');
+    console.log(typeof getSubjects);
+    
+
+
+
+
+    
+    function meetsCriteriaForQuestioning(obj){
+    // let sRDaysLevelArray = [0,1,2,4,8,16,32,64,128,256,512,1024,2048,4096]
+    // let todayDate = 9;
+    let lastAskedDate = obj.lastAskedDate ?? 0;
+    let timeElapsed = todayDate - lastAskedDate;
+    let nextAskAtSRDaysLevel = obj.nextAskAtSRDaysLevel ?? 0;
+    // let lastLevel = 4;
+    if(nextAskAtSRDaysLevel<=timeElapsed){
+        console.log("ask question");
+        return obj;
+    }else{
+        console.log("skip this question");
+    }
+
+    // let datum = obj.data;
+    // if(datum == 'subtracted'){
+    // console.log(obj);
+    //     return;
+    // }
+    }
+        // let subjectsCards = JSON.parse(getSubjects);
+    let subjectsCards = getSubjects && getSubjects.trim() !== '' ? JSON.parse(getSubjects): [];
+    
+        // 260325
+        const saquizAns = JSON.parse(localStorage.getItem('saquizAns')) || [];
+        const map = new Map();
+        [...subjectsCards, ...saquizAns].forEach(item=>{
+            if(map.has(item._id)){
+                map.set(item._id,{...map.get(item._id),...item//merge properties
+                    });
+            }else{
+                map.set(item._id,item);
+            }
+        });
+
+        const result = Array.from(map.values());
+    localStorage.setItem("saquizAns", JSON.stringify(result));
+
+    const refinedQuestions = result.filter(obj => obj.subjectId === localStorage.getItem('subjectId')).filter(meetsCriteriaForQuestioning);
+    // const refinedQuestions = subjectsCards.filter(meetsCriteriaForQuestioning);
+        // 260325
+
+    // this
+    // changed in 260324
+    // const refinedQuestions = subjectsCards.filter(meetsCriteriaForQuestioning);
+    subjectsCards = refinedQuestions;
+        shuffleArray(subjectsCards);
+    // or
+    // subjectsCards = subjectsCards.slice(0,0); /// i think this line no use
+    // changed in 260324
+    console.log(subjectsCards);
+    // let subjectsCards = getSubjects ? JSON.parse(getSubjects): [];
+    
+            buildQuiz2();
+        const previousButton2 = document.getElementById("ok");
+        const nextButton2 = document.getElementById("skip");
+        const editButton = document.getElementById("edit");
+        const slides2 = document.querySelectorAll(".slide2");
+        const slides = document.querySelectorAll(".slide");
+        let currentSlide2 = 0;  
+        
+        showSlide2(currentSlide2);
+        
+        previousButton2.addEventListener("click", gameFunction2);
+        previousButton2.addEventListener("click", showNextSlide2);
+        nextButton2.addEventListener("click", gameFunction);
+        nextButton2.addEventListener("click", showNextSlide2);
+    
+
+
+
+
+
+
+        function closeEditModal(){
+        
+        document.getElementById('create').style.display="none";
+    }
+    
+    function creategetmodel(){
+        pauseTimer();
+        // let key1 = subjectsCards[currentSlide2]._id;
+        // document.getElementById('keys2').value = key1;
+        document.getElementById('create').style.display="flex";
+        console.log(currentSlide2)
+        console.log(subjectsCards)
+
+
+
+
+        let unitNumber = subjectsCards[currentSlide2].question;
+        let unitName = subjectsCards[currentSlide2].question;
+        let topic = subjectsCards[currentSlide2].question;
+
+        let question = subjectsCards[currentSlide2].topic;
+        document.getElementById('keys1').value = question;
+        let correctOption = subjectsCards[currentSlide2].description;
+        document.getElementById('keys2').value = correctOption;
+
+        
+        
+        // alert(key1);
+        // document.getElementById('keys1').value = key1;
+
+
+
+
+
+
+        // document.getElementById('101').style.display="none";
+    }
+
+
+    //   window.addEventListener('DOMContentLoaded', () => {
+    //   const timeLeft = sessionStorage.getItem('timerValue');
+    //   if (timeLeft !== null) {
+    //     console.log('Got timer value from previous page:', timeLeft);
+    //     // Use it to update UI or resume timer
+    //     sessionStorage.removeItem('timerValue'); // if you want to clear it
+    //   } else {
+    //     console.log('No timer value found');
+    //   }
+    // });
+
+
+    // function fetch(){
+    //     document.getElementById('101').style.display="flex";
+    // }
+
+
+    function updateScoreBoard(){
+    if (points2 !== 0) {
+      document.getElementById("congra").textContent =
+        `To-do : ${points2}\n Done : ${points}`;
+    } else {
+      document.getElementById("congra").textContent = points;
+    }
+
+    }
+
+    </script>
+
+    <script src="/src/js/app.js"></script>
+</body>
+ 
+   <!-- Testing Purpose
+
+   <div  class="quizFlag btton0 buton11 mcAnsFag" onclick="fetch111()" style=""> 
+                <div class="pen" onclick="" style="margin:0px 0px 0px 3px;"></div>
+            </div>
+            
+
+    <script>
+    
+    function fetch111(){
+        console.log("ok")
+        document.getElementById('111').style.display="flex";
+    }
+
+
+    </script> -->
+
+    <!-- header.html -->
+     <!-- <header>
+        <h1>My Site</h1>
+        <nav>....</nav>
+     </header> -->
+
+     <!-- in your main pages -->
+      <!-- <div id="header"></div>
+      <script>
+        fetch('header.html')// or /header.html
+        .then(res=>res.text())
+        .then(data=>{
+            document.getElementById('header').innerHTML = data;
+        });
+      </script> -->
+
+      
+    <script src="studyaccount.js"></script>

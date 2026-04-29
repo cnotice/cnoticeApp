@@ -15,8 +15,8 @@ const userSchema = new mongoose.Schema({
         },
         contactcode:{
         type: String
-        // ,
-        // unique: true
+        ,
+        unique: true
         },
     name:{
         type: String
@@ -104,6 +104,13 @@ const userSchema = new mongoose.Schema({
         // unique: true
         }
     }],
+        instituteId:{
+                type: mongoose.Schema.Types.ObjectId,
+                // required: true,
+                ref: 'Institute'
+        // ,
+        // unique: true
+        },
     tokens:[{
         token:{
             type:String,
@@ -153,6 +160,19 @@ const payload = {
     return token;
 }
 
+
+userSchema.methods.generateUpdateUser = async function(data){
+    console.log("data")
+    console.log(data)
+    console.log("data")
+    const user = this;
+    user.instituteId = data._id;
+    // // console.log(user.bssds);
+    // // console.log(data)
+    await user.save();
+    
+    return user;
+}
 
 
 userSchema.virtual('degrees',{

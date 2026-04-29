@@ -6,7 +6,7 @@ const imageRouter = require('./router/image');//120724 second phase
 const imageuploadRouter = require('./router/imageupload');//160724 second phase
 const imagenoticeRouter = require('./router/imagenotice');//130824
 const userRouter = require('./router/user');
-const taskRouter = require('./router/task');
+// const taskRouter = require('./router/task');
 const keysRouter = require('./router/keywords');
 const fcRouter = require('./router/fc');
 const owRouter = require('./router/ow');
@@ -16,10 +16,11 @@ const noticeRouter = require('./router/notice');
 const SubjectNoticeRouter = require('./router/subjectnotice');
 const attRouter = require('./router/attendance');
 const desigRouter = require('./router/designation');
-const deptRouter = require('./router/department');
+// const deptRouter = require('./router/department');
 const degreeRouter = require('./router/degree');
+const instituteRouter = require('./router/institute');
 const subRouter = require('./router/sub');
-const testRouter = require('./router/test');
+// const testRouter = require('./router/test');
 const funRouter = require('./router/functionz');
 const logsRouter = require('./router/logs');
 
@@ -61,7 +62,7 @@ const port = process.env.PORT || 5000 ;
 
 app.use(express.json());
 app.use(userRouter);
-app.use(taskRouter);
+// app.use(taskRouter);
 app.use(keysRouter);
 app.use(fcRouter);
 app.use(owRouter);
@@ -71,10 +72,11 @@ app.use(noticeRouter);
 app.use(SubjectNoticeRouter);
 app.use(attRouter);
 app.use(desigRouter);
-app.use(deptRouter);
+// app.use(deptRouter);
 app.use(degreeRouter);
+app.use(instituteRouter);
 app.use(subRouter);
-app.use(testRouter);
+// app.use(testRouter);
 app.use(funRouter);
 app.use(logsRouter);
 app.use(imageRouter);//120724 second phase
@@ -145,7 +147,7 @@ app.listen(port, ()=>{
 
 // console.log(JSON.stringify(pet) + " this is mario");
 
-const Task = require('./models/task');
+// const Task = require('./models/task');
 const User = require('./models/user');
 
 const main = async()=>{
