@@ -2,7 +2,8 @@ require('dotenv').config();
 const path = require ('path');
 const express = require ('express');
 // const multer = require('multer'); //120724
-require('./db/mongoose');
+// require('./db/mongoose');
+const connectDB = require('./db/mongoose');
 const imageRouter = require('./router/image');//120724 second phase
 const imageuploadRouter = require('./router/imageupload');//160724 second phase
 const imagenoticeRouter = require('./router/imagenotice');//130824
@@ -109,12 +110,10 @@ app.use(express.static(imageDirectoryPath));
 
 
 
-app.listen(port, ()=>{
-    // console.log('Server is up on port' + port) //before reset password code
-    console.log('@http://localhost:5000') //reset password code
-})
-
-
+// app.listen(port, ()=>{
+//     // console.log('Server is up on port' + port) //before reset password code
+//     console.log('@http://localhost:5000') //reset password code
+// })
 
 // const jwt = require('jsonwebtoken');
 // // const bcrypt = require('bcrypt');   
@@ -294,7 +293,7 @@ app.post('/forgot-password',(req,res,next)=>{
 
     const token = jwt.sign(payload, secret, {expiresIn: '15m'});
     // const link = `http://localhost:5000/reset-password/${userReset.id}/${token}`;
-    const link = `http://localhost:5000/reset-password.html?id=${userReset.id}&token=${token}`;
+    const link = `/reset-password.html?id=${userReset.id}&token=${token}`;
     // const link = `http://localhost:5000/reset-password.html`;
     console.log(link);
     res.send('Password reset link has been sent to ur email...');
@@ -316,7 +315,7 @@ app.get('/reset-password.html/:id/:token',(req,res,next)=>{
         const payload = jwt.verify(token,secret);
         // res.render('reset-password', {email:user.email});
     // res.redirect(`/reset-password.html?email=${userReset.email}`);
-    res.redirect(`http://localhost:5000/reset-password.html?${userReset.id}/${token}/test`);
+    res.redirect(`/reset-password.html?${userReset.id}/${token}/test`);
     // res.redirect(`/reset-password.html?something`);
     }catch(error){
         console.log(error.message);
@@ -392,3 +391,11 @@ app.post("/sendemail",(req,res)=>{
 });
 
 ////////////////////////////280724 sendgrid
+
+
+
+
+
+app.listen(port, "0.0.0.0", () => {
+    console.log(`Server running on port ${port}`);
+});
