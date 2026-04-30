@@ -2,8 +2,7 @@ require('dotenv').config();
 const path = require ('path');
 const express = require ('express');
 // const multer = require('multer'); //120724
-// require('./db/mongoose');
-const connectDB = require('./db/mongoose');
+require('./db/mongoose');
 const imageRouter = require('./router/image');//120724 second phase
 const imageuploadRouter = require('./router/imageupload');//160724 second phase
 const imagenoticeRouter = require('./router/imagenotice');//130824

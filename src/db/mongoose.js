@@ -4,6 +4,21 @@
 //     useNewUrlParser: true
 // })
 
+
+
+// const mongoose = require('mongoose');
+
+// mongoose.connect(process.env.MONGO_URL);
+
+// const mongoose = require('mongoose');
+
+// mongoose.connect(process.env.MONGO_URL)
+//   .then(() => console.log("MongoDB connected"))
+//   .catch(err => console.log(err));
+  
+
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.error("MongoDB connection error:", err));
